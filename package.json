@@ -1,6 +1,6 @@
 {
   "name": "angular-paginator",
-  "version": "1.0.0",
+  "version": "1.0.0-beta.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -11,7 +11,7 @@
     "test:single-run": "ng test --watch false",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "precommit": "yarn run test:single-run"
+    "precommit": "yarn run test:single-run && yarn run build:package"
   },
   "private": true,
   "dependencies": {
