@@ -8,27 +8,27 @@
 
       <!-- boundary link -->
       <li class="page-item" *ngIf="boundaryLinks" (click)="paginator.toFirstPage()" [ngClass]="{'disabled': paginator.currentPage === paginator.firstPage}">
-        <a class="page-link" href="#" [innerHTML]="firstText"></a>
+        <a class="page-link" [innerHTML]="firstText"></a>
       </li>
 
       <!-- direction link -->
       <li class="page-item" *ngIf="directionLinks" (click)="paginator.toPreviousPage()" [ngClass]="{'disabled': paginator.currentPage === paginator.firstPage}">
-        <a class="page-link" href="#" [innerHTML]="previousText"></a>
+        <a class="page-link" [innerHTML]="previousText"></a>
       </li>
 
       <!-- pagination array -->
       <li class="page-item" *ngFor="let page of paginator.pages" [ngClass]="{'active': page['active']}" (click)="paginator.setCurrentPage(page['number'])">
-        <a class="page-link" href="#">{{page['text']}}</a>
+        <a class="page-link">{{page['text']}}</a>
       </li>
 
       <!-- direction link -->
       <li class="page-item" *ngIf="directionLinks" (click)="paginator.toNextPage()" [ngClass]="{'disabled': paginator.currentPage === paginator.lastPage}">
-        <a class="page-link" href="#" [innerHTML]="nextText"></a>
+        <a class="page-link" [innerHTML]="nextText"></a>
       </li>
 
       <!-- boundary link -->
       <li class="page-item" *ngIf="boundaryLinks" (click)="paginator.toLastPage()" [ngClass]="{'disabled': paginator.currentPage === paginator.lastPage}">
-        <a class="page-link" href="#" [innerHTML]="lastText"></a>
+        <a class="page-link" [innerHTML]="lastText"></a>
       </li>
 
     </ul>
