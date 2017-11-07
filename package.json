@@ -10,7 +10,8 @@
     "test": "ng test",
     "test:single-run": "ng test --watch false",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "precommit": "yarn run test:single-run"
   },
   "private": true,
   "dependencies": {
