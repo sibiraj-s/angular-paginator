@@ -1,0 +1,21 @@
+<div class="container-fluid">
+  <br>
+  <h4>angular-paginator</h4>
+  <br>
+  <form class="form-inline">
+    <label class="mr-sm-2" for="inlineFormCustomSelectPref2">Items Per Page</label>
+    <select class="custom-select mb-2 mr-sm-2 mb-sm-0" name="inlineFormCustomSelectPref2" id="inlineFormCustomSelectPref2" [(ngModel)]="itemsPerPage">
+      <option [ngValue]="3">3</option>
+      <option [ngValue]="10">10</option>
+      <option [ngValue]="15">15</option>
+      <option [ngValue]="20">20</option>
+    </select>
+  </form>
+  <hr>
+  <div *ngFor="let item of jsonArray | angularPaginator: {itemsPerPage: this.itemsPerPage, currentPage: currentPage }; let i = index">
+    {{(currentPage - 1) * itemsPerPage + i +1}}. {{item['name']}}
+  </div>
+  <br>
+  <app-angular-paginator size="sm" forceEllipses="true" (pageChange)="currentPage = $event"></app-angular-paginator>
+
+</div>

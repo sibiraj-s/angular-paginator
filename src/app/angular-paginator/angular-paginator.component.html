@@ -1,0 +1,37 @@
+<appAngularPaginator [id]="id" [size]="size" [boundaryLinks]="boundaryLinks" [directionLinks]="directionLinks" [maxSize]="maxSize"
+  [rotate]="rotate" [boundaryLinkNumbers]="boundaryLinkNumbers" [forceEllipses]="forceEllipses" [class]="class" #paginator="angularPaginator"
+  (pageChange)="pageChange.emit($event)">
+
+  <!-- ======================================== BOOTSTRAP 4 TEMPLATE ======================================== -->
+  <nav class="angular-bs4-pagination">
+    <ul class="pagination" [ngClass]="[paginator.getPaginationSize(), paginator.class]" *ngIf="paginator.pages['length'] !== 0">
+
+      <!-- boundary link -->
+      <li class="page-item" *ngIf="boundaryLinks" (click)="paginator.toFirstPage()" [ngClass]="{'disabled': paginator.currentPage === paginator.firstPage}">
+        <a class="page-link" href="#" [innerHTML]="firstText"></a>
+      </li>
+
+      <!-- direction link -->
+      <li class="page-item" *ngIf="directionLinks" (click)="paginator.toPreviousPage()" [ngClass]="{'disabled': paginator.currentPage === paginator.firstPage}">
+        <a class="page-link" href="#" [innerHTML]="previousText"></a>
+      </li>
+
+      <!-- pagination array -->
+      <li class="page-item" *ngFor="let page of paginator.pages" [ngClass]="{'active': page['active']}" (click)="paginator.setCurrentPage(page['number'])">
+        <a class="page-link" href="#">{{page['text']}}</a>
+      </li>
+
+      <!-- direction link -->
+      <li class="page-item" *ngIf="directionLinks" (click)="paginator.toNextPage()" [ngClass]="{'disabled': paginator.currentPage === paginator.lastPage}">
+        <a class="page-link" href="#" [innerHTML]="nextText"></a>
+      </li>
+
+      <!-- boundary link -->
+      <li class="page-item" *ngIf="boundaryLinks" (click)="paginator.toLastPage()" [ngClass]="{'disabled': paginator.currentPage === paginator.lastPage}">
+        <a class="page-link" href="#" [innerHTML]="lastText"></a>
+      </li>
+
+    </ul>
+  </nav>
+
+</appAngularPaginator>
