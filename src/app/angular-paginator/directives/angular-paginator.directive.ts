@@ -45,7 +45,7 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
     if (this.size === 'sm' || this.size === 'lg') {
       return 'pagination-' + this.size;
     }
-    return undefined;
+    return 'default';
   }
 
   // navigate through pages
