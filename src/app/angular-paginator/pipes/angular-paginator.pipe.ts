@@ -19,8 +19,8 @@ export class AngularPaginatorPipe implements PipeTransform {
     this._angularPaginatorService.registerInstance(instance);
 
     // set the slicing range
-    const start = (args.currentPage - 1) * args.itemsPerPage;
-    const end = args.currentPage * args.itemsPerPage;
+    const start = (instance.currentPage - 1) * instance.itemsPerPage;
+    const end = instance.currentPage * instance.itemsPerPage;
 
     return array.slice(start, end);
 
