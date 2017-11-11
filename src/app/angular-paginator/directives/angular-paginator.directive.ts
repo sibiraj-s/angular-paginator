@@ -18,7 +18,6 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
   @Input() forceEllipses: boolean;
   @Input() size: string;
   @Input() id: string;
-  @Input() class: string;
 
   currentPage: number;
   firstPage = 1;

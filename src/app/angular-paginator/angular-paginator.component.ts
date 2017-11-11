@@ -21,7 +21,7 @@ export class AngularPaginatorComponent implements OnInit {
   @Input() previousText = 'Previous';
   @Input() nextText = 'Next';
   @Input() lastText = 'Last';
-  @Input() class: string;
+  @Input() className: string;
   @Input() autoHide = false;
 
   @Output() pageChange: EventEmitter<number> = new EventEmitter<number>();
@@ -34,7 +34,7 @@ export class AngularPaginatorComponent implements OnInit {
     this.id = this.id ? this.id : this._angularPaginatorService.id;
 
     // set default class if not provided
-    this.class = this.class ? this.class : this._angularPaginatorService.id;
+    this.className = this.className ? this.className : this._angularPaginatorService.id;
 
   }
 

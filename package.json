@@ -11,7 +11,8 @@
     "test:single-run": "ng test --watch false",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "precommit": "yarn run test:single-run && yarn run build:package"
+    "precommit": "yarn run test:single-run && yarn run build:package",
+    "cz": "git cz"
   },
   "repository": {
     "type": "git",
