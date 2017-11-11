@@ -3,7 +3,7 @@
   (pageChange)="pageChange.emit($event)">
 
   <!-- ======================================== BOOTSTRAP 4 TEMPLATE ======================================== -->
-  <nav class="angular-bs4-pagination">
+  <nav class="angular-bs4-pagination" *ngIf="!(autoHide && paginator.pages.length <= 1)">
     <ul class="pagination" [ngClass]="[paginator.getPaginationSize(), paginator.class]" *ngIf="paginator.pages['length'] !== 0">
 
       <!-- boundary link -->

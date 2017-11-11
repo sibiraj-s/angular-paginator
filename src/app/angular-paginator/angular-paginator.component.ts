@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, TemplateRef } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { AngularPaginatorService } from './services/angular-paginator.service';
 
 @Component({
@@ -22,14 +22,11 @@ export class AngularPaginatorComponent implements OnInit {
   @Input() nextText = 'Next';
   @Input() lastText = 'Last';
   @Input() class: string;
+  @Input() autoHide = false;
 
   @Output() pageChange: EventEmitter<number> = new EventEmitter<number>();
 
   constructor(private _angularPaginatorService: AngularPaginatorService) { }
-
-  setCustomTemplate() {
-
-  }
 
   ngOnInit() {
 
