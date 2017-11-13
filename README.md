@@ -1,5 +1,5 @@
 # Angular Paginator
-Pagination for Angular Applications. Paginator uses [Bootstrap4][Bootstrap4] template
+Pagination for Angular Applications. Paginator uses [Bootstrap-4][Bootstrap4] template
 
 ## Getting Started
 
