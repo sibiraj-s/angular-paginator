@@ -21,6 +21,13 @@ export class AngularPaginatorComponent implements OnInit {
   @Input() previousText = 'Previous';
   @Input() nextText = 'Next';
   @Input() lastText = 'Last';
+  @Input() screenReaderFirstText = 'First';
+  @Input() screenReaderPreviousText = 'Previous';
+  @Input() screenReaderNextText = 'Next';
+  @Input() screenReaderLastText = 'Last';
+  @Input() screenReaderPageText = 'Page';
+  @Input() screenReaderCurrentPageText = 'You`re on page';
+  @Input() screenReaderPaginationLabel = 'Pagination';
   @Input() className: string;
   @Input() autoHide = false;
 
