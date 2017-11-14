@@ -22,6 +22,16 @@
     "url": "https://github.com/Sibiraj-S/angular-paginator/issues"
   },
   "homepage": "https://github.com/Sibiraj-S/angular-paginator",
+  "keywords": [
+    "angular-paginator",
+    "angular-pagination",
+    "paginator",
+    "pagination",
+    "angular-bootstrap-pagination",
+    "bootstrap4",
+    "angular",
+    "bootstrap4-paginator"
+  ],
   "dependencies": {
     "@angular/animations": "^5.0.0",
     "@angular/common": "^5.0.0",
