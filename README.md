@@ -40,7 +40,7 @@ Then in HTML
 
 angularPaginator pipe accepts
 
-``` bash
+```bash
 {
   id: 'ANGULAR_PAGINATOR_DEFAULT',
   itemsPerPage: 10,
