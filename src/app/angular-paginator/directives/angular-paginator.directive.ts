@@ -176,7 +176,7 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
 
     const correctedCurrentPage = this.outOfBoundCorrection(instance);
 
-    if (correctedCurrentPage !== instance['currentPae']) {
+    if (correctedCurrentPage !== instance['currentPage']) {
 
       setTimeout(() => {
         this.setCurrentPage(correctedCurrentPage);
