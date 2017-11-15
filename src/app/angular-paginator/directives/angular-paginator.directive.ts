@@ -70,7 +70,7 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
 
   // set current page
   setCurrentPage(page: number) {
-    if (this.currentPage !== page) {
+    if (page && this.currentPage !== page) {
       this.currentPage = page;
       this.pageChange.emit(page);
     }
