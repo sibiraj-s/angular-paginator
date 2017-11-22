@@ -26,7 +26,7 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
 
   subscription: Subscription;
 
-  @Output() pageChange: EventEmitter<number> = new EventEmitter<number>();
+  @Output() pageChange: EventEmitter<number> = new EventEmitter<number>(true);
 
   constructor(private _angularPaginatorService: AngularPaginatorService, private changeDetectorRef: ChangeDetectorRef) {
 
@@ -180,12 +180,10 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
 
     if (correctedCurrentPage !== instance['currentPage']) {
 
-      setTimeout(() => {
-        this.pages = this.getPages(instance.currentPage, instance.itemsPerPage, instance.totalItems);
+      this.pages = this.getPages(instance.currentPage, instance.itemsPerPage, instance.totalItems);
 
-        // detect for changes since OnPush Change detection stragtegy is used
-        this.changeDetectorRef.markForCheck();
-      });
+      // detect for changes since OnPush Change detection stragtegy is used
+      this.changeDetectorRef.markForCheck();
 
     } else {
       this.pages = this.getPages(instance.currentPage, instance.itemsPerPage, instance.totalItems);
