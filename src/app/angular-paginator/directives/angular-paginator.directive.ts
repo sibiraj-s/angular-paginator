@@ -1,4 +1,4 @@
-import { Directive, OnInit, OnDestroy, Input, Output, EventEmitter, ChangeDetectorRef } from '@angular/core';
+import { Directive, OnInit, OnDestroy, Input, Output, EventEmitter } from '@angular/core';
 import { AngularPaginatorService } from '../services/angular-paginator.service';
 import { AngularPaginatorInstance, Page } from '../others/angular-paginator.interface';
 import { Subscription } from 'rxjs/Subscription';
@@ -28,7 +28,7 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
 
   @Output() pageChange: EventEmitter<number> = new EventEmitter<number>(true);
 
-  constructor(private _angularPaginatorService: AngularPaginatorService, private changeDetectorRef: ChangeDetectorRef) {
+  constructor(private _angularPaginatorService: AngularPaginatorService) {
 
     // subscribe to changes
     this.subscription = this._angularPaginatorService.change.subscribe(id => {
@@ -178,16 +178,7 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
 
     this.setCurrentPage(correctedCurrentPage);
 
-    if (correctedCurrentPage !== instance['currentPage']) {
-
-      this.pages = this.getPages(instance.currentPage, instance.itemsPerPage, instance.totalItems);
-
-      // detect for changes since OnPush Change detection stragtegy is used
-      this.changeDetectorRef.markForCheck();
-
-    } else {
-      this.pages = this.getPages(instance.currentPage, instance.itemsPerPage, instance.totalItems);
-    }
+    this.pages = this.getPages(instance.currentPage, instance.itemsPerPage, instance.totalItems);
 
   }
 
