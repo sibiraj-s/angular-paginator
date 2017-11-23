@@ -26,7 +26,7 @@ export class AngularPaginatorPipe implements PipeTransform {
 
   }
 
-  createInstance(array, args) {
+  createInstance(array, args): any {
     return {
       id: args['id'] ? args.id : this._angularPaginatorService.id,
       currentPage: args['currentPage'] ? args['currentPage'] : 1,

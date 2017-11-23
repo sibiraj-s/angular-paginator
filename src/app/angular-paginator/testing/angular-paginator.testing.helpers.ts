@@ -17,8 +17,13 @@ export class AngularPaginatorMockService {
     change: EventEmitter<string> = new EventEmitter<string>();
 
     // return instance with given id
-    getInstance(id: string) {
+    getInstance(id: string): any {
         return this.instances[id];
+    }
+
+    // return currentPage for given id
+    getCurrentPage(id: string): number {
+        return this.instances[id].currentPage;
     }
 
 }

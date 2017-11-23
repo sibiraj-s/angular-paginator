@@ -13,7 +13,7 @@ export class AngularPaginatorService {
 
   constructor() { }
 
-  registerInstance(instance: AngularPaginatorInstance) {
+  registerInstance(instance: AngularPaginatorInstance): void {
 
     if (!this.instances[instance.id]) {
       this.instances[instance.id] = instance;
@@ -25,13 +25,14 @@ export class AngularPaginatorService {
       }
     }
 
+    return;
   }
 
   /*
    * updates existing pagination instances available
    * and returns true if value has changed
    */
-  updateInstance(instance: AngularPaginatorInstance) {
+  updateInstance(instance: AngularPaginatorInstance): boolean {
 
     for (const key in instance) {
       if (instance[key] !== this.instances[instance['id']][key]) {
@@ -44,8 +45,13 @@ export class AngularPaginatorService {
   }
 
   // return instance with given id
-  getInstance(id: string) {
+  getInstance(id: string): any {
     return this.instances[id];
+  }
+
+  // return currentPage for given id
+  getCurrentPage(id: string): number {
+    return this.instances[id].currentPage;
   }
 
 }

@@ -40,7 +40,7 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
   }
 
   // set size for pagination component
-  getPaginationSize() {
+  getPaginationSize(): string {
     if (this.size === 'sm' || this.size === 'lg') {
       return 'pagination-' + this.size;
     }
@@ -48,36 +48,41 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
   }
 
   // navigate through pages
-  toPreviousPage() {
+  toPreviousPage(): void {
     if (this.currentPage > this.firstPage) {
       this.setCurrentPage(this.currentPage - 1);
     }
+    return;
   }
 
-  toNextPage() {
+  toNextPage(): void {
     if (this.currentPage < this.lastPage) {
       this.setCurrentPage(this.currentPage + 1);
     }
+    return;
   }
 
-  toFirstPage() {
+  toFirstPage(): void {
     this.setCurrentPage(this.firstPage);
+    return;
   }
 
-  toLastPage() {
+  toLastPage(): void {
     this.setCurrentPage(this.lastPage);
+    return;
   }
 
   // set current page
-  setCurrentPage(page: number) {
+  setCurrentPage(page: number): void {
     if (page && this.currentPage !== page) {
       this.currentPage = page;
       this.pageChange.emit(page);
     }
+    return;
   }
 
   // create page object used for template
-  makePage(number: number, text: any, isActive: boolean) {
+  makePage(number: number, text: any, isActive: boolean): any {
     return {
       number: number,
       text: text,
@@ -86,7 +91,7 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
   }
 
   // create page array
-  getPages(currentPage: number, itemsPerPage: number, totalItems: number) {
+  getPages(currentPage: number, itemsPerPage: number, totalItems: number): any {
     const pages: any = [];
 
     // Default page limits
@@ -171,19 +176,22 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
   }
 
   // update page array
-  updatePages() {
+  updatePages(): void {
     const instance: AngularPaginatorInstance = this._angularPaginatorService.getInstance(this.id);
 
     const correctedCurrentPage = this.outOfBoundCorrection(instance);
 
-    this.setCurrentPage(correctedCurrentPage);
+    if (correctedCurrentPage !== instance['currentPage']) {
+      this.setCurrentPage(correctedCurrentPage);
+    }
 
     this.pages = this.getPages(instance.currentPage, instance.itemsPerPage, instance.totalItems);
 
+    return;
   }
 
   // check if currentPage is out of bound with totalPages
-  outOfBoundCorrection(instance: AngularPaginatorInstance) {
+  outOfBoundCorrection(instance: AngularPaginatorInstance): number {
 
     const totalPages = Math.ceil(instance['totalItems'] / instance['itemsPerPage']);
 
@@ -197,17 +205,21 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
   }
 
   // check if there is any instance registered with the id
-  isValidId() {
+  isValidId(): void {
 
     if (!this._angularPaginatorService.getInstance(this.id)) {
       throw new Error('There is no instance registered with id `' + this.id + '`');
     }
 
+    return;
   }
 
   ngOnInit() {
     this.isValidId();
     this.updatePages();
+
+    // set currentPage
+    this.currentPage = this._angularPaginatorService.getCurrentPage(this.id);
   }
 
   ngOnDestroy() {
