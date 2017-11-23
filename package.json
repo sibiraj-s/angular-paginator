@@ -1,6 +1,6 @@
 {
   "name": "angular-paginator",
-  "version": "1.0.0-rc.3",
+  "version": "1.0.0",
   "description": "Pagination for Angular Applications",
   "license": "MIT",
   "scripts": {
