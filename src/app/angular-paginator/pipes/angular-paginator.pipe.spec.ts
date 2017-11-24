@@ -3,7 +3,7 @@ import { AngularPaginatorService } from '../services/angular-paginator.service';
 
 describe('AngularPaginatorPipe', () => {
 
-  let service: AngularPaginatorService;
+  const service: AngularPaginatorService = new AngularPaginatorService;
 
   it('create an instance', () => {
     const pipe = new AngularPaginatorPipe(service);
