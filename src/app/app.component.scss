@@ -1,0 +1,35 @@
+.paginator {
+    font-size: 95%;
+
+    .btn {
+        &:focus {
+            box-shadow: none;
+        }
+    }
+
+    mark {
+        background-color: #f1f1f1;
+    }
+
+    .title {
+        display: inline-block;
+    }
+
+    .col-md-6 {
+        margin-bottom: 2rem;
+    }
+
+    .pagination-components {
+        p {
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    .pagination-options {
+        ul {
+            li {
+                margin-bottom: 0.5rem;
+            }
+        }
+    }
+}
