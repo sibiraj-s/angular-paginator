@@ -15,13 +15,18 @@
         display: inline-block;
     }
 
-    .col-md-6 {
-        margin-bottom: 2rem;
-    }
-
     .pagination-components {
+        margin-bottom: 2rem;
+
         p {
             margin-bottom: 0.5rem;
+        }
+
+        .page-number {
+            display: inline-block;
+            width: 20px;
+            text-align: right;
+            margin-right: 3px;
         }
     }
 

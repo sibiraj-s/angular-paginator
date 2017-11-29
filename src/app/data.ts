@@ -17,9 +17,6 @@ export const jsonArray = [{
     'name': 'Ian',
     'id': 'Q7W 8M4'
 }, {
-    'name': 'Eden',
-    'id': 'H8X 5E0'
-}, {
     'name': 'Britanney',
     'id': 'I1Q 1O1'
 }, {

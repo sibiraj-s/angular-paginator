@@ -16,7 +16,7 @@
     <div class="row">
       <div class="col-md-6 pagination-components">
         <div *ngFor="let item of jsonArray | angularPaginator: {itemsPerPage: this.itemsPerPage, currentPage: currentPage }; let i = index">
-          {{ (currentPage - 1) * itemsPerPage + i +1 }}. {{ item['name'] }}
+          <span class="page-number">{{ (currentPage - 1) * itemsPerPage + i +1 }}.</span> {{ item['name'] }}
         </div>
         <br>
         <app-angular-paginator size="sm" forceEllipses="true" (pageChange)="currentPage = $event"></app-angular-paginator>
