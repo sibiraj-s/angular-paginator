@@ -18,7 +18,7 @@ describe('AngularPaginatorDirective', () => {
 
   beforeEach(() => {
     service = new AngularPaginatorService();
-    directive = new AngularPaginatorDirective(service);
+    directive = new AngularPaginatorDirective(service, this);
   });
 
   it('should create an instance', () => {

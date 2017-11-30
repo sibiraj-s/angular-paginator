@@ -1,7 +1,7 @@
-import { Directive, OnInit, OnDestroy, Input, Output, EventEmitter } from '@angular/core';
+import { Directive, OnInit, OnDestroy, Input, Output, EventEmitter, ChangeDetectorRef } from '@angular/core';
 import { AngularPaginatorService } from '../services/angular-paginator.service';
 import { AngularPaginatorInstance, Page } from '../others/angular-paginator.interface';
-import { Subscription } from 'rxjs/Subscription';
+import { Subject } from 'rxjs/Subject';
 
 @Directive({
   selector: 'appAngularPaginator, [appAngularPaginator]',
@@ -24,16 +24,18 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
   lastPage: number;
   pages: Page[] = [];
 
-  subscription: Subscription;
+  private subscription: Subject<any> = new Subject();
 
   @Output() pageChange: EventEmitter<number> = new EventEmitter<number>(true);
 
-  constructor(private _angularPaginatorService: AngularPaginatorService) {
+  constructor(private _angularPaginatorService: AngularPaginatorService,
+    private _changeDetectorRef: ChangeDetectorRef) {
 
     // subscribe to changes
     this.subscription = this._angularPaginatorService.change.subscribe(id => {
       if (id === this.id) {
         this.updatePages();
+        this._changeDetectorRef.markForCheck();
       }
     });
 
@@ -181,7 +183,7 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
 
     const correctedCurrentPage = this.outOfBoundCorrection(instance);
 
-    if (correctedCurrentPage !== instance['currentPage']) {
+    if (correctedCurrentPage !== instance['currentPage'] || this.currentPage !== instance['currentPage']) {
       this.setCurrentPage(correctedCurrentPage);
     }
 
@@ -217,17 +219,12 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
   ngOnInit() {
     this.isValidId();
     this.updatePages();
-
-    // set currentPage
-    this.currentPage = this._angularPaginatorService.getCurrentPage(this.id);
   }
 
   ngOnDestroy() {
 
     // destroy the subscription when the directive is destroyed
-    if (this.subscription) {
-      this.subscription.unsubscribe();
-    }
+    this.subscription.unsubscribe();
   }
 
 }

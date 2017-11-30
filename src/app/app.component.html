@@ -21,7 +21,7 @@
         <br>
         <app-angular-paginator size="sm" forceEllipses="true" (pageChange)="currentPage = $event"></app-angular-paginator>
         <br>
-        <button class="btn btn-info btn-sm" (click)="currentPage=3">Set CurrentPage to 3</button>
+        <button class="btn btn-info btn-sm" (click)="currentPage = 3" [disabled]="currentPage === 3">Set CurrentPage to 3</button>
       </div>
       <div class="col-md-6 pagination-options">
         <p>A Simple and Lightweight Pagination component for Angular Applications</p>

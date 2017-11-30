@@ -1,10 +1,11 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
 import { AngularPaginatorService } from './services/angular-paginator.service';
 
 @Component({
   selector: 'app-angular-paginator',
   templateUrl: './angular-paginator.component.html',
-  styleUrls: ['./angular-paginator.component.scss']
+  styleUrls: ['./angular-paginator.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class AngularPaginatorComponent implements OnInit {
