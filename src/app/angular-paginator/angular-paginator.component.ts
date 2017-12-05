@@ -16,7 +16,6 @@ export class AngularPaginatorComponent implements OnInit {
   @Input() rotate = true;
   @Input() boundaryLinkNumbers = false;
   @Input() forceEllipses = false;
-  @Input() size: string;
   @Input() id: string;
   @Input() firstText = 'First';
   @Input() previousText = 'Previous';

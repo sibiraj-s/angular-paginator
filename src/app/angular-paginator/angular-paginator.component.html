@@ -1,13 +1,12 @@
-<appAngularPaginator [id]="id" [size]="size" [boundaryLinks]="boundaryLinks" [directionLinks]="directionLinks" [maxSize]="maxSize"
-  [rotate]="rotate" [boundaryLinkNumbers]="boundaryLinkNumbers" [forceEllipses]="forceEllipses" #paginator="angularPaginator"
-  (pageChange)="pageChange.emit($event)">
+<appAngularPaginator [id]="id" [boundaryLinks]="boundaryLinks" [directionLinks]="directionLinks" [maxSize]="maxSize" [rotate]="rotate"
+  [boundaryLinkNumbers]="boundaryLinkNumbers" [forceEllipses]="forceEllipses" #paginator="angularPaginator" (pageChange)="pageChange.emit($event)">
 
   <!-- ======================================== BOOTSTRAP 4 TEMPLATE ======================================== -->
   <ng-container *ngIf="!(autoHide && paginator.pages['length'] <= 1)">
     <nav class="angular-bs4-pagination" [attr.aria-label]="screenReaderPaginationLabel">
 
       <ng-container *ngIf="paginator.pages['length'] !== 0">
-        <ul class="pagination" [ngClass]="[paginator.getPaginationSize(), className]">
+        <ul class="pagination" [ngClass]="className">
 
           <!-- boundary link -->
           <li class="page-item" *ngIf="boundaryLinks" (click)="paginator.toFirstPage()" [ngClass]="{'disabled': paginator.currentPage === paginator.firstPage}">

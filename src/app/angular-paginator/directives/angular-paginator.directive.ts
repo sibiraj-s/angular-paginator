@@ -16,7 +16,6 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
   @Input() rotate: boolean;
   @Input() boundaryLinkNumbers: boolean;
   @Input() forceEllipses: boolean;
-  @Input() size: string;
   @Input() id: string;
 
   currentPage: number;
@@ -39,14 +38,6 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
       }
     });
 
-  }
-
-  // set size for pagination component
-  getPaginationSize(): string {
-    if (this.size === 'sm' || this.size === 'lg') {
-      return 'pagination-' + this.size;
-    }
-    return 'default';
   }
 
   // navigate through pages

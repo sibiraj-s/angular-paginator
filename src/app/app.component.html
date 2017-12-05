@@ -19,7 +19,7 @@
           <span class="page-number">{{ (currentPage - 1) * itemsPerPage + i +1 }}.</span> {{ item['name'] }}
         </div>
         <br>
-        <app-angular-paginator size="sm" forceEllipses="true" (pageChange)="currentPage = $event"></app-angular-paginator>
+        <app-angular-paginator className="pagination-sm" forceEllipses="true" (pageChange)="currentPage = $event"></app-angular-paginator>
         <br>
         <button class="btn btn-info btn-sm" (click)="currentPage = 3" [disabled]="currentPage === 3">Set CurrentPage to 3</button>
       </div>
@@ -52,10 +52,6 @@
           <li>
             <b>forceEllipses: </b>(Default: false) Also displays ellipses when rotate is true and maxSize is smaller than the
             number of pages
-          </li>
-          <li>
-            <b>size: </b>(Default: 'default') Sets the size of pagination when bootstrap 4 is being used. Can accept only two
-            values either `sm` or `lg`. Check Bootstrap 4 docs for more details.
           </li>
           <li>
             <b>className: </b>(Default: 'ANGULAR_PAGINATOR_DEFAULT') Adds custom class to the pagination element
