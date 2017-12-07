@@ -30,6 +30,7 @@ export class AngularPaginatorComponent implements OnInit {
   @Input() screenReaderPaginationLabel = 'Pagination';
   @Input() className: string;
   @Input() autoHide = false;
+  @Input() disabled = false;
 
   @Output() pageChange: EventEmitter<number> = new EventEmitter<number>();
 
