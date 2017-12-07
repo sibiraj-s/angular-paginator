@@ -1,4 +1,5 @@
 # Angular Paginator
+
 Pagination for Angular Applications. Paginator uses [Bootstrap-4][Bootstrap4] template
 
 ## Getting Started
@@ -36,6 +37,7 @@ Then in HTML
 
 <app-angular-paginator (pageChange)="currentPage = $event"></app-angular-paginator>
 ```
+
 ### Paginator Pipe
 
 angularPaginator pipe accepts
@@ -53,18 +55,18 @@ angularPaginator pipe accepts
 Paginator component accepts
 
 ```html
-<app-angular-paginator [boundaryLinks]="false" 
+<app-angular-paginator [boundaryLinks]="false"
                        [directionLinks]="true"
                        maxSize="5"
                        [rotate]="true"
                        [boundaryLinkNumbers]="false"
                        [forceEllipses]="false"
                        size="sm"
-                       id="ANGULAR_PAGINATOR_DEFAULT" 
-                       firstText="First" 
+                       id="ANGULAR_PAGINATOR_DEFAULT"
+                       firstText="First"
                        previousText="Previous"
                        nextText="Next"
-                       lastText="Last" 
+                       lastText="Last"
                        screenReaderFirstText="First"
                        screenReaderPreviousText="Previous"
                        screenReaderNextText="Next"
@@ -74,6 +76,7 @@ Paginator component accepts
                        screenReaderPaginationLabel="Pagination"
                        className="ANGULAR_PAGINATOR_DEFAULT"
                        [autoHide]="false"
+                       [disabled]="false"
                        (pageChange)="currentPage = $event">
 </app-angular-paginator>
 ```
@@ -92,10 +95,11 @@ Paginator component accepts
 * **nextText:** Text for Next button
 * **lastText:** Text for Last button
 * **autoHide:** Hides the pagination component if items length is less than itemsPerPage
-
+* **disabled:** Disables pagination component
 
 ### Documentation
-Check [wiki][wiki] for more information 
+
+Check [wiki][wiki] for more information
 
 [npm]: https://www.npmjs.com/
 [yarn]: https://yarnpkg.com/lang/en/
