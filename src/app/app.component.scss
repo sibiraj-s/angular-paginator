@@ -1,3 +1,24 @@
+.navbar-text {
+    color: white;
+    margin-left: 0.4rem;
+
+    .fa {
+        font-size: 1.4rem;
+    }
+}
+
+.entry-container {
+    padding: 5.5rem 0;
+
+    .buttons, .title {
+        margin-bottom: 1rem;
+    }
+
+    .version {
+        font-size: 90%;
+    }
+}
+
 .paginator {
     font-size: 95%;
 
@@ -9,10 +30,6 @@
 
     mark {
         background-color: #f1f1f1;
-    }
-
-    .title {
-        display: inline-block;
     }
 
     .pagination-components {
