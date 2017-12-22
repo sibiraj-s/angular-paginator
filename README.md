@@ -97,6 +97,10 @@ Paginator component accepts
 * **autoHide:** Hides the pagination component if items length is less than itemsPerPage
 * **disabled:** Disables pagination component
 
+### Demo
+
+Demo at stackblitz [angular-paginator](https://angular-paginator.stackblitz.io)
+
 ### Documentation
 
 Check [wiki][wiki] for more information

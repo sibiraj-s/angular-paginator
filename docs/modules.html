@@ -45,7 +45,7 @@
                                     </a>
                                 </li>
                                 <li class="link">
-                                  <a href="./index.html"  class="active" ><span class="fa fa-file-text-o"></span>README</a>
+                                  <a href="./index.html" ><span class="fa fa-file-text-o"></span>README</a>
                                 </li>
                                 <li class="link">
                                         <a href="./license.html"
@@ -58,7 +58,7 @@
             
             
                     <li class="chapter">
-                        <a data-type="chapter-link" href="./modules.html" >
+                        <a data-type="chapter-link" href="./modules.html"  class="active" >
                             <div class="menu-toggler linked" data-toggle="collapse"
                                     data-target="#xs-modules-links"
                             >
@@ -246,7 +246,7 @@
                                            </a>
                                        </li>
                                        <li class="link">
-                                         <a href="./index.html"  class="active" ><span class="fa fa-file-text-o"></span>README</a>
+                                         <a href="./index.html" ><span class="fa fa-file-text-o"></span>README</a>
                                        </li>
                                        <li class="link">
                                                <a href="./license.html"
@@ -259,7 +259,7 @@
                    
                    
                            <li class="chapter">
-                               <a data-type="chapter-link" href="./modules.html" >
+                               <a data-type="chapter-link" href="./modules.html"  class="active" >
                                    <div class="menu-toggler linked" data-toggle="collapse"
                                            data-target="#modules-links"
                                    >
@@ -416,81 +416,50 @@
                    
                    </nav>
                </div>
-               <div class="content getting-started">
+               <div class="content modules">
                    <div class="content-data">
 
-<h1 id="angular-paginator">Angular Paginator</h1>
-<p>Pagination for Angular Applications. Paginator uses <a href="https://github.com/twbs/bootstrap">Bootstrap-4</a> template</p>
-<h2 id="getting-started">Getting Started</h2>
-<h3 id="installation">Installation</h3>
-<p>Install via Package managers such as <a href="https://www.npmjs.com/">npm</a> or <a href="https://yarnpkg.com/lang/en/">yarn</a></p>
-<pre class="line-numbers"><code class="language-bash">npm install angular-paginator --save
-# or
-yarn add angular-paginator</code></pre><h3 id="usage">Usage</h3>
-<p>Import <code>angular-paginator</code> module</p>
-<pre class="line-numbers"><code class="language-typescript">import { AngularPaginatorModule } from &#39;angular-paginator&#39;;
-
-&#64;NgModule({
-  imports: [ AngularPaginatorModule ]
-})</code></pre><p>Import <a href="https://github.com/twbs/bootstrap">bootstrap-4</a> into your application</p>
-<p>Then in HTML</p>
-<pre class="line-numbers"><code class="language-html">&lt;div *ngFor=&quot;let item of array | angularPaginator: { currentPage: currentPage }; let i = index&quot;&gt;
-    {{(currentPage - 1) * itemsPerPage + i +1}}. {{item}}
-&lt;/div&gt;
-
-&lt;app-angular-paginator (pageChange)=&quot;currentPage = $event&quot;&gt;&lt;/app-angular-paginator&gt;</code></pre><h3 id="paginator-pipe">Paginator Pipe</h3>
-<p>angularPaginator pipe accepts</p>
-<pre class="line-numbers"><code class="language-bash">{
-  id: &#39;ANGULAR_PAGINATOR_DEFAULT&#39;,
-  itemsPerPage: 10,
-  currentPage: currentPage
-}</code></pre><h3 id="paginator-component">Paginator Component</h3>
-<p>Paginator component accepts</p>
-<pre class="line-numbers"><code class="language-html">&lt;app-angular-paginator [boundaryLinks]=&quot;false&quot;
-                       [directionLinks]=&quot;true&quot;
-                       maxSize=&quot;5&quot;
-                       [rotate]=&quot;true&quot;
-                       [boundaryLinkNumbers]=&quot;false&quot;
-                       [forceEllipses]=&quot;false&quot;
-                       size=&quot;sm&quot;
-                       id=&quot;ANGULAR_PAGINATOR_DEFAULT&quot;
-                       firstText=&quot;First&quot;
-                       previousText=&quot;Previous&quot;
-                       nextText=&quot;Next&quot;
-                       lastText=&quot;Last&quot;
-                       screenReaderFirstText=&quot;First&quot;
-                       screenReaderPreviousText=&quot;Previous&quot;
-                       screenReaderNextText=&quot;Next&quot;
-                       screenReaderLastText=&quot;Last&quot;
-                       screenReaderPageText=&quot;Page&quot;
-                       screenReaderCurrentPageText=&quot;You`re on page&quot;
-                       screenReaderPaginationLabel=&quot;Pagination&quot;
-                       className=&quot;ANGULAR_PAGINATOR_DEFAULT&quot;
-                       [autoHide]=&quot;false&quot;
-                       [disabled]=&quot;false&quot;
-                       (pageChange)=&quot;currentPage = $event&quot;&gt;
-&lt;/app-angular-paginator&gt;</code></pre><ul>
-<li><strong>id:</strong> Use unique id when multiple paginations are being used on the same page</li>
-<li><strong>boundaryLinks:</strong> Whether to display First / Last buttons</li>
-<li><strong>directionLinks:</strong> Whether to display Previous / Next buttons</li>
-<li><strong>maxSize:</strong> Limit number for pagination size</li>
-<li><strong>rotate:</strong> Whether to keep the current page in the middle of the visible ones</li>
-<li><strong>boundaryLinkNumbers:</strong> Whether to always display the first and last page numbers. If max-size is smaller than the number of pages, then the first and last page numbers are still shown with ellipses in-between as necessary. NOTE: max-size refers to the center of the range. This option may add up to 2 more numbers on each side of the displayed range for the end value and what would be an ellipsis but is replaced by a number because it is sequential</li>
-<li><strong>forceEllipses:</strong> Also displays ellipses when rotate is true and maxSize is smaller than the number of pages</li>
-<li><strong>size:</strong> Sets the size of pagination when bootstrap 4 is being used. Can accept only two values either <code>sm</code> or <code>lg</code>. Check Bootstrap 4 docs for more details.</li>
-<li><strong>className:</strong> Adds custom class to the pagination element</li>
-<li><strong>firstText:</strong> Text for First button</li>
-<li><strong>previousText:</strong> Text for Previous button</li>
-<li><strong>nextText:</strong> Text for Next button</li>
-<li><strong>lastText:</strong> Text for Last button</li>
-<li><strong>autoHide:</strong> Hides the pagination component if items length is less than itemsPerPage</li>
-<li><strong>disabled:</strong> Disables pagination component</li>
-</ul>
-<h3 id="documentation">Documentation</h3>
-<p>Check <a href="https://github.com/Sibiraj-S/angular-paginator/wiki/angular-paginator">wiki</a> for more information</p>
 
 
-
+<h3>Modules</h3>
+<div class="container-fluid modules">
+    <div class="row">
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">AngularPaginatorModule</h4>
+                    </div>
+                    <div class="card-block">
+                                <p>
+                                    <object id="demo-svg" type="image/svg+xml" data="./modules/AngularPaginatorModule/dependencies.svg" style="width: 100%; height: 175px;">
+                                            Your browser does not support SVG
+                                    </object>
+                                </p>
+                        <footer class="text-center">
+                            <a href="./modules/AngularPaginatorModule.html" class="btn btn-default">Browse</a>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">AppModule</h4>
+                    </div>
+                    <div class="card-block">
+                                <p>
+                                    <object id="demo-svg" type="image/svg+xml" data="./modules/AppModule/dependencies.svg" style="width: 100%; height: 175px;">
+                                            Your browser does not support SVG
+                                    </object>
+                                </p>
+                        <footer class="text-center">
+                            <a href="./modules/AppModule.html" class="btn btn-default">Browse</a>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
 
 
 
