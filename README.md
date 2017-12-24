@@ -1,6 +1,25 @@
 # Angular Paginator
 
-Pagination for Angular Applications. Paginator uses [Bootstrap-4][Bootstrap4] template
+<p align="center">
+  <a href="https://github.com/Sibiraj-S/angular-paginator">
+   <img src="https://raw.githubusercontent.com/Sibiraj-S/angular-paginator/master/src/assets/angular.png" alt="angularPaginator" width="350">
+  </a>
+</p>
+<p align="center">Pagination for Angular application using Bootstrap-4 template</p>
+<p align="center">
+  <a href="https://travis-ci.org/Sibiraj-S/angular-paginator">
+    <img alt="Build Status" src="https://travis-ci.org/Sibiraj-S/angular-paginator.svg?branch=master">
+  </a>
+  <a href="https://www.npmjs.com/package/angular-paginator">
+    <img alt="npm version" src="https://img.shields.io/npm/v/angular-paginator.svg">
+  </a>
+  <a href="https://www.npmjs.com/package/angular-paginator">
+    <img alt="npm" src="https://img.shields.io/npm/dm/angular-paginator.svg">
+  </a>
+  <a href="https://github.com/Sibiraj-S/angular-paginator/blob/master/LICENSE">
+    <img alt="licence" src="https://img.shields.io/npm/l/angular-paginator.svg">
+  </a>
+</p>
 
 ## Getting Started
 
