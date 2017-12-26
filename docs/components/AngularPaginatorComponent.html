@@ -116,22 +116,6 @@
                         </ul>
                     </li>
             
-                    <li class="chapter">
-                        <div class="simple menu-toggler" data-toggle="collapse"
-                                data-target="#xs-classes-links"
-                            >
-                            <span class="fa fa-file-code-o"></span>
-                            <span>Classes</span>
-                            <span class="fa fa-angle-down"></span>
-                        </div>
-                        <ul class="links collapse "
-                                id="xs-classes-links"
-                            >
-                                <li class="link">
-                                    <a href="../classes/AngularPaginatorMockService.html" >AngularPaginatorMockService</a>
-                                </li>
-                        </ul>
-                    </li>
             
                     <li class="chapter">
                         <div class="simple menu-toggler" data-toggle="collapse"
@@ -317,22 +301,6 @@
                                </ul>
                            </li>
                    
-                           <li class="chapter">
-                               <div class="simple menu-toggler" data-toggle="collapse"
-                                       data-target="#classes-links"
-                   >
-                                   <span class="fa fa-file-code-o"></span>
-                                   <span>Classes</span>
-                                   <span class="fa fa-angle-down"></span>
-                               </div>
-                               <ul class="links collapse "
-                                       id="classes-links"
-                   >
-                                       <li class="link">
-                                           <a href="../classes/AngularPaginatorMockService.html" >AngularPaginatorMockService</a>
-                                       </li>
-                               </ul>
-                           </li>
                    
                            <li class="chapter">
                                <div class="simple menu-toggler" data-toggle="collapse"
@@ -650,7 +618,8 @@
                                                       </td>
                                                       <td>
                                                       </td>
-                                                      <td></td>
+                                                      <td><p>service for angular paginator</p>
+    </td>
                                                     </tr>
                                             </tbody>
                                         </table>
@@ -1139,7 +1108,7 @@
     
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/angular-paginator/angular-paginator.component.ts:39</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/angular-paginator/angular-paginator.component.ts:43</a></div>
                                 </td>
                             </tr>
     
@@ -1197,6 +1166,10 @@ export class AngularPaginatorComponent implements OnInit {
 
   @Output() pageChange: EventEmitter&lt;number&gt; &#x3D; new EventEmitter&lt;number&gt;();
 
+  /**
+   * 
+   * @param _angularPaginatorService service for angular paginator
+   */
   constructor(private _angularPaginatorService: AngularPaginatorService) { }
 
   ngOnInit() {

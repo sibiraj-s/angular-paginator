@@ -21,6 +21,10 @@ export class AppComponent implements OnInit, OnDestroy {
   maxSize = 5;
   jsonArray = jsonArray;
 
+  /**
+   *
+   * @param _appService service helper for app component
+   */
   constructor(private _appService: AppService) { }
 
   getLatestRelease() {

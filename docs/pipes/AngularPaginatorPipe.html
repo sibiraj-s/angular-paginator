@@ -116,22 +116,6 @@
                         </ul>
                     </li>
             
-                    <li class="chapter">
-                        <div class="simple menu-toggler" data-toggle="collapse"
-                                data-target="#xs-classes-links"
-                            >
-                            <span class="fa fa-file-code-o"></span>
-                            <span>Classes</span>
-                            <span class="fa fa-angle-down"></span>
-                        </div>
-                        <ul class="links collapse "
-                                id="xs-classes-links"
-                            >
-                                <li class="link">
-                                    <a href="../classes/AngularPaginatorMockService.html" >AngularPaginatorMockService</a>
-                                </li>
-                        </ul>
-                    </li>
             
                     <li class="chapter">
                         <div class="simple menu-toggler" data-toggle="collapse"
@@ -317,22 +301,6 @@
                                </ul>
                            </li>
                    
-                           <li class="chapter">
-                               <div class="simple menu-toggler" data-toggle="collapse"
-                                       data-target="#classes-links"
-                   >
-                                   <span class="fa fa-file-code-o"></span>
-                                   <span>Classes</span>
-                                   <span class="fa fa-angle-down"></span>
-                               </div>
-                               <ul class="links collapse "
-                                       id="classes-links"
-                   >
-                                       <li class="link">
-                                           <a href="../classes/AngularPaginatorMockService.html" >AngularPaginatorMockService</a>
-                                       </li>
-                               </ul>
-                           </li>
                    
                            <li class="chapter">
                                <div class="simple menu-toggler" data-toggle="collapse"
@@ -487,19 +455,21 @@
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-            <code>createInstance(array: , args: )</code>
+            <code>createInstance(array: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, args: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
                                 </td>
                             </tr>
             
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/angular-paginator/pipes/angular-paginator.pipe.ts:29</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/angular-paginator/pipes/angular-paginator.pipe.ts:43</a></div>
                                         </td>
                                     </tr>
             
                             <tr>
                                 <td class="col-md-4">
+                                        <div class="io-description"><p>create an instance for each pipe</p>
+            </div>
             
                                         <div class="io-description">
                                                 <b>Parameters :</b>
@@ -516,18 +486,22 @@
                                                             <tr>
                                                               <td>array</td>
                                                               <td>
+                                                                      <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
                                                               </td>
                                                               <td>
                                                               </td>
-                                                              <td></td>
+                                                              <td><p>input array</p>
+            </td>
                                                             </tr>
                                                             <tr>
                                                               <td>args</td>
                                                               <td>
+                                                                      <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
                                                               </td>
                                                               <td>
                                                               </td>
-                                                              <td></td>
+                                                              <td><p>input arguments for the paginator pipe</p>
+            </td>
                                                             </tr>
                                                     </tbody>
                                                 </table>
@@ -567,7 +541,7 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/angular-paginator/pipes/angular-paginator.pipe.ts:14</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/angular-paginator/pipes/angular-paginator.pipe.ts:22</a></div>
                                         </td>
                                     </tr>
             
@@ -593,7 +567,8 @@
                                                               </td>
                                                               <td>
                                                               </td>
-                                                              <td></td>
+                                                              <td><p>array for which the manipulation happens</p>
+            </td>
                                                             </tr>
                                                             <tr>
                                                               <td>args</td>
@@ -603,7 +578,8 @@
                                                               <td>
                                                                   true
                                                               </td>
-                                                              <td></td>
+                                                              <td><p>input arguments for the paginator pipe</p>
+            </td>
                                                             </tr>
                                                     </tbody>
                                                 </table>
@@ -638,9 +614,17 @@ import { AngularPaginatorInstance } from &#x27;../others/angular-paginator.inter
 
 export class AngularPaginatorPipe implements PipeTransform {
 
-
+  /**
+   * 
+   * @param _angularPaginatorService service for angular pagiantor 
+   */
   constructor(private _angularPaginatorService: AngularPaginatorService) { }
 
+  /**
+   * 
+   * @param array array for which the manipulation happens
+   * @param args input arguments for the paginator pipe
+   */
   transform(array: any, args?: any): any {
 
     const instance: AngularPaginatorInstance &#x3D; this.createInstance(array, args);
@@ -656,7 +640,13 @@ export class AngularPaginatorPipe implements PipeTransform {
 
   }
 
-  createInstance(array, args): any {
+  /**
+   * create an instance for each pipe
+   * 
+   * @param array input array
+   * @param args input arguments for the paginator pipe
+   */
+  createInstance(array: any, args: any): any {
     return {
       id: args[&#x27;id&#x27;] ? args.id : this._angularPaginatorService.id,
       currentPage: args[&#x27;currentPage&#x27;] ? args[&#x27;currentPage&#x27;] : 1,

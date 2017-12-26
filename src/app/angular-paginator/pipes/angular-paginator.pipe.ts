@@ -8,9 +8,17 @@ import { AngularPaginatorInstance } from '../others/angular-paginator.interface'
 
 export class AngularPaginatorPipe implements PipeTransform {
 
-
+  /**
+   *
+   * @param _angularPaginatorService service for angular pagiantor
+   */
   constructor(private _angularPaginatorService: AngularPaginatorService) { }
 
+  /**
+   *
+   * @param array array for which the manipulation happens
+   * @param args input arguments for the paginator pipe
+   */
   transform(array: any, args?: any): any {
 
     const instance: AngularPaginatorInstance = this.createInstance(array, args);
@@ -26,7 +34,13 @@ export class AngularPaginatorPipe implements PipeTransform {
 
   }
 
-  createInstance(array, args): any {
+  /**
+   * create an instance for each pipe
+   *
+   * @param array input array
+   * @param args input arguments for the paginator pipe
+   */
+  createInstance(array: any, args: any): any {
     return {
       id: args['id'] ? args.id : this._angularPaginatorService.id,
       currentPage: args['currentPage'] ? args['currentPage'] : 1,

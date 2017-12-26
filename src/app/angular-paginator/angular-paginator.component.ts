@@ -34,6 +34,10 @@ export class AngularPaginatorComponent implements OnInit {
 
   @Output() pageChange: EventEmitter<number> = new EventEmitter<number>();
 
+  /**
+   *
+   * @param _angularPaginatorService service for angular paginator
+   */
   constructor(private _angularPaginatorService: AngularPaginatorService) { }
 
   ngOnInit() {

@@ -7,6 +7,10 @@ export class AppService {
 
   private releaseURL = 'https://api.github.com/repos/Sibiraj-S/angular-paginator/releases/latest';
 
+  /**
+   *
+   * @param _http Perform HTTP requests.
+   */
   constructor(private _http: HttpClient) { }
 
   getLatestRelease(): any {

@@ -116,22 +116,6 @@
                         </ul>
                     </li>
             
-                    <li class="chapter">
-                        <div class="simple menu-toggler" data-toggle="collapse"
-                                data-target="#xs-classes-links"
-                            >
-                            <span class="fa fa-file-code-o"></span>
-                            <span>Classes</span>
-                            <span class="fa fa-angle-down"></span>
-                        </div>
-                        <ul class="links collapse "
-                                id="xs-classes-links"
-                            >
-                                <li class="link">
-                                    <a href="../classes/AngularPaginatorMockService.html" >AngularPaginatorMockService</a>
-                                </li>
-                        </ul>
-                    </li>
             
                     <li class="chapter">
                         <div class="simple menu-toggler" data-toggle="collapse"
@@ -317,22 +301,6 @@
                                </ul>
                            </li>
                    
-                           <li class="chapter">
-                               <div class="simple menu-toggler" data-toggle="collapse"
-                                       data-target="#classes-links"
-                   >
-                                   <span class="fa fa-file-code-o"></span>
-                                   <span>Classes</span>
-                                   <span class="fa fa-angle-down"></span>
-                               </div>
-                               <ul class="links collapse "
-                                       id="classes-links"
-                   >
-                                       <li class="link">
-                                           <a href="../classes/AngularPaginatorMockService.html" >AngularPaginatorMockService</a>
-                                       </li>
-                               </ul>
-                           </li>
                    
                            <li class="chapter">
                                <div class="simple menu-toggler" data-toggle="collapse"
@@ -551,12 +519,14 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/angular-paginator/services/angular-paginator.service.ts:53</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">src/app/angular-paginator/services/angular-paginator.service.ts:68</a></div>
                                         </td>
                                     </tr>
             
                             <tr>
                                 <td class="col-md-4">
+                                        <div class="io-description"><p>return currentPage for given id</p>
+            </div>
             
                                         <div class="io-description">
                                                 <b>Parameters :</b>
@@ -577,7 +547,8 @@
                                                               </td>
                                                               <td>
                                                               </td>
-                                                              <td></td>
+                                                              <td><p>unique id for the pagination component</p>
+            </td>
                                                             </tr>
                                                     </tbody>
                                                 </table>
@@ -617,12 +588,14 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/angular-paginator/services/angular-paginator.service.ts:48</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/angular-paginator/services/angular-paginator.service.ts:59</a></div>
                                         </td>
                                     </tr>
             
                             <tr>
                                 <td class="col-md-4">
+                                        <div class="io-description"><p>return instance with given id</p>
+            </div>
             
                                         <div class="io-description">
                                                 <b>Parameters :</b>
@@ -643,7 +616,8 @@
                                                               </td>
                                                               <td>
                                                               </td>
-                                                              <td></td>
+                                                              <td><p>unique id for the pagination component</p>
+            </td>
                                                             </tr>
                                                     </tbody>
                                                 </table>
@@ -683,12 +657,14 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/angular-paginator/services/angular-paginator.service.ts:16</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/angular-paginator/services/angular-paginator.service.ts:21</a></div>
                                         </td>
                                     </tr>
             
                             <tr>
                                 <td class="col-md-4">
+                                        <div class="io-description"><p>creates an instance for every pipe differentiated with id</p>
+            </div>
             
                                         <div class="io-description">
                                                 <b>Parameters :</b>
@@ -709,7 +685,8 @@
                                                               </td>
                                                               <td>
                                                               </td>
-                                                              <td></td>
+                                                              <td><p>each instance refers to a unique pagination component</p>
+            </td>
                                                             </tr>
                                                     </tbody>
                                                 </table>
@@ -749,12 +726,15 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/angular-paginator/services/angular-paginator.service.ts:35</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/angular-paginator/services/angular-paginator.service.ts:42</a></div>
                                         </td>
                                     </tr>
             
                             <tr>
                                 <td class="col-md-4">
+                                        <div class="io-description"><p>updates existing pagination instances available
+            and returns true if value has changed</p>
+            </div>
             
                                         <div class="io-description">
                                                 <b>Parameters :</b>
@@ -775,7 +755,8 @@
                                                               </td>
                                                               <td>
                                                               </td>
-                                                              <td></td>
+                                                              <td><p>an unique pagination component</p>
+            </td>
                                                             </tr>
                                                     </tbody>
                                                 </table>
@@ -971,6 +952,11 @@ export class AngularPaginatorService {
 
   constructor() { }
 
+  /**
+   * creates an instance for every pipe differentiated with id
+   * 
+   * @param instance each instance refers to a unique pagination component
+   */
   registerInstance(instance: AngularPaginatorInstance): void {
 
     if (!this.instances[instance.id]) {
@@ -986,9 +972,11 @@ export class AngularPaginatorService {
     return;
   }
 
-  /*
+  /**
    * updates existing pagination instances available
    * and returns true if value has changed
+   * 
+   * @param instance an unique pagination component
    */
   updateInstance(instance: AngularPaginatorInstance): boolean {
 
@@ -1002,12 +990,20 @@ export class AngularPaginatorService {
     return false;
   }
 
-  // return instance with given id
+  /**
+   * return instance with given id
+   * 
+   * @param id unique id for the pagination component
+   */
   getInstance(id: string): any {
     return this.instances[id];
   }
 
-  // return currentPage for given id
+  /**
+   * return currentPage for given id
+   * 
+   * @param id unique id for the pagination component
+   */
   getCurrentPage(id: string): number {
     return this.instances[id].currentPage;
   }

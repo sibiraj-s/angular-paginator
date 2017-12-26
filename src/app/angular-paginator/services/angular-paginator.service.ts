@@ -13,6 +13,11 @@ export class AngularPaginatorService {
 
   constructor() { }
 
+  /**
+   * creates an instance for every pipe differentiated with id
+   *
+   * @param instance each instance refers to a unique pagination component
+   */
   registerInstance(instance: AngularPaginatorInstance): void {
 
     if (!this.instances[instance.id]) {
@@ -28,9 +33,11 @@ export class AngularPaginatorService {
     return;
   }
 
-  /*
+  /**
    * updates existing pagination instances available
    * and returns true if value has changed
+   *
+   * @param instance an unique pagination component
    */
   updateInstance(instance: AngularPaginatorInstance): boolean {
 
@@ -44,12 +51,20 @@ export class AngularPaginatorService {
     return false;
   }
 
-  // return instance with given id
+  /**
+   * return instance with given id
+   *
+   * @param id unique id for the pagination component
+   */
   getInstance(id: string): any {
     return this.instances[id];
   }
 
-  // return currentPage for given id
+  /**
+   * return currentPage for given id
+   *
+   * @param id unique id for the pagination component
+   */
   getCurrentPage(id: string): number {
     return this.instances[id].currentPage;
   }

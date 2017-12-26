@@ -27,6 +27,11 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
 
   @Output() pageChange: EventEmitter<number> = new EventEmitter<number>(true);
 
+  /**
+   *
+   * @param _angularPaginatorService serivce for angular paginator
+   * @param _changeDetectorRef for manual change detection
+   */
   constructor(private _angularPaginatorService: AngularPaginatorService,
     private _changeDetectorRef: ChangeDetectorRef) {
 
@@ -65,7 +70,11 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
     return;
   }
 
-  // set current page
+  /**
+   * sets current page
+   *
+   * @param page page number to set as currentPage
+   */
   setCurrentPage(page: number): void {
     if (page && this.currentPage !== page) {
       this.currentPage = page;
@@ -74,7 +83,13 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
     return;
   }
 
-  // create page object used for template
+  /**
+   * create page object used for template
+   *
+   * @param number page number
+   * @param text page number, text to be displayed
+   * @param isActive whether the page is active or not, true for currentPage
+   */
   makePage(number: number, text: any, isActive: boolean): any {
     return {
       number: number,
@@ -83,7 +98,13 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
     };
   }
 
-  // create page array
+  /**
+   *  create page array
+   *
+   * @param currentPage current page number
+   * @param itemsPerPage total items per page
+   * @param totalItems no of items for pagination, usually array length
+   */
   getPages(currentPage: number, itemsPerPage: number, totalItems: number): any {
     const pages: any = [];
 
@@ -213,7 +234,6 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-
     // destroy the subscription when the directive is destroyed
     this.subscription.unsubscribe();
   }
