@@ -1641,7 +1641,7 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
   @Output() pageChange: EventEmitter&lt;number&gt; &#x3D; new EventEmitter&lt;number&gt;(true);
 
   /**
-   * 
+   *
    * @param _angularPaginatorService serivce for angular paginator
    * @param _changeDetectorRef for manual change detection
    */
@@ -1685,7 +1685,7 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
 
   /**
    * sets current page
-   * 
+   *
    * @param page page number to set as currentPage
    */
   setCurrentPage(page: number): void {
@@ -1698,7 +1698,7 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
 
   /**
    * create page object used for template
-   * 
+   *
    * @param number page number
    * @param text page number, text to be displayed
    * @param isActive whether the page is active or not, true for currentPage
@@ -1713,7 +1713,7 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
 
   /**
    *  create page array
-   * 
+   *
    * @param currentPage current page number
    * @param itemsPerPage total items per page
    * @param totalItems no of items for pagination, usually array length
