@@ -73,9 +73,6 @@
                                 <li class="link">
                                     <a href="../modules/AngularPaginatorModule.html" >AngularPaginatorModule</a>
                                 </li>
-                                <li class="link">
-                                    <a href="../modules/AppModule.html" >AppModule</a>
-                                </li>
                         </ul>
                     </li>
             
@@ -92,9 +89,6 @@
                             >
                                 <li class="link">
                                     <a href="../components/AngularPaginatorComponent.html"  data-type="entity-link" class="active" >AngularPaginatorComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/AppComponent.html" >AppComponent</a>
                                 </li>
                         </ul>
                     </li>
@@ -130,9 +124,6 @@
                             >
                                 <li class="link">
                                     <a href="../injectables/AngularPaginatorService.html" >AngularPaginatorService</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../injectables/AppService.html" >AppService</a>
                                 </li>
                         </ul>
                     </li>
@@ -258,9 +249,6 @@
                                        <li class="link">
                                            <a href="../modules/AngularPaginatorModule.html" >AngularPaginatorModule</a>
                                        </li>
-                                       <li class="link">
-                                           <a href="../modules/AppModule.html" >AppModule</a>
-                                       </li>
                                </ul>
                            </li>
                    
@@ -277,9 +265,6 @@
                    >
                                        <li class="link">
                                            <a href="../components/AngularPaginatorComponent.html"  data-type="entity-link" class="active" >AngularPaginatorComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/AppComponent.html" >AppComponent</a>
                                        </li>
                                </ul>
                            </li>
@@ -315,9 +300,6 @@
                    >
                                        <li class="link">
                                            <a href="../injectables/AngularPaginatorService.html" >AngularPaginatorService</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../injectables/AppService.html" >AppService</a>
                                        </li>
                                </ul>
                            </li>
@@ -476,20 +458,6 @@
         <h3 id="index">Index</h3>
         <table class="table table-sm table-bordered index-table">
             <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Methods</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                <a href="#ngOnInit">ngOnInit</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
                 <tr>
                     <td class="col-md-4">
                         <h6><b>Inputs</b></h6>
@@ -1081,49 +1049,6 @@
 
 
 
-    <section>
-        
-            <h3 id="methods">
-                Methods
-            </h3>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <a name="ngOnInit"></a>
-                            <span class="name">
-                                <b>
-                                ngOnInit
-                                </b>
-                                <a href="#ngOnInit"><span class="fa fa-link"></span></a>
-                            </span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-    <code>ngOnInit()</code>
-                        </td>
-                    </tr>
-    
-    
-                            <tr>
-                                <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/angular-paginator/angular-paginator.component.ts:43</a></div>
-                                </td>
-                            </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-    
-                                <div class="io-description">
-                                    <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-    
-                                </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-    </section>
 
 
 </div>
@@ -1272,7 +1197,7 @@ export class AngularPaginatorComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><appAngularPaginator [id]="id" [boundaryLinks]="boundaryLinks" [directionLinks]="directionLinks" [maxSize]="maxSize" [rotate]="rotate"  [boundaryLinkNumbers]="boundaryLinkNumbers" [forceEllipses]="forceEllipses" #paginator="angularPaginator" (pageChange)="pageChange.emit($event)">  <!-- ======================================== BOOTSTRAP 4 TEMPLATE ======================================== -->  <ng-container *ngIf="!(autoHide && paginator.pages[\'length\'] <= 1)">    <nav class="angular-bs4-pagination" [attr.aria-label]="screenReaderPaginationLabel">      <ng-container *ngIf="paginator.pages[\'length\'] !== 0">        <ul class="pagination" [ngClass]="className">          <!-- boundary link -->          <li class="page-item" *ngIf="boundaryLinks" (click)="paginator.toFirstPage()" [ngClass]="{\'disabled\': (paginator.currentPage === paginator.firstPage) || disabled}">            <a class="page-link" href="javascript:void(0)">              <span aria-hidden="true" [innerHTML]="firstText"></span>              <span class="sr-only">{{ screenReaderFirstText }}</span>            </a>          </li>          <!-- direction link -->          <li class="page-item" *ngIf="directionLinks" (click)="paginator.toPreviousPage()" [ngClass]="{\'disabled\': (paginator.currentPage === paginator.firstPage) || disabled}">            <a class="page-link" href="javascript:void(0)">              <span aria-hidden="true" [innerHTML]="previousText"></span>              <span class="sr-only">{{ screenReaderPreviousText }}</span>            </a>          </li>          <!-- pagination array -->          <li class="page-item" *ngFor="let page of paginator.pages" [ngClass]="{\'active\': page[\'active\'], \'disabled\': disabled}" (click)="!page[\'active\'] && paginator.setCurrentPage(page[\'number\'])">            <a href="javascript:void(0)" class="page-link">              {{ page[\'text\'] }}              <span class="sr-only" *ngIf="!page[\'active\']">{{ screenReaderPageText + \' \' }}{{ page[\'text\'] }}</span>              <span class="sr-only" *ngIf="page[\'active\']">{{ screenReaderCurrentPageText + \' \' }}{{ page[\'text\'] }}</span>            </a>          </li>          <!-- direction link -->          <li class="page-item" *ngIf="directionLinks" (click)="paginator.toNextPage()" [ngClass]="{\'disabled\': (paginator.currentPage === paginator.lastPage) || disabled}">            <a class="page-link" href="javascript:void(0)">              <span aria-hidden="true" [innerHTML]="nextText"></span>              <span class="sr-only">{{ screenReaderNextText }}</span>            </a>          </li>          <!-- boundary link -->          <li class="page-item" *ngIf="boundaryLinks" (click)="paginator.toLastPage()" [ngClass]="{\'disabled\': (paginator.currentPage === paginator.lastPage) || disabled}">            <a class="page-link" href="javascript:void(0)">              <span aria-hidden="true" [innerHTML]="lastText"></span>              <span class="sr-only">{{ screenReaderLastText }}</span>            </a>          </li>        </ul>      </ng-container>    </nav>  </ng-container></appAngularPaginator></div>'
-    var COMPONENTS = [{'name': 'AngularPaginatorComponent', 'selector': 'app-angular-paginator'},{'name': 'AppComponent', 'selector': 'app-root'}];
+    var COMPONENTS = [{'name': 'AngularPaginatorComponent', 'selector': 'app-angular-paginator'}];
     var DIRECTIVES = [{'name': 'AngularPaginatorDirective', 'selector': 'appAngularPaginator, [appAngularPaginator]'}];
     var ACTUAL_COMPONENT = {'name': 'AngularPaginatorComponent'};
 </script>
