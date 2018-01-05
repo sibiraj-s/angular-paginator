@@ -124,8 +124,6 @@ Demo at stackblitz [angular-paginator](https://angular-paginator.stackblitz.io)
 
 Documentation is auto-generated using [compodoc][compodoc], and can be viewed here: [https://sibiraj-s.github.io/angular-paginator/](https://sibiraj-s.github.io/angular-paginator/)
 
-Wiki [here][wiki]
-
 [npm]: https://www.npmjs.com/
 [yarn]: https://yarnpkg.com/lang/en/
 [github]: https://sibiraj-s.github.io/
