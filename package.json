@@ -17,6 +17,7 @@
     "postdocs": "git add docs/",
     "prerelease": "npm run build",
     "release": "sh ./scripts/release.sh",
+    "serve:docs": "./node_modules/.bin/compodoc --serve -o --output docs/",
     "start": "ng serve --aot -o --port 5005 --host 0.0.0.0",
     "test": "ng test",
     "test:single-run": "npm run lint && ng test --watch false"

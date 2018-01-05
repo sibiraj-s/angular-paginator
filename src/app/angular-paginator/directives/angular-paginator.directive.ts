@@ -3,6 +3,10 @@ import { AngularPaginatorService } from '../services/angular-paginator.service';
 import { AngularPaginatorInstance, Page } from '../others/angular-paginator.interface';
 import { Subject } from 'rxjs/Subject';
 
+/**
+ * This is the directive where the actual pagination takes place, it provides a sync between the
+ * pipes and the pagination component
+ */
 @Directive({
   selector: 'appAngularPaginator, [appAngularPaginator]',
   exportAs: 'angularPaginator'
@@ -10,12 +14,37 @@ import { Subject } from 'rxjs/Subject';
 
 export class AngularPaginatorDirective implements OnInit, OnDestroy {
 
+  /**
+   * Whether to display First / Last buttons
+   */
   @Input() boundaryLinks: boolean;
+  /**
+  * Whether to display Previous / Next buttons
+  */
   @Input() directionLinks: boolean;
+  /**
+   * Limit number for pagination size, i.e., the maximum page numbers to be displayed
+   */
   @Input() maxSize: number;
+  /**
+   * Whether to keep current page in the middle of the visible ones
+   */
   @Input() rotate: boolean;
+  /**
+   * Whether to always display the first and last page numbers.
+   * If max-size is smaller than the number of pages, then the first and last page numbers are still shown with ellipses
+   * in-between as necessary. NOTE: max-size refers to the center of the range.
+   * This option may add up to 2 more numbers on each side of the displayed range for the end value and
+   * what would be an ellipsis but is replaced by a number because it is sequential
+   */
   @Input() boundaryLinkNumbers: boolean;
+  /**
+   * Also displays ellipses when rotate is true and maxSize is smaller than the number of pages forceEllipses
+   */
   @Input() forceEllipses: boolean;
+  /**
+   * Use unique id when multiple paginations are being used on the same page. By Default Paginator uses id `ANGULAR_PAGINATOR_DEFAULT`
+   */
   @Input() id: string;
 
   currentPage: number;
@@ -25,6 +54,9 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
 
   private subscription: Subject<any> = new Subject();
 
+  /**
+   * Emits an event whenever the current page is changed, It emits the current page number
+   */
   @Output() pageChange: EventEmitter<number> = new EventEmitter<number>(true);
 
   /**
@@ -45,7 +77,9 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
 
   }
 
-  // navigate through pages
+  /**
+   * Navigate to prevoius page
+   */
   toPreviousPage(): void {
     if (this.currentPage > this.firstPage) {
       this.setCurrentPage(this.currentPage - 1);
@@ -53,6 +87,9 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
     return;
   }
 
+  /**
+   * Navigate to next page
+   */
   toNextPage(): void {
     if (this.currentPage < this.lastPage) {
       this.setCurrentPage(this.currentPage + 1);
@@ -60,18 +97,24 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
     return;
   }
 
+  /**
+   * Navigate to first page
+   */
   toFirstPage(): void {
     this.setCurrentPage(this.firstPage);
     return;
   }
 
+  /**
+   * Navigate to last page
+   */
   toLastPage(): void {
     this.setCurrentPage(this.lastPage);
     return;
   }
 
   /**
-   * sets current page
+   * Sets current page
    *
    * @param page page number to set as currentPage
    */
@@ -189,7 +232,9 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
     return pages;
   }
 
-  // update page array
+  /**
+   * Updates the pagination component
+   */
   updatePages(): void {
     const instance: AngularPaginatorInstance = this._angularPaginatorService.getInstance(this.id);
 
@@ -204,7 +249,9 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
     return;
   }
 
-  // check if currentPage is out of bound with totalPages
+  /**
+   * Check if currentPage is out of bound with totalPages
+   */
   outOfBoundCorrection(instance: AngularPaginatorInstance): number {
 
     const totalPages = Math.ceil(instance['totalItems'] / instance['itemsPerPage']);
@@ -218,7 +265,9 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
     return instance['currentPage'];
   }
 
-  // check if there is any instance registered with the id
+  /**
+   * check if there is any instance registered with the id
+   */
   isValidId(): void {
 
     if (!this._angularPaginatorService.getInstance(this.id)) {
@@ -234,7 +283,7 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    // destroy the subscription when the directive is destroyed
+    /** destroy the subscription when the directive is destroyed */
     this.subscription.unsubscribe();
   }
 

@@ -403,6 +403,13 @@
             <code>src/app/angular-paginator/pipes/angular-paginator.pipe.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Pagination Pipe which paginates the array for the provided arguments such as <code>itemsPerPage</code> and <code>currentPage</code></p>
+
+            </p>
 
 
         <section>
@@ -444,7 +451,7 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/angular-paginator/pipes/angular-paginator.pipe.ts:43</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/angular-paginator/pipes/angular-paginator.pipe.ts:47</a></div>
                                         </td>
                                     </tr>
             
@@ -472,7 +479,7 @@
                                                               </td>
                                                               <td>
                                                               </td>
-                                                              <td><p>input array</p>
+                                                              <td><p>input array for which the manipulation happens</p>
             </td>
                                                             </tr>
                                                             <tr>
@@ -523,12 +530,14 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/angular-paginator/pipes/angular-paginator.pipe.ts:22</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/angular-paginator/pipes/angular-paginator.pipe.ts:26</a></div>
                                         </td>
                                     </tr>
             
                             <tr>
                                 <td class="col-md-4">
+                                        <div class="io-description"><p>this pipes paginates the array for the provided arguments such as <code>itemsPerPage</code> and <code>currentPage</code></p>
+            </div>
             
                                         <div class="io-description">
                                                 <b>Parameters :</b>
@@ -549,7 +558,7 @@
                                                               </td>
                                                               <td>
                                                               </td>
-                                                              <td><p>array for which the manipulation happens</p>
+                                                              <td><p>input array for which the manipulation happens</p>
             </td>
                                                             </tr>
                                                             <tr>
@@ -590,6 +599,9 @@
 import { AngularPaginatorService } from &#x27;../services/angular-paginator.service&#x27;;
 import { AngularPaginatorInstance } from &#x27;../others/angular-paginator.interface&#x27;;
 
+/**
+ * Pagination Pipe which paginates the array for the provided arguments such as &#x60;itemsPerPage&#x60; and &#x60;currentPage&#x60;
+ */
 @Pipe({
   name: &#x27;angularPaginator&#x27;
 })
@@ -603,8 +615,9 @@ export class AngularPaginatorPipe implements PipeTransform {
   constructor(private _angularPaginatorService: AngularPaginatorService) { }
 
   /**
+   * this pipes paginates the array for the provided arguments such as &#x60;itemsPerPage&#x60; and &#x60;currentPage&#x60;
    *
-   * @param array array for which the manipulation happens
+   * @param array input array for which the manipulation happens
    * @param args input arguments for the paginator pipe
    */
   transform(array: any, args?: any): any {
@@ -625,7 +638,7 @@ export class AngularPaginatorPipe implements PipeTransform {
   /**
    * create an instance for each pipe
    *
-   * @param array input array
+   * @param array input array for which the manipulation happens
    * @param args input arguments for the paginator pipe
    */
   createInstance(array: any, args: any): any {
