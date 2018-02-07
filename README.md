@@ -19,6 +19,9 @@
   <a href="https://github.com/Sibiraj-S/angular-paginator/blob/master/LICENSE">
     <img alt="licence" src="https://img.shields.io/npm/l/angular-paginator.svg">
   </a>
+  <a href="https://github.com/Sibiraj-S/angular-paginator/">
+    <img alt="licence" src="https://img.shields.io/badge/maintained%20%3F-no-red.svg">
+  </a>
 </p>
 
 ## Getting Started
