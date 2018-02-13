@@ -58,7 +58,7 @@
             
             
                     <li class="chapter">
-                        <a data-type="chapter-link" href="./modules.html"  class="active" >
+                        <a data-type="chapter-link" href="./modules.html" >
                             <div class="menu-toggler linked" data-toggle="collapse"
                                     data-target="#xs-modules-links"
                             >
@@ -184,6 +184,9 @@
                     </li>
             
             
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="./coverage.html"  class="active" ><span class="fa fa-fw fa-tasks"></span>Documentation coverage</a>
+                    </li>
             
             
                 </ul>
@@ -234,7 +237,7 @@
                    
                    
                            <li class="chapter">
-                               <a data-type="chapter-link" href="./modules.html"  class="active" >
+                               <a data-type="chapter-link" href="./modules.html" >
                                    <div class="menu-toggler linked" data-toggle="collapse"
                                            data-target="#modules-links"
                                    >
@@ -360,52 +363,199 @@
                            </li>
                    
                    
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="./coverage.html"  class="active" ><span class="fa fa-fw fa-tasks"></span>Documentation coverage</a>
+                           </li>
                    
                    
                        </ul>
                    
                    </nav>
                </div>
-               <div class="content modules">
+               <div class="content coverage">
                    <div class="content-data">
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 <ol class="breadcrumb">
-    <li>Modules</li>
+  <li>Documentation coverage</li>
 </ol>
-<div class="container-fluid modules">
-    <div class="row">
-            <div class="col-sm-4">
-                <div class="card card-module">
-                    <div class="card-header">
-                        <h4 class="card-title">AngularPaginatorModule</h4>
-                    </div>
-                    <div class="card-block">
-                                <p>
-                                    <object id="demo-svg" type="image/svg+xml" data="./modules/AngularPaginatorModule/dependencies.svg" style="width: 100%; height: 175px;">
-                                            Your browser does not support SVG
-                                    </object>
-                                </p>
-                        <footer class="text-center">
-                            <a href="./modules/AngularPaginatorModule.html" class="btn btn-default">Browse</a>
-                        </footer>
-                    </div>
-                </div>
-            </div>
-    </div>
-</div>
 
+<img src="./images/coverage-badge.svg">
 
+<table class="table table-bordered coverage" id="coverage-table">
+    <thead class="coverage-header">
+        <tr>
+            <th>File</th>
+            <th>Type</th>
+            <th>Identifier</th>
+            <th style="text-align:right" class="statements" data-sort-default>Statements</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                    <a href="./components/AngularPaginatorComponent.html">src/app/angular-paginator/angular-paginator.component.ts</a>
+            </td>
+            <td>
+                component
+            </td>
+            <td>
+                AngularPaginatorComponent
+            </td>
+            <td align="right" data-sort="95">
+                <span class="coverage-percent">95 %</span>
+                <span class="coverage-count">(23/24)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                    <a href="./directives/AngularPaginatorDirective.html">src/app/angular-paginator/directives/angular-paginator.directive.ts</a>
+            </td>
+            <td>
+                directive
+            </td>
+            <td>
+                AngularPaginatorDirective
+            </td>
+            <td align="right" data-sort="79">
+                <span class="coverage-percent">79 %</span>
+                <span class="coverage-count">(19/24)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                    <a href="./interfaces/AngularPaginatorInstance.html">src/app/angular-paginator/others/angular-paginator.interface.ts</a>
+            </td>
+            <td>
+                interface
+            </td>
+            <td>
+                AngularPaginatorInstance
+            </td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(5/5)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                    <a href="./interfaces/Page.html">src/app/angular-paginator/others/angular-paginator.interface.ts</a>
+            </td>
+            <td>
+                interface
+            </td>
+            <td>
+                Page
+            </td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(4/4)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                    <a href="./pipes/AngularPaginatorPipe.html">src/app/angular-paginator/pipes/angular-paginator.pipe.ts</a>
+            </td>
+            <td>
+                pipe
+            </td>
+            <td>
+                AngularPaginatorPipe
+            </td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                    <a href="./injectables/AngularPaginatorService.html">src/app/angular-paginator/services/angular-paginator.service.ts</a>
+            </td>
+            <td>
+                injectable
+            </td>
+            <td>
+                AngularPaginatorService
+            </td>
+            <td align="right" data-sort="77">
+                <span class="coverage-percent">77 %</span>
+                <span class="coverage-count">(7/9)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                    <a href="./miscellaneous/variables.html#jsonArray">src/app/data.ts</a>
+            </td>
+            <td>
+                variable
+            </td>
+            <td>
+                jsonArray
+            </td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                    <a href="./miscellaneous/variables.html#environment">src/environments/environment.prod.ts</a>
+            </td>
+            <td>
+                variable
+            </td>
+            <td>
+                environment
+            </td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                    <a href="./miscellaneous/variables.html#environment">src/environments/environment.ts</a>
+            </td>
+            <td>
+                variable
+            </td>
+            <td>
+                environment
+            </td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+    </tbody>
+</table>
 
-
-
-
-
-
-
-
-
+<script src="js/libs/tablesort.min.js"></script>
+<script src="js/libs/tablesort.number.min.js"></script>
+<script>
+    new Tablesort(document.getElementById('coverage-table'));
+</script>
 
                    </div><div class="search-results">
     <div class="has-results">

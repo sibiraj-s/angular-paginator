@@ -251,6 +251,8 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
 
   /**
    * Check if currentPage is out of bound with totalPages
+   *
+   * @param instance instance for which the range is to be corrected
    */
   outOfBoundCorrection(instance: AngularPaginatorInstance): number {
 

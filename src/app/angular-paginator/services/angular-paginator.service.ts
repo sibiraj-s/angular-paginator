@@ -4,11 +4,13 @@ import { AngularPaginatorInstance } from '../others/angular-paginator.interface'
 @Injectable()
 export class AngularPaginatorService {
 
+  /** id is used to identify pagination instances */
   id = 'ANGULAR_PAGINATOR_DEFAULT';
 
+  /** instances is the collection of pagination componetns */
   instances: any = {};
-  collection: any = [];
 
+  /** emits an event with instance id whenever the page number changes */
   change: EventEmitter<string> = new EventEmitter<string>();
 
   constructor() { }
@@ -54,7 +56,7 @@ export class AngularPaginatorService {
   /**
    * return instance with given id
    *
-   * @param id unique id for the pagination component
+   * @param id unique id of the pagination component
    */
   getInstance(id: string): any {
     return this.instances[id];
@@ -63,7 +65,7 @@ export class AngularPaginatorService {
   /**
    * return currentPage for given id
    *
-   * @param id unique id for the pagination component
+   * @param id unique id of the pagination component
    */
   getCurrentPage(id: string): number {
     return this.instances[id].currentPage;

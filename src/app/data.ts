@@ -1,4 +1,7 @@
-export const jsonArray = [{
+/**
+ * jsonArray holds the values for the angular paginator example
+ */
+export const jsonArray: object = [{
     'name': 'Bell',
     'id': 'K0H 2V5'
 }, {
