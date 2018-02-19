@@ -5,7 +5,8 @@
 │   ├── app.po.ts
 │   └── tsconfig.e2e.json
 ├── scripts
-│   └── build.sh
+│   ├── build.sh
+│   └── release.sh
 ├── src
 │   ├── app
 │   │   ├── angular-paginator
@@ -32,8 +33,12 @@
 │   │   ├── app.component.spec.ts
 │   │   ├── app.component.ts
 │   │   ├── app.module.ts
+│   │   ├── app.service.spec.ts
+│   │   ├── app.service.ts
 │   │   └── data.ts
 │   ├── assets
+│   │   ├── angular.png
+│   │   ├── angular.svg
 │   │   └── .gitkeep
 │   ├── environments
 │   │   ├── environment.prod.ts
@@ -42,6 +47,7 @@
 │   ├── index.html
 │   ├── main.ts
 │   ├── polyfills.ts
+│   ├── public_api.ts
 │   ├── styles.scss
 │   ├── test.ts
 │   ├── tsconfig.app.json
@@ -58,12 +64,10 @@
 ├── package.json
 ├── package-lock.json
 ├── protractor.conf.js
-├── public_api.ts
 ├── .pullapprove.yml
 ├── README.md
 ├── .travis.yml
 ├── TREE.md
 ├── tsconfig.json
-├── tslint.json
-└── yarn.lock
+└── tslint.json
 ```
