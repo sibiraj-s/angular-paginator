@@ -3,6 +3,8 @@
     "workingDirectory": "./.ng_pkg_build",
     "dest": "./build/",
     "lib": {
-        "entryFile": "./src/public_api.ts"
+        "entryFile": "./src/public_api.ts",
+        "comments": "none",
+        "licensePath": "./LICENSE"
     }
 }
