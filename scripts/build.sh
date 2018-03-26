@@ -4,6 +4,9 @@
 rm -rf build/
 rm -rf dist/
 
+# remove npm tarballs if present
+rm -rf build.tgz
+
 # build 
 ./node_modules/.bin/ng-packagr -p ng-package.json
 
