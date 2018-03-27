@@ -7,7 +7,7 @@
     "build": "ng build --prod",
     "build:package": "sh ./scripts/build.sh",
     "cz": "git-cz",
-    "docs": "./node_modules/.bin/compodoc --tsconfig=\"src/tsconfig.app.json\" --name=\"Angular Paginator\" --disableCoverage --disablePrivate --disableInternal --disableLifeCycleHooks --disableProtected --hideGenerator --customFavicon=\"src/favicon.ico\" --output=\"docs/\"",
+    "docs": "compodoc --tsconfig=\"src/tsconfig.app.json\" --name=\"Angular Paginator\" --disableCoverage --disablePrivate --disableInternal --disableLifeCycleHooks --disableProtected --hideGenerator --customFavicon=\"src/favicon.ico\" --output=\"docs/\"",
     "e2e": "ng e2e",
     "lint": "ng lint",
     "ng": "ng",
@@ -16,7 +16,7 @@
     "precommit": "npm run test:single-run",
     "prerelease": "npm run build",
     "release": "sh ./scripts/release.sh",
-    "serve:docs": "./node_modules/.bin/compodoc --serve --open --output=\"docs/\"",
+    "serve:docs": "compodoc --serve --open --output=\"docs/\"",
     "start": "ng serve --aot -o --port 5005 --host 0.0.0.0",
     "test": "ng test",
     "test:single-run": "npm run lint && ng test --watch false"
