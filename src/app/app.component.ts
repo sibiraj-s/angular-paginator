@@ -27,7 +27,7 @@ export class AppComponent implements OnInit, OnDestroy {
    */
   constructor(private _appService: AppService) { }
 
-  getLatestRelease() {
+  private getLatestRelease() {
     this.subscription = this._appService.getLatestRelease().subscribe(
       data => this.latestRelease = data,
       error => { console.log(error); },
