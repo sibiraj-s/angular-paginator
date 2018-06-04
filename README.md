@@ -17,10 +17,7 @@
     <img alt="npm downloads" src="https://img.shields.io/npm/dm/angular-paginator.svg">
   </a>
   <a href="https://github.com/Sibiraj-S/angular-paginator/blob/master/LICENSE">
-    <img alt="licence" src="https://img.shields.io/npm/l/angular-paginator.svg">
-  </a>
-  <a href="https://github.com/Sibiraj-S/angular-paginator/">
-    <img alt="maintenance" src="https://img.shields.io/badge/maintained%20%3F-no-red.svg">
+    <img alt="license" src="https://img.shields.io/npm/l/angular-paginator.svg">
   </a>
 </p>
 
