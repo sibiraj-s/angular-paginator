@@ -9,6 +9,6 @@ describe('angular-paginator App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Angular Paginator');
+    expect(page.getParagraphText()).toEqual('angular-paginator');
   });
 });

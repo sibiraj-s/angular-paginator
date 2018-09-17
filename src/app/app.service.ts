@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import 'rxjs/add/operator/map';
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class AppService {
@@ -15,13 +15,15 @@ export class AppService {
 
   getLatestRelease(): any {
     return this._http.get(this.releaseURL)
-      .map((response: any) => {
-        if (response && response['length'] !== 0) {
-          return response;
-        } else {
-          return [];
-        }
-      });
+      .pipe(
+        map((response: any) => {
+          if (response && response['length'] !== 0) {
+            return response;
+          } else {
+            return [];
+          }
+        })
+      );
   }
 
 }

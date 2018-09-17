@@ -1,5 +1,4 @@
 import { EventEmitter } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
 
 export class AngularPaginatorMockService {
 

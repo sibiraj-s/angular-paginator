@@ -1,7 +1,7 @@
 import { Directive, OnInit, OnDestroy, Input, Output, EventEmitter, ChangeDetectorRef } from '@angular/core';
 import { AngularPaginatorService } from '../services/angular-paginator.service';
 import { AngularPaginatorInstance, Page } from '../others/angular-paginator.interface';
-import { Subject } from 'rxjs/Subject';
+import { Subject } from 'rxjs';
 
 /**
  * This is the directive where the actual pagination takes place, it provides a sync between the
