@@ -11,6 +11,16 @@ All notable changes to this project will be documented in this file.
 > - Documentation
 > - Internal
 
+## v2.0.0 (2018-09-18)
+
+Upgrade to Angular 6.
+
+#### Dependency Updates
+
+* update angular dependencies ([423f9d2](https://github.com/Sibiraj-S/angular-paginator/commit/423f9d2))
+* update ng-packagr to v4.1.1 ([423f9d2](https://github.com/Sibiraj-S/angular-paginator/commit/423f9d2))
+* update compodoc to v1.1.5 ([423f9d2](https://github.com/Sibiraj-S/angular-paginator/commit/423f9d2))
+
 ## v1.1.7 (2018-06-04)
 
 #### Dependency Updates
