@@ -1,13 +1,13 @@
 {
-    "name": "Angular Paginator",
-    "output": "./docs/",
-    "tsconfig": "./src/tsconfig.app.json",
-    "customFavicon": "./src/favicon.ico",
-    "disableLifeCycleHooks": true,
-    "disablePrivate": true,
-    "disableProtected": true,
-    "disableInternal": true,
-    "disableCoverage": true,
-    "hideGenerator": true
+  "$schema": "./node_modules/@compodoc/compodoc/src/config/schema.json",
+  "name": "Angular Paginator",
+  "output": "./docs/",
+  "tsconfig": "./src/tsconfig.app.json",
+  "customFavicon": "./src/favicon.ico",
+  "disableLifeCycleHooks": true,
+  "disablePrivate": true,
+  "disableProtected": true,
+  "disableInternal": true,
+  "disableCoverage": true,
+  "hideGenerator": true
 }
-
