@@ -11,6 +11,18 @@ All notable changes to this project will be documented in this file.
 > - Documentation
 > - Internal
 
+## v2.0.1 (2018-09-22)
+
+#### Documentation
+
+* recompiled documentation for latest changes which also includes CHANGELOG
+
+#### Internal
+
+* migrate from travis-ci.org to travis-ci.com
+* remove vscode settings infavour of editorconfig ([82e3093](https://github.com/Sibiraj-S/angular-paginator/commit/82e3093))
+* add schema to compodoc configuaration ([9e17805](https://github.com/Sibiraj-S/angular-paginator/commit/9e17805))
+
 ## v2.0.0 (2018-09-18)
 
 Upgrade to Angular 6.
