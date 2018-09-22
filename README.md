@@ -7,8 +7,8 @@
 </p>
 <p align="center">Pagination for Angular application using Bootstrap-4 template</p>
 <p align="center">
-  <a href="https://travis-ci.org/Sibiraj-S/angular-paginator">
-    <img alt="Build Status" src="https://travis-ci.org/Sibiraj-S/angular-paginator.svg?branch=master">
+  <a href="https://travis-ci.com/Sibiraj-S/angular-paginator">
+    <img alt="Build Status" src="https://travis-ci.com/Sibiraj-S/angular-paginator.svg?branch=master">
   </a>
   <a href="https://www.npmjs.com/package/angular-paginator">
     <img alt="npm version" src="https://img.shields.io/npm/v/angular-paginator.svg">
