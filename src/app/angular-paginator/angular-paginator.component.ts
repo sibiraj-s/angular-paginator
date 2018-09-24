@@ -122,7 +122,5 @@ export class AngularPaginatorComponent implements OnInit {
 
     // set default class if not provided
     this.className = this.className ? this.className : this._angularPaginatorService.id;
-
   }
-
 }

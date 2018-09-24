@@ -1,47 +1,18 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { jsonArray } from './data';
-import { AppService } from './app.service';
-import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  providers: [AppService]
+  encapsulation: ViewEncapsulation.None
 })
 
-export class AppComponent implements OnInit, OnDestroy {
-
+export class AppComponent {
   title = 'Angular Paginator';
-  latestRelease: any = {};
-  private subscription: Subject<any> = new Subject();
 
   currentPage = 1;
   itemsPerPage = 15;
   maxSize = 5;
   jsonArray = jsonArray;
-
-  /**
-   *
-   * @param _appService service helper for app component
-   */
-  constructor(private _appService: AppService) { }
-
-  private getLatestRelease() {
-    this.subscription = this._appService.getLatestRelease().subscribe(
-      data => this.latestRelease = data,
-      error => { console.log(error); },
-      () => {
-        console.log('latest release: ' + this.latestRelease['name']);
-        this.subscription.unsubscribe();
-      });
-  }
-
-  ngOnInit() {
-    this.getLatestRelease();
-  }
-
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
-  }
 }

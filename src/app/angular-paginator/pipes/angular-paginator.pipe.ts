@@ -10,7 +10,6 @@ import { AngularPaginatorInstance } from '../others/angular-paginator.interface'
 })
 
 export class AngularPaginatorPipe implements PipeTransform {
-
   /**
    *
    * @param _angularPaginatorService service for angular pagiantor
@@ -51,7 +50,5 @@ export class AngularPaginatorPipe implements PipeTransform {
       itemsPerPage: args['itemsPerPage'] ? args['itemsPerPage'] : 10,
       totalItems: array['length']
     };
-
   }
-
 }

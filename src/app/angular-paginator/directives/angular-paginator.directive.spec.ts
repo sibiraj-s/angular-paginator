@@ -3,7 +3,6 @@ import { AngularPaginatorDirective } from './angular-paginator.directive';
 import { AngularPaginatorService } from '../services/angular-paginator.service';
 
 describe('AngularPaginatorDirective', () => {
-
   let service: AngularPaginatorService;
   let directive: AngularPaginatorDirective;
 
@@ -14,7 +13,6 @@ describe('AngularPaginatorDirective', () => {
     })
       .compileComponents();
   }));
-
 
   beforeEach(() => {
     service = new AngularPaginatorService();
@@ -39,5 +37,4 @@ describe('AngularPaginatorDirective', () => {
     const pages = directive.getPages(1, 10, 100);
     expect(pages[0].active).toBe(true);
   });
-
 });

@@ -1,57 +1,64 @@
 .navbar-text {
-    color: white;
-    margin-left: 0.4rem;
+  color: white;
+  margin-left: 0.4rem;
 
-    .fa {
-        font-size: 1.4rem;
-    }
+  .fa {
+    font-size: 1.4rem;
+  }
 }
 
 .entry-container {
-    padding: 5.5rem 0;
+  padding: 5.5rem 0;
 
-    .buttons, .title {
-        margin-bottom: 1rem;
+  .buttons {
+    span {
+      margin-right: 0.3rem;
     }
+  }
 
-    .version {
-        font-size: 90%;
-    }
+  .buttons,
+  .title {
+    margin-bottom: 1rem;
+  }
+
+  .version {
+    font-size: 90%;
+  }
 }
 
 .paginator {
-    font-size: 95%;
+  font-size: 95%;
 
-    .btn {
-        &:focus {
-            box-shadow: none;
-        }
+  .btn {
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  mark {
+    background-color: #f1f1f1;
+  }
+
+  .pagination-components {
+    margin-bottom: 2rem;
+
+    p {
+      margin-bottom: 0.5rem;
     }
 
-    mark {
-        background-color: #f1f1f1;
+    .page-number {
+      display: inline-block;
+      width: 20px;
+      text-align: right;
+      margin-right: 3px;
     }
+  }
 
-    .pagination-components {
-        margin-bottom: 2rem;
-
-        p {
-            margin-bottom: 0.5rem;
-        }
-
-        .page-number {
-            display: inline-block;
-            width: 20px;
-            text-align: right;
-            margin-right: 3px;
-        }
+  .pagination-options {
+    ul {
+      li {
+        margin-bottom: 0.5rem;
+      }
     }
-
-    .pagination-options {
-        ul {
-            li {
-                margin-bottom: 0.5rem;
-            }
-        }
-    }
+  }
 }

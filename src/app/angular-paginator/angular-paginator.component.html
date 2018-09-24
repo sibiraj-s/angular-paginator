@@ -1,5 +1,6 @@
-<appAngularPaginator [id]="id" [boundaryLinks]="boundaryLinks" [directionLinks]="directionLinks" [maxSize]="maxSize" [rotate]="rotate"
-  [boundaryLinkNumbers]="boundaryLinkNumbers" [forceEllipses]="forceEllipses" #paginator="angularPaginator" (pageChange)="pageChange.emit($event)">
+<appAngularPaginator [id]="id" [boundaryLinks]="boundaryLinks" [directionLinks]="directionLinks" [maxSize]="maxSize"
+  [rotate]="rotate" [boundaryLinkNumbers]="boundaryLinkNumbers" [forceEllipses]="forceEllipses" #paginator="angularPaginator"
+  (pageChange)="pageChange.emit($event)">
 
   <!-- ======================================== BOOTSTRAP 4 TEMPLATE ======================================== -->
   <ng-container *ngIf="!(autoHide && paginator.pages['length'] <= 1)">
@@ -25,7 +26,8 @@
           </li>
 
           <!-- pagination array -->
-          <li class="page-item" *ngFor="let page of paginator.pages" [ngClass]="{'active': page['active'], 'disabled': disabled}" (click)="!page['active'] && paginator.setCurrentPage(page['number'])">
+          <li class="page-item" *ngFor="let page of paginator.pages" [ngClass]="{'active': page['active'], 'disabled': disabled}"
+            (click)="!page['active'] && paginator.setCurrentPage(page['number'])">
             <a href="javascript:void(0)" class="page-link">
               {{ page['text'] }}
               <span class="sr-only" *ngIf="!page['active']">{{ screenReaderPageText + ' ' }}{{ page['text'] }}</span>

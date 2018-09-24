@@ -3,14 +3,14 @@
  */
 
 export interface AngularPaginatorInstance {
-    /** id of the pagination instance */
-    id?: string;
-    /** total numeber of items to be paginated. usually array length */
-    totalItems: number;
-    /** current page number */
-    currentPage: number;
-    /** total items to be shown per page */
-    itemsPerPage: number;
+  /** id of the pagination instance */
+  id?: string;
+  /** total numeber of items to be paginated. usually array length */
+  totalItems: number;
+  /** current page number */
+  currentPage: number;
+  /** total items to be shown per page */
+  itemsPerPage: number;
 }
 
 /**
@@ -18,10 +18,10 @@ export interface AngularPaginatorInstance {
  */
 
 export interface Page {
-    /** number of the page */
-    number: number;
-    /** text to be displayed for the page numeber */
-    text: any;
-    /** whether the page is active or not */
-    active: boolean;
+  /** number of the page */
+  number: number;
+  /** text to be displayed for the page numeber */
+  text: any;
+  /** whether the page is active or not */
+  active: boolean;
 }

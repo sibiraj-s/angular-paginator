@@ -3,7 +3,6 @@ import { AngularPaginatorInstance } from '../others/angular-paginator.interface'
 
 @Injectable()
 export class AngularPaginatorService {
-
   /** id is used to identify pagination instances */
   id = 'ANGULAR_PAGINATOR_DEFAULT';
 
@@ -70,5 +69,4 @@ export class AngularPaginatorService {
   getCurrentPage(id: string): number {
     return this.instances[id].currentPage;
   }
-
 }
