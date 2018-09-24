@@ -11,6 +11,13 @@ All notable changes to this project will be documented in this file.
 > - Documentation
 > - Internal
 
+## v2.0.2 (2018-09-24)
+
+#### Internal
+
+* format files and cleanup ([27197b1](https://github.com/sibiraj-s/angular-paginator/commit/27197b1))
+* update github username ([de68256](https://github.com/sibiraj-s/angular-paginator/commit/de68256))
+
 ## v2.0.1 (2018-09-22)
 
 #### Documentation
