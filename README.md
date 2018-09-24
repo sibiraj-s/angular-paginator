@@ -1,14 +1,14 @@
 # Angular Paginator
 
 <p align="center">
-  <a href="https://github.com/Sibiraj-S/angular-paginator">
-   <img src="https://raw.githubusercontent.com/Sibiraj-S/angular-paginator/master/src/assets/angular.png" alt="angularPaginator" width="350">
+  <a href="https://github.com/sibiraj-s/angular-paginator">
+   <img src="https://raw.githubusercontent.com/sibiraj-s/angular-paginator/master/src/assets/angular.png" alt="angularPaginator" width="350">
   </a>
 </p>
 <p align="center">Pagination for Angular application using Bootstrap-4 template</p>
 <p align="center">
-  <a href="https://travis-ci.com/Sibiraj-S/angular-paginator">
-    <img alt="Build Status" src="https://travis-ci.com/Sibiraj-S/angular-paginator.svg?branch=master">
+  <a href="https://travis-ci.com/sibiraj-s/angular-paginator">
+    <img alt="Build Status" src="https://travis-ci.com/sibiraj-s/angular-paginator.svg?branch=master">
   </a>
   <a href="https://www.npmjs.com/package/angular-paginator">
     <img alt="npm version" src="https://img.shields.io/npm/v/angular-paginator.svg">
@@ -16,7 +16,7 @@
   <a href="https://www.npmjs.com/package/angular-paginator">
     <img alt="npm downloads" src="https://img.shields.io/npm/dm/angular-paginator.svg">
   </a>
-  <a href="https://github.com/Sibiraj-S/angular-paginator/blob/master/LICENSE">
+  <a href="https://github.com/sibiraj-s/angular-paginator/blob/master/LICENSE">
     <img alt="license" src="https://img.shields.io/npm/l/angular-paginator.svg">
   </a>
 </p>
@@ -127,6 +127,6 @@ Documentation is auto-generated using [compodoc][compodoc], and can be viewed he
 [npm]: https://www.npmjs.com/
 [yarn]: https://yarnpkg.com/lang/en/
 [github]: https://sibiraj-s.github.io/
-[wiki]: https://github.com/Sibiraj-S/angular-paginator/wiki/angular-paginator
+[wiki]: https://github.com/sibiraj-s/angular-paginator/wiki/angular-paginator
 [Bootstrap4]: https://github.com/twbs/bootstrap
 [compodoc]: https://compodoc.github.io/website/
