@@ -11,6 +11,17 @@ All notable changes to this project will be documented in this file.
 > - Documentation
 > - Internal
 
+## Unreleased
+
+#### Dependency Updates
+
+* update husky to 1.1.0 ([efe9291](https://github.com/sibiraj-s/angular-paginator/commit/efe9291))
+* remove commitizen, cz-conventional-changelog ([efe9291](https://github.com/sibiraj-s/angular-paginator/commit/efe9291))
+
+#### Internal
+
+* add prepublish script to prevent accidental publish to npm registry ([efe9291](https://github.com/sibiraj-s/angular-paginator/commit/efe9291))
+
 ## v2.0.2 (2018-09-24)
 
 #### Internal
