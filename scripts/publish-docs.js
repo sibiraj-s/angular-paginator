@@ -21,6 +21,7 @@ inquirer.prompt([
     ghpages.publish('docs', ghPagesOptions, (err) => {
       if (err) {
         chalk.red('Unable to publish docs. Error: ', err);
+        return;
       }
       console.log(chalk.green(`\nDocumentation published successfully to ${chalk.cyan('\'gh-pages\'')} \n`));
     });
