@@ -21,6 +21,11 @@ All notable changes to this project will be documented in this file.
 #### Internal
 
 * add prepublish script to prevent accidental publish to npm registry ([efe9291](https://github.com/sibiraj-s/angular-paginator/commit/efe9291))
+* add lint rules for scripts ([727045d](https://github.com/sibiraj-s/angular-paginator/commit/727045d))
+
+#### Documentation
+
+* move documentation to `gh-pages` branch ([727045d](https://github.com/sibiraj-s/angular-paginator/commit/727045d))
 
 ## v2.0.2 (2018-09-24)
 
