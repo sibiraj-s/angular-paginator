@@ -3,6 +3,9 @@
   "version": "2.0.2",
   "description": "Pagination for Angular Applications",
   "license": "MIT",
+  "engines": {
+    "node": "^10"
+  },
   "scripts": {
     "build": "ng build --prod",
     "build:package": "sh ./scripts/build.sh",
