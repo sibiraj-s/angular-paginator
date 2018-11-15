@@ -3,6 +3,9 @@
   "version": "2.0.2",
   "description": "Pagination for Angular Applications",
   "license": "MIT",
+  "repository": "https://github.com/sibiraj-s/angular-paginator.git",
+  "bugs": "https://github.com/sibiraj-s/angular-paginator/issues",
+  "homepage": "https://github.com/sibiraj-s/angular-paginator",
   "engines": {
     "node": "^10"
   },
@@ -25,14 +28,6 @@
     "test": "ng test",
     "test:single-run": "npm run lint && ng test --watch false"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sibiraj-s/angular-paginator.git"
-  },
-  "bugs": {
-    "url": "https://github.com/sibiraj-s/angular-paginator/issues"
-  },
-  "homepage": "https://github.com/sibiraj-s/angular-paginator",
   "keywords": [
     "angular-paginator",
     "angular-pagination",
