@@ -10,7 +10,6 @@ import { jsonArray } from './data';
 
 export class AppComponent {
   title = 'Angular Paginator';
-
   currentPage = 1;
   itemsPerPage = 15;
   maxSize = 5;

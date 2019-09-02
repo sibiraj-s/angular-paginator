@@ -30,12 +30,12 @@ export class AngularPaginatorComponent implements OnInit {
    */
   @Input() rotate = true;
   /**
-    * Whether to always display the first and last page numbers.
-    * If max-size is smaller than the number of pages, then the first and last page numbers are still shown with ellipses
-    * in-between as necessary. NOTE: max-size refers to the center of the range.
-    * This option may add up to 2 more numbers on each side of the displayed range for the end value and
-    * what would be an ellipsis but is replaced by a number because it is sequential
-    */
+   * Whether to always display the first and last page numbers.
+   * If max-size is smaller than the number of pages, then the first and last page numbers are still shown with ellipses
+   * in-between as necessary. NOTE: max-size refers to the center of the range.
+   * This option may add up to 2 more numbers on each side of the displayed range for the end value and
+   * what would be an ellipsis but is replaced by a number because it is sequential
+   */
   @Input() boundaryLinkNumbers = false;
   /**
    * Also displays ellipses when rotate is true and maxSize is smaller than the number of pages forceEllipses
@@ -66,32 +66,32 @@ export class AngularPaginatorComponent implements OnInit {
    */
   @Input() screenReaderFirstText = 'First';
   /**
-  * Screen reader text for previous button
-  */
+   * Screen reader text for previous button
+   */
   @Input() screenReaderPreviousText = 'Previous';
   /**
-  * Screen reader text for next button
-  */
+   * Screen reader text for next button
+   */
   @Input() screenReaderNextText = 'Next';
   /**
-  * Screen reader text for lasr button
-  */
+   * Screen reader text for lasr button
+   */
   @Input() screenReaderLastText = 'Last';
   /**
-  * Screen reader text for page numbers
-  */
+   * Screen reader text for page numbers
+   */
   @Input() screenReaderPageText = 'Page';
   /**
-  * Screen reader text for current page
-  */
+   * Screen reader text for current page
+   */
   @Input() screenReaderCurrentPageText = 'You`re on page';
   /**
-  * Screen reader text for the pagination component
-  */
+   * Screen reader text for the pagination component
+   */
   @Input() screenReaderPaginationLabel = 'Pagination';
   /**
-  * Adds custom class to the pagination element
-  */
+   * Adds custom class to the pagination element
+   */
   @Input() className: string;
   /**
    * Hides the pagination component if the items are less than `itemsPerPage`
@@ -111,16 +111,16 @@ export class AngularPaginatorComponent implements OnInit {
 
   /**
    *
-   * @param _angularPaginatorService service for angular paginator
+   * @param angularPaginatorService service for angular paginator
    */
-  constructor(private _angularPaginatorService: AngularPaginatorService) { }
+  constructor(private angularPaginatorService: AngularPaginatorService) { }
 
   ngOnInit() {
 
     // set default id if not provided
-    this.id = this.id ? this.id : this._angularPaginatorService.id;
+    this.id = this.id ? this.id : this.angularPaginatorService.id;
 
     // set default class if not provided
-    this.className = this.className ? this.className : this._angularPaginatorService.id;
+    this.className = this.className ? this.className : this.angularPaginatorService.id;
   }
 }

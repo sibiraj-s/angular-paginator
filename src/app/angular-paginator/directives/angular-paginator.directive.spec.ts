@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, TestBed } from '@angular/core/testing';
 import { AngularPaginatorDirective } from './angular-paginator.directive';
 import { AngularPaginatorService } from '../services/angular-paginator.service';
 
@@ -16,7 +16,7 @@ describe('AngularPaginatorDirective', () => {
 
   beforeEach(() => {
     service = new AngularPaginatorService();
-    directive = new AngularPaginatorDirective(service, this);
+    directive = new AngularPaginatorDirective(service);
   });
 
   it('should create an instance', () => {

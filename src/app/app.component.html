@@ -17,11 +17,19 @@
     <h2 class="title">angular-paginator</h2>
     <p>A Simple Pagination component using Bootstrap-4 for Angular Applications</p>
     <div class="buttons">
-      <a class="github-button" href="https://github.com/sibiraj-s" aria-label="Follow @sibiraj-s on GitHub">Follow @sibiraj-s</a>
-      <a class="github-button" href="https://github.com/sibiraj-s/angular-paginator/fork" aria-label="Fork sibiraj-s/angular-paginator on GitHub">Fork</a>
-      <a class="github-button" href="https://github.com/sibiraj-s/angular-paginator" aria-label="Star sibiraj-s/angular-paginator on GitHub">Star</a>
-      <a class="github-button" href="https://github.com/sibiraj-s/angular-paginator/issues" data-show-count="true" aria-label="Issue sibiraj-s/angular-paginator on GitHub">Issue</a>
-      <a class="github-button" href="https://github.com/sibiraj-s/angular-paginator/archive/master.zip" aria-label="Download sibiraj-s/angular-paginator on GitHub">Download</a>
+      <a href="https://github.com/sibiraj-s" target="_blank">
+        <img src="https://badgen.net/badge/github/Follow%20@sibiraj-s?icon&label" alt="Follow @sibiraj-s on GitHub" />
+      </a>
+      <a href="https://github.com/sibiraj-s/angular-paginator/fork" target="_blank">
+        <img src="https://badgen.net/badge/git/Fork%20angular-paginator?icon&label"
+          alt="Fork sibiraj-s/angular-paginator on GitHub" />
+      </a>
+      <a href="https://www.npmjs.com/package/angular-paginator" target="_blank">
+        <img src="https://badgen.net/npm/v/angular-paginator" alt="NPM Version" />
+      </a>
+      <a href="https://github.com/sibiraj-s/angular-paginator/blob/master/LICENSE" target="_blank">
+        <img src="https://badgen.net/github/license/sibiraj-s/angular-paginator" alt="License" />
+      </a>
     </div>
   </div>
 </div>
@@ -30,13 +38,16 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 pagination-components">
-        <div *ngFor="let item of jsonArray | angularPaginator: {itemsPerPage: this.itemsPerPage, currentPage: currentPage }; let i = index">
+        <div
+          *ngFor="let item of jsonArray | angularPaginator: {itemsPerPage: this.itemsPerPage, currentPage: currentPage }; let i = index">
           <span class="page-number">{{ (currentPage - 1) * itemsPerPage + i +1 }}.</span> {{ item['name'] }}
         </div>
         <br>
-        <app-angular-paginator className="pagination-sm" forceEllipses="true" (pageChange)="currentPage = $event"></app-angular-paginator>
+        <app-angular-paginator className="pagination-sm" forceEllipses="true" (pageChange)="currentPage = $event">
+        </app-angular-paginator>
         <br>
-        <button class="btn btn-info btn-sm" (click)="currentPage = 3" [disabled]="currentPage === 3">Set CurrentPage to 3</button>
+        <button class="btn btn-info btn-sm" (click)="currentPage = 3" [disabled]="currentPage === 3">Set CurrentPage to
+          3</button>
       </div>
       <div class="col-md-6 pagination-options">
         <p>A Simple and Lightweight Pagination component for Angular Applications</p>
@@ -58,14 +69,19 @@
             <b>rotate: </b>(Default: true) Whether to keep the current page in the middle of the visible ones
           </li>
           <li>
-            <b>boundaryLinkNumbers: </b>(Default: false) Whether to always display the first and last page numbers. If max-size
-            is smaller than the number of pages, then the first and last page numbers are still shown with ellipses in-between
-            as necessary. NOTE: max-size refers to the center of the range. This option may add up to 2 more numbers on each
-            side of the displayed range for the end value and what would be an ellipsis but is replaced by a number because
+            <b>boundaryLinkNumbers: </b>(Default: false) Whether to always display the first and last page numbers. If
+            max-size
+            is smaller than the number of pages, then the first and last page numbers are still shown with ellipses
+            in-between
+            as necessary. NOTE: max-size refers to the center of the range. This option may add up to 2 more numbers on
+            each
+            side of the displayed range for the end value and what would be an ellipsis but is replaced by a number
+            because
             it is sequential
           </li>
           <li>
-            <b>forceEllipses: </b>(Default: false) Also displays ellipses when rotate is true and maxSize is smaller than the
+            <b>forceEllipses: </b>(Default: false) Also displays ellipses when rotate is true and maxSize is smaller
+            than the
             number of pages
           </li>
           <li>
