@@ -11,11 +11,16 @@ All notable changes to this project will be documented in this file.
 > - Documentation
 > - Internal
 
-## Unreleased
+## v3.0.0 (2019-09-02)
+
+#### Breaking Changes
+
+- `app-angular-paginator` is renamed to `angular-paginator` ([093d667](https://github.com/sibiraj-s/angular-paginator/commit/093d667))
 
 #### Dependency Updates
 
-- update husky to 1.1.0 ([efe9291](https://github.com/sibiraj-s/angular-paginator/commit/efe9291))
+- upgrade to angular 8 ([3a89063](https://github.com/sibiraj-s/angular-paginator/commit/3a89063))
+- bump devDependencies ([3a89063](https://github.com/sibiraj-s/angular-paginator/commit/3a89063))
 - remove commitizen, cz-conventional-changelog ([efe9291](https://github.com/sibiraj-s/angular-paginator/commit/efe9291))
 
 #### Internal
