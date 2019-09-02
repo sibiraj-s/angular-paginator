@@ -11,13 +11,13 @@
     <img alt="Build Status" src="https://travis-ci.com/sibiraj-s/angular-paginator.svg?branch=master">
   </a>
   <a href="https://www.npmjs.com/package/angular-paginator">
-    <img alt="npm version" src="https://img.shields.io/npm/v/angular-paginator.svg">
+    <img alt="npm version" src="https://badgen.net/npm/v/angular-paginator">
   </a>
   <a href="https://www.npmjs.com/package/angular-paginator">
-    <img alt="npm downloads" src="https://img.shields.io/npm/dm/angular-paginator.svg">
+    <img alt="npm downloads" src="https://badgen.net/npm/dt/angular-paginator">
   </a>
   <a href="https://github.com/sibiraj-s/angular-paginator/blob/master/LICENSE">
-    <img alt="license" src="https://img.shields.io/npm/l/angular-paginator.svg">
+    <img alt="license" src="https://badgen.net/github/license/sibiraj-s/angular-paginator">
   </a>
 </p>
 
