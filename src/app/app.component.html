@@ -43,8 +43,8 @@
           <span class="page-number">{{ (currentPage - 1) * itemsPerPage + i +1 }}.</span> {{ item['name'] }}
         </div>
         <br>
-        <app-angular-paginator className="pagination-sm" forceEllipses="true" (pageChange)="currentPage = $event">
-        </app-angular-paginator>
+        <angular-paginator className="pagination-sm" forceEllipses="true" (pageChange)="currentPage = $event">
+        </angular-paginator>
         <br>
         <button class="btn btn-info btn-sm" (click)="currentPage = 3" [disabled]="currentPage === 3">Set CurrentPage to
           3</button>

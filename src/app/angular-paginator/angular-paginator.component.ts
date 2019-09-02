@@ -5,7 +5,7 @@ import { AngularPaginatorService } from './services/angular-paginator.service';
  * The component that renders the Pagination component template, It also accepts the inputs for the Pagination component
  */
 @Component({
-  selector: 'app-angular-paginator',
+  selector: 'angular-paginator',
   templateUrl: './angular-paginator.component.html',
   styleUrls: ['./angular-paginator.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -42,7 +42,8 @@ export class AngularPaginatorComponent implements OnInit {
    */
   @Input() forceEllipses = false;
   /**
-   * Use unique id when multiple paginations are being used on the same page. By Default Paginator uses id `ANGULAR_PAGINATOR_DEFAULT`
+   * Use unique id when multiple paginations are being used on the same page.
+   * By Default Paginator uses id `ANGULAR_PAGINATOR_DEFAULT`
    */
   @Input() id: string;
   /**

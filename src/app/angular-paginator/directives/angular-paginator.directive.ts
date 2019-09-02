@@ -8,7 +8,7 @@ import { Subscription } from 'rxjs';
  * pipes and the pagination component
  */
 @Directive({
-  selector: 'appAngularPaginator, [appAngularPaginator]',
+  selector: 'angularPaginator, [angularPaginator]',
   exportAs: 'angularPaginator'
 })
 
@@ -43,7 +43,8 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
    */
   @Input() forceEllipses: boolean;
   /**
-   * Use unique id when multiple paginations are being used on the same page. By Default Paginator uses id `ANGULAR_PAGINATOR_DEFAULT`
+   * Use unique id when multiple paginations are being used on the same page.
+   * By Default Paginator uses id `ANGULAR_PAGINATOR_DEFAULT`
    */
   @Input() id: string;
 
@@ -188,7 +189,8 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
     if (isMaxSized && this.maxSize > 0 && (!this.rotate || this.forceEllipses || this.boundaryLinkNumbers)) {
       if (startPage > 1) {
 
-        if (!this.boundaryLinkNumbers || startPage > 3) { // need ellipsis for all options unless range is too close to beginning
+        // need ellipsis for all options unless range is too close to beginning
+        if (!this.boundaryLinkNumbers || startPage > 3) {
           const previousPageSet = this.makePage(startPage - 1, '...', false);
           pages.unshift(previousPageSet);
         }
@@ -208,7 +210,8 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
 
       if (endPage < totalPages) {
 
-        if (!this.boundaryLinkNumbers || endPage < totalPages - 2) { // need ellipsis for all options unless range is too close to end
+        // need ellipsis for all options unless range is too close to end
+        if (!this.boundaryLinkNumbers || endPage < totalPages - 2) {
           const nextPageSet = this.makePage(endPage + 1, '...', false);
           pages.push(nextPageSet);
         }

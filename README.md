@@ -54,7 +54,7 @@ Then in HTML
     {{(currentPage - 1) * itemsPerPage + i +1}}. {{item}}
 </div>
 
-<app-angular-paginator (pageChange)="currentPage = $event"></app-angular-paginator>
+<angular-paginator (pageChange)="currentPage = $event"></angular-paginator>
 ```
 
 ### Paginator Pipe
@@ -74,30 +74,30 @@ angularPaginator pipe accepts
 Paginator component accepts
 
 ```html
-<app-angular-paginator [boundaryLinks]="false"
-                       [directionLinks]="true"
-                       maxSize="5"
-                       [rotate]="true"
-                       [boundaryLinkNumbers]="false"
-                       [forceEllipses]="false"
-                       size="sm"
-                       id="ANGULAR_PAGINATOR_DEFAULT"
-                       firstText="First"
-                       previousText="Previous"
-                       nextText="Next"
-                       lastText="Last"
-                       screenReaderFirstText="First"
-                       screenReaderPreviousText="Previous"
-                       screenReaderNextText="Next"
-                       screenReaderLastText="Last"
-                       screenReaderPageText="Page"
-                       screenReaderCurrentPageText="You`re on page"
-                       screenReaderPaginationLabel="Pagination"
-                       className="ANGULAR_PAGINATOR_DEFAULT"
-                       [autoHide]="false"
-                       [disabled]="false"
-                       (pageChange)="currentPage = $event">
-</app-angular-paginator>
+<angular-paginator [boundaryLinks]="false"
+                   [directionLinks]="true"
+                   maxSize="5"
+                   [rotate]="true"
+                   [boundaryLinkNumbers]="false"
+                   [forceEllipses]="false"
+                   size="sm"
+                   id="ANGULAR_PAGINATOR_DEFAULT"
+                   firstText="First"
+                   previousText="Previous"
+                   nextText="Next"
+                   lastText="Last"
+                   screenReaderFirstText="First"
+                   screenReaderPreviousText="Previous"
+                   screenReaderNextText="Next"
+                   screenReaderLastText="Last"
+                   screenReaderPageText="Page"
+                   screenReaderCurrentPageText="You`re on page"
+                   screenReaderPaginationLabel="Pagination"
+                   className="ANGULAR_PAGINATOR_DEFAULT"
+                   [autoHide]="false"
+                   [disabled]="false"
+                   (pageChange)="currentPage = $event">
+</angular-paginator>
 ```
 
 * **id:** Use unique id when multiple paginations are being used on the same page
