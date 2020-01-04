@@ -11,22 +11,21 @@
   },
   "scripts": {
     "build": "ng build --prod",
-    "build:package": "sh ./scripts/build.sh",
+    "postbuild": "npm run build:package",
+    "build:package": "ng-packagr -p ng-package.json",
     "docs": "compodoc && npm run publish:docs",
     "e2e": "ng e2e",
     "lint": "ng lint",
     "lint:scripts": "eslint ./scripts",
     "ng": "ng",
-    "postbuild": "npm run build:package",
-    "prebuild": "npm run lint",
     "prepublishOnly": "node ./scripts/pre-publish.js",
     "prerelease": "npm run build",
-    "publish:docs": "node ./scripts/publish-docs.js",
     "release": "sh ./scripts/release.sh",
     "serve:docs": "compodoc --serve --open --output=\"docs/\"",
+    "publish:docs": "node ./scripts/publish-docs.js",
     "start": "ng serve --aot --open --port 5005 --host 0.0.0.0",
-    "test": "ng test",
-    "test:single-run": "npm run lint && ng test --watch false"
+    "test": "ng test --browsers ChromeHeadless --watch false",
+    "test:watch": "ng test"
   },
   "keywords": [
     "angular-paginator",

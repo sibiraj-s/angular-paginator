@@ -22,9 +22,5 @@
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true
-  },
-  "exclude": [
-    ".ng_build",
-    ".ng_pkg_build",
-  ]
+  }
 }
