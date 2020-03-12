@@ -11,6 +11,12 @@ All notable changes to this project will be documented in this file.
 > - Documentation
 > - Internal
 
+## v4.0.0 (2020-03-13)
+
+#### Features
+
+- support angular 9 ([b504b4b](https://github.com/sibiraj-s/angular-paginator/commit/b504b4b))
+
 ## v3.0.0 (2019-09-02)
 
 #### Breaking Changes
