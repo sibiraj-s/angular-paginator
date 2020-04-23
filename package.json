@@ -6,7 +6,7 @@
   "scripts": {
     "build:demo": "ng build demo --prod",
     "build:lib": "ng build angular-paginator --prod",
-    "build": "npm run build:demo && npm run build:lib",
+    "build": "npm run build:lib && npm run build:demo",
     "postbuild": "node ./scripts/postbuild.js",
     "build:docs": "compodoc",
     "e2e": "ng e2e",
@@ -21,7 +21,8 @@
     "serve": "ng serve --open --port 5005 --host 0.0.0.0",
     "test:demo": "ng test demo --browsers ChromeHeadless --watch false",
     "test:lib": "ng test angular-paginator --browsers ChromeHeadless --watch false",
-    "test": "npm run test:demo && npm run test:lib"
+    "test": "npm run test:lib && npm run test:demo",
+    "watch:lib": "ng build angular-paginator --watch"
   },
   "dependencies": {
     "@angular/animations": "~9.1.3",
