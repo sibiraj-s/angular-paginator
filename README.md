@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://github.com/sibiraj-s/angular-paginator">
-   <img src="https://raw.githubusercontent.com/sibiraj-s/angular-paginator/master/src/assets/angular.png" alt="angularPaginator" width="350">
+   <img src="./assets/angular.png" alt="angularPaginator" width="350">
   </a>
 </p>
 <p align="center">Pagination for Angular application using Bootstrap-4 template</p>

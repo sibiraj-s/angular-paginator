@@ -3,11 +3,12 @@
   "name": "Angular Paginator",
   "output": "./docs/",
   "tsconfig": "./tsconfig.docs.json",
-  "customFavicon": "./src/favicon.ico",
+  "customFavicon": "./demo/src/favicon.ico",
   "disableLifeCycleHooks": true,
   "disablePrivate": true,
   "disableProtected": true,
   "disableInternal": true,
   "disableCoverage": true,
-  "hideGenerator": true
+  "hideGenerator": true,
+  "assetsFolder": "assets"
 }
