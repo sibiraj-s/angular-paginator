@@ -5,7 +5,6 @@ on:
     branches: master
 
 env:
-  CI: true
   NODE_VERSION: 12
 
 jobs:
@@ -30,8 +29,6 @@ jobs:
 
       - name: Build
         run: npm run build
-        env:
-          NODE_ENV: production
           
       - name: Test
         run: npm run test

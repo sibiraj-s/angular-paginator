@@ -11,7 +11,7 @@ import { AngularPaginatorService } from './services/angular-paginator.service';
   ],
   providers: [AngularPaginatorService],
   declarations: [AngularPaginatorComponent, AngularPaginatorPipe, AngularPaginatorDirective],
-  exports: [AngularPaginatorComponent, AngularPaginatorPipe, AngularPaginatorDirective]
+  exports: [AngularPaginatorComponent, AngularPaginatorPipe]
 })
 
 export class AngularPaginatorModule { }
