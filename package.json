@@ -13,7 +13,7 @@
     "lint": "ng lint",
     "lint:scripts": "eslint ./scripts",
     "ng": "ng",
-    "prerelease": "npm run build",
+    "prerelease": "npm run build:lib",
     "release": "sh ./scripts/release.sh",
     "serve:docs": "compodoc --serve --watch --open --output=\"docs/\"",
     "publish:docs": "npm run build:docs && node ./scripts/publish-docs.js",
