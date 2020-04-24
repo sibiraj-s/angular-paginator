@@ -14,4 +14,8 @@ export class AppComponent {
   itemsPerPage = 15;
   maxSize = 5;
   jsonArray = jsonArray;
+
+  onBrandClick(e: MouseEvent): void {
+    e.preventDefault();
+  }
 }
