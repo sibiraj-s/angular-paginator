@@ -13,9 +13,13 @@ All notable changes to this project will be documented in this file.
 
 ## v5.0.1 (2020-04-24)
 
+#### Internal
+
 - fix README, LICENSE not published to npm ([b03dcef](https://github.com/sibiraj-s/angular-paginator/commit/b03dcef))
 
 ## v5.0.0 (2020-04-24)
+
+#### Features
 
 - fix compatibility issues with ivy compiler ([b51d33f](https://github.com/sibiraj-s/angular-paginator/commit/b51d33f))
 
