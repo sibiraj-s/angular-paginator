@@ -11,6 +11,10 @@ All notable changes to this project will be documented in this file.
 > - Documentation
 > - Internal
 
+## v5.0.0 (2020-04-24)
+
+- fix compatibility issues with ivy compiler ([b51d33f](https://github.com/sibiraj-s/angular-paginator/commit/b51d33f))
+
 ## v4.0.0 (2020-03-13)
 
 #### Features
