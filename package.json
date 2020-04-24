@@ -7,7 +7,7 @@
     "build:demo": "ng build demo --prod",
     "build:lib": "ng build angular-paginator --prod",
     "build": "npm run build:lib && npm run build:demo",
-    "postbuild": "node ./scripts/postbuild.js",
+    "postbuild:lib": "node ./scripts/postbuild.js",
     "build:docs": "compodoc",
     "e2e": "ng e2e",
     "lint": "ng lint",
