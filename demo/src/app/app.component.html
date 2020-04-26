@@ -6,7 +6,8 @@
   <div class="my-2 my-lg-0">
     <a href="https://github.com/sibiraj-s/angular-paginator" target="_blank">
       <span class="navbar-text">
-        <i class="fa fa-github" aria-hidden="true"></i>
+        <img class="github-logo" height="20" width="20"
+          src="https://cdn.jsdelivr.net/npm/simple-icons@v2/icons/github.svg" />
       </span>
     </a>
   </div>
@@ -43,7 +44,7 @@
           <span class="page-number">{{ (currentPage - 1) * itemsPerPage + i +1 }}.</span> {{ item['name'] }}
         </div>
         <br>
-        <angular-paginator className="pagination-sm" forceEllipses="true" (pageChange)="currentPage = $event">
+        <angular-paginator className="pagination-sm" [forceEllipses]="true" (pageChange)="currentPage = $event">
         </angular-paginator>
         <br>
         <button class="btn btn-info btn-sm" (click)="currentPage = 3" [disabled]="currentPage === 3">Set CurrentPage to

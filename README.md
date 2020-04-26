@@ -76,7 +76,7 @@ Paginator component accepts
 ```html
 <angular-paginator [boundaryLinks]="false"
                    [directionLinks]="true"
-                   maxSize="5"
+                   [maxSize]="5"
                    [rotate]="true"
                    [boundaryLinkNumbers]="false"
                    [forceEllipses]="false"
