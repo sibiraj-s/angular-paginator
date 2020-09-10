@@ -3,6 +3,7 @@
 All notable changes to this project will be documented in this file.
 
 > **Tags**
+>
 > - Features
 > - Bug Fixes
 > - Performance Improvements
@@ -10,6 +11,17 @@ All notable changes to this project will be documented in this file.
 > - Breaking Changes
 > - Documentation
 > - Internal
+
+## v6.0.0 (2020-09-10)
+
+#### Features
+
+- support angular 10 ([9a7cd76](https://github.com/sibiraj-s/angular-paginator/commit/9a7cd76))
+
+#### Internal
+
+- replace inquirer with prompts ([89aeda7](https://github.com/sibiraj-s/angular-paginator/commit/89aeda7))
+- replace airbnb eslint config with pegasus ([be8dec5](https://github.com/sibiraj-s/angular-paginator/commit/be8dec5))
 
 ## v5.0.1 (2020-04-24)
 
@@ -91,7 +103,7 @@ Upgrade to Angular 6.
 
 #### Internal
 
-- remove maintenance badge from README  ([0b3072e](https://github.com/sibiraj-s/angular-paginator/commit/0b3072e))
+- remove maintenance badge from README ([0b3072e](https://github.com/sibiraj-s/angular-paginator/commit/0b3072e))
 
 ## v1.1.5 (2018-03-26)
 
@@ -225,7 +237,7 @@ Upgrade to Angular 6.
 
 #### Performance Improvements
 
-- use `ng-container` to avoid interference in HTML layout  ([6f25cce](https://github.com/sibiraj-s/angular-paginator/commit/6f25cce))
+- use `ng-container` to avoid interference in HTML layout ([6f25cce](https://github.com/sibiraj-s/angular-paginator/commit/6f25cce))
 
 #### Breaking Changes
 
