@@ -116,7 +116,7 @@ export class AngularPaginatorComponent implements OnInit {
    */
   constructor(private angularPaginatorService: AngularPaginatorService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
 
     // set default id if not provided
     this.id = this.id ? this.id : this.angularPaginatorService.id;

@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { AngularPaginatorComponent } from './angular-paginator.component';
 import { AngularPaginatorDirective } from './directives/angular-paginator.directive';
@@ -9,7 +9,7 @@ describe('AngularPaginatorComponent', () => {
   let component: AngularPaginatorComponent;
   let fixture: ComponentFixture<AngularPaginatorComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       providers: [{ provide: AngularPaginatorService, useClass: AngularPaginatorMockService }],
       declarations: [AngularPaginatorComponent, AngularPaginatorDirective]

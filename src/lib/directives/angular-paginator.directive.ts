@@ -279,12 +279,12 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
     return;
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.isValidId();
     this.updatePages();
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     /** destroy the subscription when the directive is destroyed */
     this.subscription.unsubscribe();
   }

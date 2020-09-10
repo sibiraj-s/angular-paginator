@@ -4,9 +4,6 @@
 /dist
 /tmp
 /out-tsc
-/.ng_pkg_build
-/build
-*.tgz
 /docs
 
 # Only exists if Bazel was run

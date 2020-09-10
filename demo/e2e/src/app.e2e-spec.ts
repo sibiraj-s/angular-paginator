@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display app title', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('angular-paginator');
+    expect(page.getTitleText()).toEqual('angular-paginator');
   });
 
   afterEach(async () => {
