@@ -1,10 +1,9 @@
-# Angular Paginator
-
 <p align="center">
   <a href="https://github.com/sibiraj-s/angular-paginator">
    <img src="./assets/angular.png" alt="angularPaginator" width="350">
   </a>
 </p>
+<h1 align="center">Angular Paginator</h1>
 <p align="center">Pagination for Angular application using Bootstrap-4 template</p>
 <p align="center">
   <a href="https://github.com/sibiraj-s/angular-paginator/actions">
@@ -120,13 +119,8 @@ Paginator component accepts
 
 Demo at stackblitz [angular-paginator](https://angular-paginator.stackblitz.io)
 
-### Documentation
-
-Documentation is auto-generated using [compodoc][compodoc], and can be viewed here: [https://sibiraj-s.github.io/angular-paginator/](https://sibiraj-s.github.io/angular-paginator/)
-
 [npm]: https://www.npmjs.com/
 [yarn]: https://yarnpkg.com/lang/en/
 [github]: https://sibiraj-s.github.io/
 [wiki]: https://github.com/sibiraj-s/angular-paginator/wiki/angular-paginator
 [Bootstrap4]: https://github.com/twbs/bootstrap
-[compodoc]: https://compodoc.github.io/website/
