@@ -1,2 +1,4 @@
 name: angular-paginator
 description: Pagination for Angular Applications
+
+theme: jekyll-theme-primer
