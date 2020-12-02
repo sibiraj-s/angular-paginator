@@ -1,9 +1,9 @@
 module.exports = {
   extends: [
     'pegasus',
-    'pegasus/node'
+    'pegasus/node',
   ],
   rules: {
-    'no-console': 'off'
-  }
+    'no-console': 'off',
+  },
 };
