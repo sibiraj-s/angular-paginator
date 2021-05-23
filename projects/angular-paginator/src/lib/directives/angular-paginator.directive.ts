@@ -78,9 +78,10 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
   /**
    * Navigate to prevoius page
    */
-  toPreviousPage(): void {
+  toPreviousPage(event: MouseEvent): void {
+    event.preventDefault()
     if (this.currentPage > this.firstPage) {
-      this.setCurrentPage(this.currentPage - 1);
+      this.setPage(this.currentPage - 1);
     }
     return;
   }
@@ -88,9 +89,10 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
   /**
    * Navigate to next page
    */
-  toNextPage(): void {
+  toNextPage(event: MouseEvent): void {
+    event.preventDefault()
     if (this.currentPage < this.lastPage) {
-      this.setCurrentPage(this.currentPage + 1);
+      this.setPage(this.currentPage + 1);
     }
     return;
   }
@@ -98,16 +100,18 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
   /**
    * Navigate to first page
    */
-  toFirstPage(): void {
-    this.setCurrentPage(this.firstPage);
+  toFirstPage(event: MouseEvent): void {
+    event.preventDefault()
+    this.setPage(this.firstPage);
     return;
   }
 
   /**
    * Navigate to last page
    */
-  toLastPage(): void {
-    this.setCurrentPage(this.lastPage);
+  toLastPage(event: MouseEvent): void {
+    event.preventDefault()
+    this.setPage(this.lastPage);
     return;
   }
 
@@ -116,7 +120,16 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
    *
    * @param page page number to set as currentPage
    */
-  setCurrentPage(page: number): void {
+  setCurrentPage(event: MouseEvent, page: number): void {
+    event.preventDefault()
+    this.setPage(page)
+  }
+
+  /**
+   *
+   * @param page  page number to set
+   */
+  private setPage(page: number): void {
     if (page && this.currentPage !== page) {
       this.currentPage = page;
       this.pageChange.emit(page);
@@ -127,7 +140,7 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
   /**
    * create page object used for template
    *
-   * @param number page number
+   * @param pageNumber page number
    * @param text page number, text to be displayed
    * @param isActive whether the page is active or not, true for currentPage
    */
@@ -241,7 +254,7 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
     const correctedCurrentPage = this.outOfBoundCorrection(instance);
 
     if (correctedCurrentPage !== instance.currentPage || this.currentPage !== instance.currentPage) {
-      this.setCurrentPage(correctedCurrentPage);
+      this.setPage(correctedCurrentPage);
     }
 
     this.pages = this.getPages(instance.currentPage, instance.itemsPerPage, instance.totalItems);
