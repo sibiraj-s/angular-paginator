@@ -17,7 +17,8 @@
     "test:demo": "ng test demo --browsers ChromeHeadless --watch false",
     "test:lib": "ng test angular-paginator --browsers ChromeHeadless --watch false",
     "test": "npm run test:lib && npm run test:demo",
-    "dev": "ng build angular-paginator --watch --configuration development"
+    "dev": "ng build angular-paginator --watch --configuration development",
+    "prepare": "is-ci || husky install"
   },
   "dependencies": {
     "@angular/animations": "~12.0.1",
@@ -52,6 +53,7 @@
     "eslint": "^7.27.0",
     "eslint-config-pegasus": "^2.0.2",
     "husky": "^6.0.0",
+    "is-ci": "^3.0.0",
     "jasmine-core": "~3.7.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
