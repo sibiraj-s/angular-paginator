@@ -1,0 +1,1 @@
+'*.{js,ts,html}': 'eslint --fix'
