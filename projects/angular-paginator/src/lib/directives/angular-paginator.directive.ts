@@ -24,12 +24,12 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
   /**
    * Limit number for pagination size, i.e., the maximum page numbers to be displayed
    */
-  @Input() maxSize: number;
+  @Input() maxSize?: number;
 
   /**
    * Whether to keep current page in the middle of the visible ones
    */
-  @Input() rotate: boolean;
+  @Input() rotate = false;
 
   /**
    * Whether to always display the first and last page numbers.
@@ -38,18 +38,16 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
    * This option may add up to 2 more numbers on each side of the displayed range for the end value and
    * what would be an ellipsis but is replaced by a number because it is sequential
    */
-  @Input() boundaryLinkNumbers: boolean;
+  @Input() boundaryLinkNumbers = false;
 
   /**
    * Also displays ellipses when rotate is true and maxSize is smaller than the number of pages forceEllipses
    */
-  @Input() forceEllipses: boolean;
+  @Input() forceEllipses = false;
 
-  currentPage: number;
-
+  currentPage!: number;
   firstPage = 1;
-
-  lastPage: number;
+  lastPage!: number;
 
   pages: Page[] = [];
 
@@ -137,7 +135,7 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
    * @param text page number, text to be displayed
    * @param isActive whether the page is active or not, true for currentPage
    */
-  private makePage(pageNumber: number, text: string, isActive: boolean): Page {
+  makePage(pageNumber: number, text: string, isActive: boolean): Page {
     return {
       number: pageNumber,
       text,
@@ -160,10 +158,10 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
 
     let startPage = 1;
     let endPage: number = totalPages;
-    const isMaxSized: boolean = this.maxSize && this.maxSize < totalPages;
+    const isMaxSized: boolean = this.maxSize ? this.maxSize < totalPages : false;
 
     // recompute if maxSize
-    if (isMaxSized) {
+    if (isMaxSized && this.maxSize) {
       if (this.rotate) {
         // current page is displayed in the middle of the visible ones
         startPage = Math.max(currentPage - Math.floor(this.maxSize / 2), 1);
@@ -190,7 +188,7 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
     }
 
     // add links to move between page sets
-    if (isMaxSized && this.maxSize > 0 && (!this.rotate || this.forceEllipses || this.boundaryLinkNumbers)) {
+    if (isMaxSized && (this.maxSize && this.maxSize > 0) && (!this.rotate || this.forceEllipses || this.boundaryLinkNumbers)) {
       if (startPage > 1) {
         // need ellipsis for all options unless range is too close to beginning
         if (!this.boundaryLinkNumbers || startPage > 3) {

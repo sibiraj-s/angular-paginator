@@ -23,7 +23,7 @@ export class AngularPaginatorPipe implements PipeTransform {
    * @param array input array for which the manipulation happens
    * @param args input arguments for the paginator pipe
    */
-  transform(array: unknown[], args?: PaginatorPipeArgs): unknown[] {
+  transform<T>(array: Array<T>, args?: PaginatorPipeArgs): Array<T> {
     const instance: AngularPaginatorInstance = this.createInstance(array, args);
 
     // create pagination information
@@ -42,11 +42,11 @@ export class AngularPaginatorPipe implements PipeTransform {
    * @param array input array for which the manipulation happens
    * @param args input arguments for the paginator pipe
    */
-  createInstance(array: unknown[], args: PaginatorPipeArgs): AngularPaginatorInstance {
+  createInstance(array: unknown[], args?: PaginatorPipeArgs): AngularPaginatorInstance {
     return {
-      id: args.id ? args.id : AngularPaginatorService.id,
-      currentPage: args.currentPage ? args.currentPage : 1,
-      itemsPerPage: args.itemsPerPage ? args.itemsPerPage : 10,
+      id: args?.id ? args.id : AngularPaginatorService.id,
+      currentPage: args?.currentPage ? args.currentPage : 1,
+      itemsPerPage: args?.itemsPerPage ? args.itemsPerPage : 10,
       totalItems: array.length,
     };
   }

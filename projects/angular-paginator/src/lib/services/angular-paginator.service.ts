@@ -38,8 +38,11 @@ export class AngularPaginatorService {
    */
   updateInstance(instance: AngularPaginatorInstance): boolean {
     for (const key in instance) {
-      if (instance[key] !== this.instances[instance.id][key]) {
-        this.instances[instance.id][key] = instance[key];
+      const v1 = instance[key as keyof AngularPaginatorInstance]
+      const v2 = this.instances[instance.id][key as keyof AngularPaginatorInstance]
+
+      if (v1 !== v2) {
+        Object.assign(this.instances[instance.id], instance)
         return true;
       }
     }
