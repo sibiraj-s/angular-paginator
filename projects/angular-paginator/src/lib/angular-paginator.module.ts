@@ -9,7 +9,7 @@ import { AngularPaginatorService } from './services/angular-paginator.service';
   imports: [CommonModule],
   providers: [AngularPaginatorService],
   declarations: [AngularPaginatorPipe, AngularPaginatorDirective],
-  exports: [AngularPaginatorDirective, AngularPaginatorPipe]
+  exports: [AngularPaginatorDirective, AngularPaginatorPipe],
 })
 
 export class AngularPaginatorModule { }

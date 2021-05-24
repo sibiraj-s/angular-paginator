@@ -10,15 +10,15 @@ import { AngularPaginatorModule } from 'angular-paginator';
 @NgModule({
   declarations: [
     AppComponent,
-    PaginationComponent
+    PaginationComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AngularPaginatorModule
+    AngularPaginatorModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 
 export class AppModule { }

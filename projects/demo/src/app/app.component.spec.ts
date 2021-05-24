@@ -9,10 +9,10 @@ describe('AppComponent', () => {
     await TestBed.configureTestingModule({
       imports: [
         FormsModule,
-        AngularPaginatorModule
+        AngularPaginatorModule,
       ],
       declarations: [
-        AppComponent
+        AppComponent,
       ],
     }).compileComponents();
   });

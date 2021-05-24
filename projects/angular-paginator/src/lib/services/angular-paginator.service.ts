@@ -19,7 +19,6 @@ export class AngularPaginatorService {
    * @param instance each instance refers to a unique pagination component
    */
   registerInstance(instance: AngularPaginatorInstance): void {
-
     if (!this.instances[instance.id]) {
       this.instances[instance.id] = instance;
       this.change.emit(instance.id);
@@ -29,8 +28,6 @@ export class AngularPaginatorService {
         this.change.emit(instance.id);
       }
     }
-
-    return;
   }
 
   /**

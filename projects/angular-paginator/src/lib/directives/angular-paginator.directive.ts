@@ -1,4 +1,6 @@
-import { Directive, OnInit, OnDestroy, Input, Output, EventEmitter } from '@angular/core';
+import {
+  Directive, OnInit, OnDestroy, Input, Output, EventEmitter,
+} from '@angular/core';
 import { AngularPaginatorService } from '../services/angular-paginator.service';
 import { AngularPaginatorInstance, Page } from '../others/angular-paginator.interface';
 import { Subscription } from 'rxjs';
@@ -9,7 +11,7 @@ import { Subscription } from 'rxjs';
  */
 @Directive({
   selector: 'angularPaginator, [angularPaginator]',
-  exportAs: 'angularPaginator'
+  exportAs: 'angularPaginator',
 })
 
 export class AngularPaginatorDirective implements OnInit, OnDestroy {
@@ -23,10 +25,12 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
    * Limit number for pagination size, i.e., the maximum page numbers to be displayed
    */
   @Input() maxSize: number;
+
   /**
    * Whether to keep current page in the middle of the visible ones
    */
   @Input() rotate: boolean;
+
   /**
    * Whether to always display the first and last page numbers.
    * If max-size is smaller than the number of pages, then the first and last page numbers are still shown with ellipses
@@ -35,14 +39,18 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
    * what would be an ellipsis but is replaced by a number because it is sequential
    */
   @Input() boundaryLinkNumbers: boolean;
+
   /**
    * Also displays ellipses when rotate is true and maxSize is smaller than the number of pages forceEllipses
    */
   @Input() forceEllipses: boolean;
 
   currentPage: number;
+
   firstPage = 1;
+
   lastPage: number;
+
   pages: Page[] = [];
 
   private subscription: Subscription;
@@ -57,7 +65,6 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
    * @param angularPaginatorService serivce for angular paginator
    */
   constructor(private angularPaginatorService: AngularPaginatorService) {
-
     // subscribe to changes
     this.subscription = this.angularPaginatorService.change.subscribe((id: string) => {
       if (id === this.id) {
@@ -70,40 +77,36 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
    * Navigate to prevoius page
    */
   toPreviousPage(event: MouseEvent): void {
-    event.preventDefault()
+    event.preventDefault();
     if (this.currentPage > this.firstPage) {
       this.setPage(this.currentPage - 1);
     }
-    return;
   }
 
   /**
    * Navigate to next page
    */
   toNextPage(event: MouseEvent): void {
-    event.preventDefault()
+    event.preventDefault();
     if (this.currentPage < this.lastPage) {
       this.setPage(this.currentPage + 1);
     }
-    return;
   }
 
   /**
    * Navigate to first page
    */
   toFirstPage(event: MouseEvent): void {
-    event.preventDefault()
+    event.preventDefault();
     this.setPage(this.firstPage);
-    return;
   }
 
   /**
    * Navigate to last page
    */
   toLastPage(event: MouseEvent): void {
-    event.preventDefault()
+    event.preventDefault();
     this.setPage(this.lastPage);
-    return;
   }
 
   /**
@@ -112,8 +115,8 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
    * @param page page number to set as currentPage
    */
   setCurrentPage(event: MouseEvent, page: number): void {
-    event.preventDefault()
-    this.setPage(page)
+    event.preventDefault();
+    this.setPage(page);
   }
 
   /**
@@ -125,7 +128,6 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
       this.currentPage = page;
       this.pageChange.emit(page);
     }
-    return;
   }
 
   /**
@@ -135,11 +137,11 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
    * @param text page number, text to be displayed
    * @param isActive whether the page is active or not, true for currentPage
    */
-  makePage(pageNumber: number, text: string, isActive: boolean): Page {
+  private makePage(pageNumber: number, text: string, isActive: boolean): Page {
     return {
       number: pageNumber,
       text,
-      active: isActive
+      active: isActive,
     };
   }
 
@@ -162,9 +164,7 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
 
     // recompute if maxSize
     if (isMaxSized) {
-
       if (this.rotate) {
-
         // current page is displayed in the middle of the visible ones
         startPage = Math.max(currentPage - Math.floor(this.maxSize / 2), 1);
         endPage = startPage + this.maxSize - 1;
@@ -192,7 +192,6 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
     // add links to move between page sets
     if (isMaxSized && this.maxSize > 0 && (!this.rotate || this.forceEllipses || this.boundaryLinkNumbers)) {
       if (startPage > 1) {
-
         // need ellipsis for all options unless range is too close to beginning
         if (!this.boundaryLinkNumbers || startPage > 3) {
           const previousPageSet = this.makePage(startPage - 1, '...', false);
@@ -200,7 +199,6 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
         }
 
         if (this.boundaryLinkNumbers) {
-
           if (startPage === 3) { // need to replace ellipsis when the buttons would be sequential
             const secondPageLink = this.makePage(2, '2', false);
             pages.unshift(secondPageLink);
@@ -213,7 +211,6 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
       }
 
       if (endPage < totalPages) {
-
         // need ellipsis for all options unless range is too close to end
         if (!this.boundaryLinkNumbers || endPage < totalPages - 2) {
           const nextPageSet = this.makePage(endPage + 1, '...', false);
@@ -221,8 +218,8 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
         }
 
         if (this.boundaryLinkNumbers) {
-
-          if (endPage === totalPages - 2) { // need to replace ellipsis when the buttons would be sequential
+          // need to replace ellipsis when the buttons would be sequential
+          if (endPage === totalPages - 2) {
             const secondToLastPageLink = this.makePage(totalPages - 1, (totalPages - 1).toString(), false);
             pages.push(secondToLastPageLink);
           }
@@ -249,8 +246,6 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
     }
 
     this.pages = this.getPages(instance.currentPage, instance.itemsPerPage, instance.totalItems);
-
-    return;
   }
 
   /**
@@ -259,10 +254,9 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
    * @param instance instance for which the range is to be corrected
    */
   outOfBoundCorrection(instance: AngularPaginatorInstance): number {
-
     const totalPages = Math.ceil(instance.totalItems / instance.itemsPerPage);
 
-    if (totalPages < instance.currentPage && 0 < totalPages) {
+    if (totalPages < instance.currentPage && totalPages > 0) {
       return totalPages;
     } else if (instance.currentPage < 1) {
       return 1;
@@ -275,12 +269,9 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
    * check if there is any instance registered with the id
    */
   isValidId(): void {
-
     if (!this.angularPaginatorService.getInstance(this.id)) {
-      throw new Error('There is no instance registered with id `' + this.id + '`');
+      throw new Error(`There is no instance registered with id \`${this.id}\``);
     }
-
-    return;
   }
 
   ngOnInit(): void {

@@ -9,7 +9,7 @@ describe('AngularPaginatorDirective', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       providers: [AngularPaginatorService],
-      declarations: [AngularPaginatorDirective]
+      declarations: [AngularPaginatorDirective],
     })
       .compileComponents();
   });

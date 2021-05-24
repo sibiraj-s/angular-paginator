@@ -7,7 +7,7 @@ import { AngularPaginatorInstance, PaginatorPipeArgs } from '../others/angular-p
  * Pagination Pipe which paginates the array for the provided arguments such as `itemsPerPage` and `currentPage`
  */
 @Pipe({
-  name: 'angularPaginator'
+  name: 'angularPaginator',
 })
 
 export class AngularPaginatorPipe implements PipeTransform {
@@ -47,7 +47,7 @@ export class AngularPaginatorPipe implements PipeTransform {
       id: args.id ? args.id : AngularPaginatorService.id,
       currentPage: args.currentPage ? args.currentPage : 1,
       itemsPerPage: args.itemsPerPage ? args.itemsPerPage : 10,
-      totalItems: array.length
+      totalItems: array.length,
     };
   }
 }

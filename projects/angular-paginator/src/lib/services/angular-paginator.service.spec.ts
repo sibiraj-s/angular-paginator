@@ -5,7 +5,7 @@ import { AngularPaginatorService } from './angular-paginator.service';
 describe('AngularPaginatorService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [AngularPaginatorService]
+      providers: [AngularPaginatorService],
     });
   });
 
