@@ -24,8 +24,8 @@ describe('AngularPaginatorDirective', () => {
   });
 
   it('should return a page object', () => {
-    const pageObject = directive.makePage(1, 1, true);
-    expect(pageObject).toEqual({ number: 1, text: 1, active: true });
+    const pageObject = directive.makePage(1, '1', true);
+    expect(pageObject).toEqual({ number: 1, text: '1', active: true });
   });
 
   it('should return an array of page objects', () => {
