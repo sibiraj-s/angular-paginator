@@ -1,10 +1,11 @@
 import { EventEmitter } from '@angular/core';
 
-export class AngularPaginatorMockService {
+import { AngularPaginatorInstance } from '../others/angular-paginator.interface';
 
+export class AngularPaginatorMockService {
   id = 'ANGULAR_PAGINATOR_DEFAULT';
 
-  instances: any = {
+  instances: Record<string, AngularPaginatorInstance> = {
     [this.id]: {
       id: this.id,
       itemsPerPage: 10,
@@ -16,7 +17,7 @@ export class AngularPaginatorMockService {
   change: EventEmitter<string> = new EventEmitter<string>();
 
   // return instance with given id
-  getInstance(id: string): any {
+  getInstance(id: string): AngularPaginatorInstance {
     return this.instances[id];
   }
 
@@ -24,5 +25,4 @@ export class AngularPaginatorMockService {
   getCurrentPage(id: string): number {
     return this.instances[id].currentPage;
   }
-
 }

@@ -3,5 +3,5 @@
  */
 
 export * from './lib/angular-paginator.module';
-export * from './lib/angular-paginator.component';
 export * from './lib/pipes/angular-paginator.pipe';
+export * from './lib/directives/angular-paginator.directive';

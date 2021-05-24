@@ -13,15 +13,12 @@ import { Subscription } from 'rxjs';
 })
 
 export class AngularPaginatorDirective implements OnInit, OnDestroy {
+  /**
+   * Use unique id when multiple paginations are being used on the same page.
+   * By Default Paginator uses id `ANGULAR_PAGINATOR_DEFAULT`
+   */
+  @Input() id: string = AngularPaginatorService.id;
 
-  /**
-   * Whether to display First / Last buttons
-   */
-  @Input() boundaryLinks: boolean;
-  /**
-   * Whether to display Previous / Next buttons
-   */
-  @Input() directionLinks: boolean;
   /**
    * Limit number for pagination size, i.e., the maximum page numbers to be displayed
    */
@@ -42,11 +39,6 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
    * Also displays ellipses when rotate is true and maxSize is smaller than the number of pages forceEllipses
    */
   @Input() forceEllipses: boolean;
-  /**
-   * Use unique id when multiple paginations are being used on the same page.
-   * By Default Paginator uses id `ANGULAR_PAGINATOR_DEFAULT`
-   */
-  @Input() id: string;
 
   currentPage: number;
   firstPage = 1;
@@ -72,7 +64,6 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
         this.updatePages();
       }
     });
-
   }
 
   /**
@@ -144,7 +135,7 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
    * @param text page number, text to be displayed
    * @param isActive whether the page is active or not, true for currentPage
    */
-  makePage(pageNumber: number, text: any, isActive: boolean): any {
+  makePage(pageNumber: number, text: string, isActive: boolean): Page {
     return {
       number: pageNumber,
       text,
@@ -159,8 +150,8 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
    * @param itemsPerPage total items per page
    * @param totalItems no of items for pagination, usually array length
    */
-  getPages(currentPage: number, itemsPerPage: number, totalItems: number): any {
-    const pages: any = [];
+  getPages(currentPage: number, itemsPerPage: number, totalItems: number): Page[] {
+    const pages: Page[] = [];
 
     // Default page limits
     const totalPages: number = this.lastPage = Math.ceil(totalItems / itemsPerPage);
@@ -194,7 +185,7 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
 
     // add page number links
     for (let pageNumber = startPage; pageNumber <= endPage; pageNumber++) {
-      const page = this.makePage(pageNumber, pageNumber, pageNumber === currentPage);
+      const page = this.makePage(pageNumber, pageNumber.toString(), pageNumber === currentPage);
       pages.push(page);
     }
 
@@ -232,12 +223,12 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
         if (this.boundaryLinkNumbers) {
 
           if (endPage === totalPages - 2) { // need to replace ellipsis when the buttons would be sequential
-            const secondToLastPageLink = this.makePage(totalPages - 1, totalPages - 1, false);
+            const secondToLastPageLink = this.makePage(totalPages - 1, (totalPages - 1).toString(), false);
             pages.push(secondToLastPageLink);
           }
 
           // add the last page
-          const lastPageLink = this.makePage(totalPages, totalPages, false);
+          const lastPageLink = this.makePage(totalPages, totalPages.toString(), false);
           pages.push(lastPageLink);
         }
       }
@@ -301,5 +292,4 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
     /** destroy the subscription when the directive is destroyed */
     this.subscription.unsubscribe();
   }
-
 }

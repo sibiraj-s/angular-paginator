@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-info sticky-top">
   <div class="container-fluid">
-    <a class="navbar-brand" (click)='onBrandClick($event)'>Angular Paginator</a>
+    <a class="navbar-brand">Angular Paginator</a>
 
     <div class="navbar-nav mr-auto mt-2 mt-lg-0">
     </div>
@@ -18,7 +18,7 @@
   <img src="./assets/angular.svg" alt="angular-paginator" width="250">
   <div class="text-center">
     <h2 class="title">angular-paginator</h2>
-    <p>A Simple Pagination component using Bootstrap-5 for Angular Applications</p>
+    <p>A Simple Pagination for Angular Applications</p>
     <div class="buttons">
       <a href="https://github.com/sibiraj-s" target="_blank">
         <img src="https://badgen.net/badge/github/Follow%20@sibiraj-s?icon&label" alt="Follow @sibiraj-s on GitHub" />
@@ -42,13 +42,11 @@
     <div class="row">
       <div class="col-md-6 pagination-components">
         <div
-          *ngFor="let item of jsonArray | angularPaginator: {itemsPerPage: this.itemsPerPage, currentPage: currentPage }; let i = index">
+          *ngFor="let item of jsonArray | angularPaginator: { itemsPerPage: this.itemsPerPage, currentPage: currentPage }; let i = index">
           <span class="page-number">{{ (currentPage - 1) * itemsPerPage + i +1 }}.</span> {{ item['name'] }}
         </div>
         <br>
-        <angular-paginator className="pagination-sm" [forceEllipses]="true" (pageChange)="currentPage = $event">
-        </angular-paginator>
-        <br>
+        <app-pagination (pageChange)="currentPage = $event"></app-pagination>
         <button class="btn btn-info btn-sm" (click)="currentPage = 3" [disabled]="currentPage === 3">Set CurrentPage to
           3</button>
       </div>
@@ -58,12 +56,6 @@
         <ul>
           <li>
             <b>id: </b> Use unique id when multiple paginations are being used on the same page
-          </li>
-          <li>
-            <b>boundaryLinks: </b>(Default: true) Whether to display First / Last buttons
-          </li>
-          <li>
-            <b>directionLinks: </b>(Default: false) Whether to display Previous / Next buttons
           </li>
           <li>
             <b>maxSize: </b>(Default: 5) Limit number for pagination size
@@ -86,27 +78,6 @@
             <b>forceEllipses: </b>(Default: false) Also displays ellipses when rotate is true and maxSize is smaller
             than the
             number of pages
-          </li>
-          <li>
-            <b>className: </b>(Default: 'ANGULAR_PAGINATOR_DEFAULT') Adds custom class to the pagination element
-          </li>
-          <li>
-            <b>firstText: </b>(Default: 'First') Text for First button. Can have HTML
-          </li>
-          <li>
-            <b>previousText: </b>(Default: 'Previous') Text for Previous button. Can have HTML
-          </li>
-          <li>
-            <b>nextText: </b>(Default: 'Next') Text for Next button. Can have HTML
-          </li>
-          <li>
-            <b>lastText: </b>(Default: 'Last') Text for Last button. Can have HTML
-          </li>
-          <li>
-            <b>autoHide: </b>(Default: false) Hides the pagination component if items length is less than itemsPerPage
-          </li>
-          <li>
-            <b>disabled: </b>(Default: false) Disables pagination component
           </li>
         </ul>
       </div>

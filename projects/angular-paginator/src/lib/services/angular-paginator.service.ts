@@ -1,18 +1,17 @@
 import { Injectable, EventEmitter } from '@angular/core';
+
 import { AngularPaginatorInstance } from '../others/angular-paginator.interface';
 
 @Injectable()
 export class AngularPaginatorService {
   /** id is used to identify pagination instances */
-  id = 'ANGULAR_PAGINATOR_DEFAULT';
+  static id = 'ANGULAR_PAGINATOR_DEFAULT';
 
   /** instances is the collection of pagination componetns */
-  instances: any = {};
+  instances: Record<string, AngularPaginatorInstance> = {};
 
   /** emits an event with instance id whenever the page number changes */
   change: EventEmitter<string> = new EventEmitter<string>();
-
-  constructor() { }
 
   /**
    * creates an instance for every pipe differentiated with id
@@ -41,7 +40,6 @@ export class AngularPaginatorService {
    * @param instance an unique pagination component
    */
   updateInstance(instance: AngularPaginatorInstance): boolean {
-
     for (const key in instance) {
       if (instance[key] !== this.instances[instance.id][key]) {
         this.instances[instance.id][key] = instance[key];
@@ -57,7 +55,7 @@ export class AngularPaginatorService {
    *
    * @param id unique id of the pagination component
    */
-  getInstance(id: string): any {
+  getInstance(id: string): AngularPaginatorInstance {
     return this.instances[id];
   }
 
