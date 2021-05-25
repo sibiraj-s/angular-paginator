@@ -3,6 +3,7 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 
 import { AngularPaginatorModule } from 'angular-paginator';
+import { PaginationComponent } from './pagination/pagination.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -13,6 +14,7 @@ describe('AppComponent', () => {
       ],
       declarations: [
         AppComponent,
+        PaginationComponent
       ],
     }).compileComponents();
   });

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { jsonArray } from '../data';
 
 @Component({
   selector: 'app-pagination',
@@ -7,5 +8,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 
 export class PaginationComponent {
-  @Output() pageChange: EventEmitter<number> = new EventEmitter<number>();
+  currentPage = 1;
+  itemsPerPage = 15;
+  jsonArray = jsonArray;
 }

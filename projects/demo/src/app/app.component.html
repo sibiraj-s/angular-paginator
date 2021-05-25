@@ -41,14 +41,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 pagination-components">
-        <div
-          *ngFor="let item of jsonArray | angularPaginator: { itemsPerPage: this.itemsPerPage, currentPage: currentPage }; let i = index">
-          <span class="page-number">{{ (currentPage - 1) * itemsPerPage + i +1 }}.</span> {{ item['name'] }}
-        </div>
-        <br>
-        <app-pagination (pageChange)="currentPage = $event"></app-pagination>
-        <button class="btn btn-info btn-sm" (click)="currentPage = 3" [disabled]="currentPage === 3">Set CurrentPage to
-          3</button>
+        <app-pagination></app-pagination>
       </div>
       <div class="col-md-6 pagination-options">
         <p>A Simple and Lightweight Pagination component for Angular Applications</p>
