@@ -12,6 +12,18 @@ All notable changes to this project will be documented in this file.
 > - Documentation
 > - Internal
 
+## v7.0.0 (2021-05-26)
+
+#### Features
+
+- support angular 12 ([877c3bb](https://github.com/sibiraj-s/angular-paginator/commit/877c3bb))
+- bootstrap is no longer a dependency ([3fbce5a](https://github.com/sibiraj-s/angular-paginator/commit/3fbce5a))
+
+#### Breaking Changes
+
+- requires angular 12 or greater ([877c3bb](https://github.com/sibiraj-s/angular-paginator/commit/877c3bb))
+- pagination template is not provided by default ([3fbce5a](https://github.com/sibiraj-s/angular-paginator/commit/3fbce5a))
+
 ## v6.0.0 (2020-09-10)
 
 #### Features
