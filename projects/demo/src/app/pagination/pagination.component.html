@@ -1,17 +1,17 @@
 <div
-*ngFor="let item of jsonArray | angularPaginator: { itemsPerPage: this.itemsPerPage, currentPage: currentPage }; let i = index">
-<span class="page-number">{{ (currentPage - 1) * itemsPerPage + i +1 }}.</span> {{ item['name'] }}
+  *ngFor="let item of jsonArray | angularPaginator: { itemsPerPage: this.itemsPerPage, currentPage: currentPage }; let i = index">
+  <span class="page-number">{{ (currentPage - 1) * itemsPerPage + i +1 }}.</span> {{ item.name }}
 </div>
 <br>
-<nav angularPaginator [forceEllipses]="true" aria-label="Pagination Component"
-  #paginator="angularPaginator" (pageChange)="currentPage = $event" >
+<nav angularPaginator [forceEllipses]="true" [rotate]="true" [maxSize]="5" aria-label="Pagination Component"
+  #paginator="angularPaginator" (pageChange)="currentPage = $event">
 
   <ng-container *ngIf="paginator.pages['length'] !== 0">
     <ul class="pagination pagination-sm">
 
       <!-- direction link -->
       <li class="page-item" [ngClass]="{'disabled': (paginator.currentPage === paginator.firstPage)}">
-        <a class="page-link" (click)="paginator.toPreviousPage($event)">
+        <a class="page-link" (click)="paginator.toPreviousPage()">
           <span aria-hidden="true">Previous</span>
           <span class="visually-hidden">Previous</span>
         </a>
@@ -19,7 +19,7 @@
 
       <!-- pagination array -->
       <li class="page-item" *ngFor="let page of paginator.pages" [ngClass]="{'active': page['active']}">
-        <a class="page-link" (click)="!page['active'] && paginator.setCurrentPage($event, page['number'])">
+        <a class="page-link" (click)="!page['active'] && paginator.setCurrentPage(page['number'])">
           {{ page['text'] }}
           <span class="visually-hidden" *ngIf="!page['active']">Page{{ page['text'] }}</span>
           <span class="visually-hidden" *ngIf="page['active']">You are on page {{ page['text'] }}</span>
@@ -28,7 +28,7 @@
 
       <!-- direction link -->
       <li class="page-item" [ngClass]="{'disabled': (paginator.currentPage === paginator.lastPage)}">
-        <a class="page-link" (click)="paginator.toNextPage($event)">
+        <a class="page-link" (click)="paginator.toNextPage()">
           <span aria-hidden="true">Next</span>
           <span class="visually-hidden">Next</span>
         </a>
@@ -38,5 +38,6 @@
   </ng-container>
 </nav>
 
-<button class="btn btn-primary btn-sm" (click)="currentPage = 3" [disabled]="currentPage === 3">Set CurrentPage to
-  3</button>
+<button class="btn btn-primary btn-sm" (click)="currentPage = 3" [disabled]="currentPage === 3">
+  Set CurrentPage to 3
+</button>

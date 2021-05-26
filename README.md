@@ -67,18 +67,17 @@ angularPaginator pipe accepts
 }
 ```
 
-### Paginator Component
-
-Paginator component accepts
+### Paginator Directive
 
 ```html
 <angular-paginator
+  id="ANGULAR_PAGINATOR_DEFAULT"
   [maxSize]="5"
   [rotate]="true"
   [boundaryLinkNumbers]="false"
   [forceEllipses]="false"
-  id="ANGULAR_PAGINATOR_DEFAULT"
   (pageChange)="currentPage = $event"
+  #paginator="angularPaginator"
 >
 </angular-paginator>
 ```
@@ -88,6 +87,27 @@ Paginator component accepts
 - **rotate:** Whether to keep the current page in the middle of the visible ones
 - **boundaryLinkNumbers:** Whether to always display the first and last page numbers. If max-size is smaller than the number of pages, then the first and last page numbers are still shown with ellipses in-between as necessary. NOTE: max-size refers to the center of the range. This option may add up to 2 more numbers on each side of the displayed range for the end value and what would be an ellipsis but is replaced by a number because it is sequential
 - **forceEllipses:** Also displays ellipses when rotate is true and maxSize is smaller than the number of pages
+
+You can get access to the pagination instance(directive's api) using `#paginator="angularPaginator"`. The following are the methods/properties available via the API
+
+- **pages** - Array of page objects.
+
+```ts
+interface Page {
+  number: number;
+  text: string;
+  active: boolean;
+}
+```
+
+- **toPreviousPage()** - Sets the current page to previous (`currentPage - 1`)
+- **toNextPage()** - Sets the current page to next (`currentPage + 1`)
+- **toFirstPage()** - Sets the first page as current
+- **toLastPage()** - Sets the last page as current
+- **setCurrentPage(val)** - Sets the given page as current page.
+- **currentPage** - Returns the current page number
+- **firstPage** - Returns the first page number
+- **lastPage** - Returns the last page number
 
 ### Demo
 

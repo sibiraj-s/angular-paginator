@@ -48,7 +48,6 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
   currentPage!: number;
   firstPage = 1;
   lastPage!: number;
-
   pages: Page[] = [];
 
   private subscription: Subscription;
@@ -74,8 +73,7 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
   /**
    * Navigate to prevoius page
    */
-  toPreviousPage(event: MouseEvent): void {
-    event.preventDefault();
+  toPreviousPage(): void {
     if (this.currentPage > this.firstPage) {
       this.setPage(this.currentPage - 1);
     }
@@ -84,8 +82,7 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
   /**
    * Navigate to next page
    */
-  toNextPage(event: MouseEvent): void {
-    event.preventDefault();
+  toNextPage(): void {
     if (this.currentPage < this.lastPage) {
       this.setPage(this.currentPage + 1);
     }
@@ -94,16 +91,14 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
   /**
    * Navigate to first page
    */
-  toFirstPage(event: MouseEvent): void {
-    event.preventDefault();
+  toFirstPage(): void {
     this.setPage(this.firstPage);
   }
 
   /**
    * Navigate to last page
    */
-  toLastPage(event: MouseEvent): void {
-    event.preventDefault();
+  toLastPage(): void {
     this.setPage(this.lastPage);
   }
 
@@ -112,8 +107,7 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
    *
    * @param page page number to set as currentPage
    */
-  setCurrentPage(event: MouseEvent, page: number): void {
-    event.preventDefault();
+  setCurrentPage(page: number): void {
     this.setPage(page);
   }
 
@@ -135,7 +129,7 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
    * @param text page number, text to be displayed
    * @param isActive whether the page is active or not, true for currentPage
    */
-  makePage(pageNumber: number, text: string, isActive: boolean): Page {
+  private makePage(pageNumber: number, text: string, isActive: boolean): Page {
     return {
       number: pageNumber,
       text,
@@ -150,7 +144,7 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
    * @param itemsPerPage total items per page
    * @param totalItems no of items for pagination, usually array length
    */
-  getPages(currentPage: number, itemsPerPage: number, totalItems: number): Page[] {
+  private getPages(currentPage: number, itemsPerPage: number, totalItems: number): Page[] {
     const pages: Page[] = [];
 
     // Default page limits
@@ -234,7 +228,7 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
   /**
    * Updates the pagination component
    */
-  updatePages(): void {
+  private updatePages(): void {
     const instance: AngularPaginatorInstance = this.angularPaginatorService.getInstance(this.id);
 
     const correctedCurrentPage = this.outOfBoundCorrection(instance);
@@ -251,7 +245,7 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
    *
    * @param instance instance for which the range is to be corrected
    */
-  outOfBoundCorrection(instance: AngularPaginatorInstance): number {
+  private outOfBoundCorrection(instance: AngularPaginatorInstance): number {
     const totalPages = Math.ceil(instance.totalItems / instance.itemsPerPage);
 
     if (totalPages < instance.currentPage && totalPages > 0) {
