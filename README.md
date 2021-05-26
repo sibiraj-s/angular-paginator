@@ -22,6 +22,8 @@
 
 ## Getting Started
 
+[edit at stackblitz](https://stackblitz.com/edit/angular-paginator) | [demo on stackblitz](https://angular-paginator.stackblitz.io)
+
 ### Installation
 
 Install via Package managers such as [npm][npm] or [yarn][yarn]
@@ -108,10 +110,6 @@ interface Page {
 - **currentPage** - Returns the current page number
 - **firstPage** - Returns the first page number
 - **lastPage** - Returns the last page number
-
-### Demo
-
-Demo at stackblitz [angular-paginator](https://angular-paginator.stackblitz.io)
 
 [npm]: https://www.npmjs.com/
 [yarn]: https://yarnpkg.com/lang/en/
