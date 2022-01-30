@@ -11,8 +11,6 @@
     "lint": "ng lint",
     "eslint": "eslint ./scripts",
     "ng": "ng",
-    "prerelease": "npm run build:lib",
-    "release": "sh ./scripts/release.sh",
     "demo": "ng serve --open --port 5005",
     "test:demo": "ng test demo --browsers ChromeHeadless --watch false",
     "test:lib": "npm run test",
