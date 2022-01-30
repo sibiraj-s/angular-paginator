@@ -1,7 +1,6 @@
-const fs = require('fs');
-const path = require('path');
-
-const chalk = require('chalk');
+const fs = require('node:fs');
+const path = require('node:path');
+const colors = require('picocolors');
 
 const copyFile = async (srcFilePath, destFilePath) => {
   const fileName = path.basename(srcFilePath);
@@ -9,9 +8,9 @@ const copyFile = async (srcFilePath, destFilePath) => {
     const srcPath = path.resolve(process.cwd(), srcFilePath);
     const destPath = path.resolve(process.cwd(), 'dist/angular-paginator', destFilePath);
     await fs.promises.copyFile(srcPath, destPath);
-    console.log(chalk.green(`- File Copied: ${fileName}`));
+    console.log(colors.green(`- File Copied: ${fileName}`));
   } catch (err) {
-    console.log(chalk.red(`Error while copying ${fileName}`), err);
+    console.log(colors.red(`Error while copying ${fileName}`), err);
   }
 };
 
