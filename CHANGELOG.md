@@ -12,6 +12,22 @@ All notable changes to this project will be documented in this file.
 > - Documentation
 > - Internal
 
+## v8.0.0 (2022-01-30)
+
+#### Features
+
+- support angular 13 ([9932092](https://github.com/sibiraj-s/angular-paginator/commit/9932092))
+
+#### Breaking Changes
+
+- requires angular 13 or greater ([9932092](https://github.com/sibiraj-s/angular-paginator/commit/9932092))
+
+#### Internal
+
+- replace chalk with picocolors ([fc70e79](https://github.com/sibiraj-s/angular-paginator/commit/fc70e79))
+- update LICENSE ([de11f61](https://github.com/sibiraj-s/angular-paginator/commit/de11f61))
+- cache npm dependencies with @actions/setup-node ([6f6f2d1](https://github.com/sibiraj-s/angular-paginator/commit/6f6f2d1))
+
 ## v7.0.0 (2021-05-26)
 
 #### Features
