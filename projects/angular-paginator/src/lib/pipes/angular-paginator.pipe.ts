@@ -42,7 +42,7 @@ export class AngularPaginatorPipe implements PipeTransform {
    * @param array input array for which the manipulation happens
    * @param args input arguments for the paginator pipe
    */
-  createInstance(array: unknown[], args?: PaginatorPipeArgs): AngularPaginatorInstance {
+  private createInstance(array: unknown[], args?: PaginatorPipeArgs): AngularPaginatorInstance {
     return {
       id: args?.id ? args.id : AngularPaginatorService.id,
       currentPage: args?.currentPage ? args.currentPage : 1,

@@ -11,6 +11,7 @@ export interface AngularPaginatorInstance {
 
   /** current page number */
   currentPage: number;
+
   /** total items to be shown per page */
   itemsPerPage: number;
 }
@@ -31,13 +32,12 @@ export interface Page {
 }
 
 export interface PaginatorPipeArgs {
-
   /** id of the pagination instance */
   id?: string;
 
-  /** current page number */
-  currentPage: number;
+  /** current page number, defaults to 1 */
+  currentPage?: number;
 
-  /** total items to be shown per page */
-  itemsPerPage: number;
+  /** total items to be shown per page, defaults to 10 */
+  itemsPerPage?: number;
 }
