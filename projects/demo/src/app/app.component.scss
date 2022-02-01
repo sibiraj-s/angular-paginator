@@ -1,64 +1,19 @@
-.navbar-text {
-  color: white;
-  margin-left: 0.4rem;
-
+.navbar {
   .github-logo {
     filter: invert(1);
   }
 }
 
-.entry-container {
-  padding: 5.5rem 0;
-
-  .buttons {
-    a {
-      margin-right: 0.3rem;
-    }
-  }
-
-  .buttons,
-  .title {
-    margin-bottom: 1rem;
-  }
-
-  .version {
-    font-size: 90%;
+.buttons {
+  a + a {
+    margin-left: 0.3rem;
   }
 }
 
 .paginator {
-  font-size: 95%;
-
   .btn {
     &:focus {
       box-shadow: none;
-    }
-  }
-
-  mark {
-    background-color: #f1f1f1;
-  }
-
-  .pagination-components {
-    margin-bottom: 2rem;
-
-    p {
-      margin-bottom: 0.5rem;
-    }
-
-    .page-number {
-      display: inline-block;
-      width: 20px;
-      text-align: right;
-      margin-right: 3px;
-    }
-  }
-
-  .pagination-options {
-    ul {
-      li {
-        margin-bottom: 0.5rem;
-      }
     }
   }
 }
