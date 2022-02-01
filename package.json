@@ -5,6 +5,7 @@
   },
   "scripts": {
     "build:demo": "ng build demo",
+    "build:pages": "ng build demo --base-href=/angular-paginator/",
     "build:lib": "ng build angular-paginator",
     "build": "ng build",
     "postbuild": "node ./scripts/postbuild.js",
