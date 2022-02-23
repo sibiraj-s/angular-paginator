@@ -138,21 +138,20 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
   }
 
   /**
-   *  create page array
+   *  computes the page limit
    *
    * @param currentPage current page number
    * @param itemsPerPage total items per page
    * @param totalItems no of items for pagination, usually array length
    */
-  private getPages(currentPage: number, itemsPerPage: number, totalItems: number): Page[] {
-    const pages: Page[] = [];
+  private computePageLimits(currentPage: number, totalItems: number, itemsPerPage: number) {
+    const totalPages = Math.ceil(totalItems / itemsPerPage);
 
     // Default page limits
-    const totalPages: number = this.lastPage = Math.ceil(totalItems / itemsPerPage);
-
     let startPage = 1;
-    let endPage: number = totalPages;
-    const isMaxSized: boolean = this.maxSize ? this.maxSize < totalPages : false;
+    let endPage = totalPages;
+
+    const isMaxSized = this.maxSize ? this.maxSize < totalPages : false;
 
     // recompute if maxSize
     if (isMaxSized && this.maxSize) {
@@ -168,21 +167,48 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
         }
       } else {
         // Visible pages are paginated with maxSize
-        startPage = (Math.ceil(currentPage / this.maxSize) - 1) * this.maxSize + 1;
+        startPage = ((Math.ceil(currentPage / this.maxSize) - 1) * this.maxSize) + 1;
 
         // adjust last page if limit is exceeded
         endPage = Math.min(startPage + this.maxSize - 1, totalPages);
       }
     }
 
+    return {
+      startPage,
+      endPage,
+      totalPages,
+      isMaxSized,
+    };
+  }
+
+  /**
+   *  create page array
+   *
+   * @param currentPage current page number
+   * @param itemsPerPage total items per page
+   * @param totalItems no of items for pagination, usually array length
+   */
+  private getPages(currentPage: number, itemsPerPage: number, totalItems: number): Page[] {
+    const pages: Page[] = [];
+
+    const pageLimits = this.computePageLimits(currentPage, totalItems, itemsPerPage);
+    const { startPage, endPage, totalPages, isMaxSized } = pageLimits;
+
+    this.lastPage = totalPages;
+
     // add page number links
-    for (let pageNumber = startPage; pageNumber <= endPage; pageNumber++) {
+    for (let pageNumber = startPage; pageNumber <= endPage; pageNumber += 1) {
       const page = this.makePage(pageNumber, pageNumber.toString(), pageNumber === currentPage);
       pages.push(page);
     }
 
     // add links to move between page sets
-    if (isMaxSized && (this.maxSize && this.maxSize > 0) && (!this.rotate || this.forceEllipses || this.boundaryLinkNumbers)) {
+    if (
+      isMaxSized
+      && (this.maxSize && this.maxSize > 0)
+      && (!this.rotate || this.forceEllipses || this.boundaryLinkNumbers)
+    ) {
       if (startPage > 1) {
         // need ellipsis for all options unless range is too close to beginning
         if (!this.boundaryLinkNumbers || startPage > 3) {

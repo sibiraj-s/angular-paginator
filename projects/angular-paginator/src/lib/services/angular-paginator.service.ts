@@ -36,18 +36,27 @@ export class AngularPaginatorService {
    *
    * @param instance an unique pagination component
    */
-  updateInstance(instance: AngularPaginatorInstance): boolean {
-    for (const key in instance) {
-      const v1 = instance[key as keyof AngularPaginatorInstance]
-      const v2 = this.instances[instance.id][key as keyof AngularPaginatorInstance]
+  private updateInstance(instance: AngularPaginatorInstance): boolean {
+    let updated = false;
+    const currentInstance = this.instances[instance.id];
 
-      if (v1 !== v2) {
-        Object.assign(this.instances[instance.id], instance)
-        return true;
+    for (const [k, v] of Object.entries(instance)) {
+      const key = k as keyof AngularPaginatorInstance;
+
+      if (
+        key !== 'id'
+        && currentInstance[k as keyof AngularPaginatorInstance] !== v
+        && !updated
+      ) {
+        this.instances[instance.id] = {
+          ...instance,
+          id: instance.id,
+        };
+        updated = true;
       }
     }
 
-    return false;
+    return updated;
   }
 
   /**

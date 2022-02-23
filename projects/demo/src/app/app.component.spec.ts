@@ -14,7 +14,7 @@ describe('AppComponent', () => {
       ],
       declarations: [
         AppComponent,
-        PaginationComponent
+        PaginationComponent,
       ],
     }).compileComponents();
   });
