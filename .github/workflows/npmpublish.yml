@@ -22,7 +22,7 @@ jobs:
           cache: npm
 
       - run: npm ci
-      - run: npm run build
+      - run: npm run build:lib
         env:
           NODE_ENV: production
 
