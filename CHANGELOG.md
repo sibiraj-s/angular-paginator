@@ -12,6 +12,12 @@ All notable changes to this project will be documented in this file.
 > - Documentation
 > - Internal
 
+## v8.0.0 (2022-08-14)
+
+#### Features
+
+- support angular 14 ([531acf7](https://github.com/sibiraj-s/angular-paginator/commit/531acf7))
+
 ## v8.0.0 (2022-01-30)
 
 #### Features
