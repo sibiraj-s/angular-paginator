@@ -12,7 +12,13 @@ All notable changes to this project will be documented in this file.
 > - Documentation
 > - Internal
 
-## v8.0.0 (2022-08-14)
+## v9.0.1 (2022-08-20)
+
+#### Bug Fixes
+
+- fix ci build step to publish LICENSE to npm ([d515265](https://github.com/sibiraj-s/angular-paginator/commit/d515265))
+
+## v9.0.0 (2022-08-14)
 
 #### Features
 
