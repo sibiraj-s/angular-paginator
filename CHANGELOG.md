@@ -12,6 +12,12 @@ All notable changes to this project will be documented in this file.
 > - Documentation
 > - Internal
 
+## v10.0.0 (2022-12-23)
+
+#### Features
+
+- support angular v15 ([cf9fea3](https://github.com/sibiraj-s/angular-paginator/commit/cf9fea3))
+
 ## v9.0.1 (2022-08-20)
 
 #### Bug Fixes
