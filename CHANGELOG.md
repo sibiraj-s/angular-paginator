@@ -12,6 +12,17 @@ All notable changes to this project will be documented in this file.
 > - Documentation
 > - Internal
 
+## v11.0.0 (2023-07-04)
+
+#### Breaking Changes
+
+- requires angular v16 or greater ([11b3309](https://github.com/sibiraj-s/angular-paginator/commit/11b3309))
+
+#### Internal
+
+- add npm package provenance ([38f9e58](https://github.com/sibiraj-s/angular-paginator/commit/38f9e58))
+- update actions/deploy-pages to v2 ([823a9b7](https://github.com/sibiraj-s/angular-paginator/commit/823a9b7))
+
 ## v10.0.1 (2022-12-23)
 
 #### Bug Fixes
