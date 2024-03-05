@@ -9,11 +9,7 @@
         "*.ts"
       ],
       "parserOptions": {
-        "project": [
-          "projects/angular-paginator/tsconfig.lib.json",
-          "projects/angular-paginator/tsconfig.spec.json"
-        ],
-        "createDefaultProgram": true
+        "project": ["projects/angular-paginator/tsconfig.(app|lib|spec).json"]
       },
       "rules": {
         "@angular-eslint/directive-selector": [
