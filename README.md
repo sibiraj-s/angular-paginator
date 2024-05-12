@@ -100,6 +100,8 @@ The `angularPaginator` pipe accepts
 > [!NOTE]
 > maxSize refers to the center of the range. This option may add up to 2 more numbers on each side of the displayed range for the end value and what would be an ellipsis but is replaced by a number because it is sequential
 
+#### API
+
 You can get access to the pagination instance(directive's api) using `#paginator="angularPaginator"`. The following are the methods/properties available via the API
 
 - **pages** - Array of page objects.
