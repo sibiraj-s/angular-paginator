@@ -8,6 +8,7 @@ import { AngularPaginatorInstance, PaginatorPipeArgs } from '../others/angular-p
  */
 @Pipe({
   name: 'angularPaginator',
+  standalone: true,
 })
 
 export class AngularPaginatorPipe implements PipeTransform {

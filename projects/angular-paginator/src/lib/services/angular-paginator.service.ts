@@ -2,7 +2,9 @@ import { Injectable, EventEmitter } from '@angular/core';
 
 import { AngularPaginatorInstance } from '../others/angular-paginator.interface';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class AngularPaginatorService {
   /** id is used to identify pagination instances */
   static id = 'ANGULAR_PAGINATOR_DEFAULT';

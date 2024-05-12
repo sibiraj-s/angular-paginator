@@ -12,6 +12,7 @@ import { Subscription } from 'rxjs';
 @Directive({
   selector: 'angularPaginator, [angularPaginator]',
   exportAs: 'angularPaginator',
+  standalone: true,
 })
 
 export class AngularPaginatorDirective implements OnInit, OnDestroy {
