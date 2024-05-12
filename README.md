@@ -22,11 +22,11 @@
 
 ## Getting Started
 
-[edit at stackblitz](https://stackblitz.com/edit/angular-paginator) | [demo on stackblitz](https://angular-paginator.stackblitz.io)
+[edit in stackblitz](https://stackblitz.com/edit/angular-paginator)
 
 ### Installation
 
-Install via Package managers such as [npm][npm] or [yarn][yarn]
+Install via package managers such as [npm][npm] or [yarn][yarn]
 
 ```bash
 npm install angular-paginator --save
@@ -36,9 +36,9 @@ yarn add angular-paginator
 
 ### Usage
 
-Import `angular-paginator` module
+Import the `angular-paginator` module
 
-```typescript
+```ts
 import { AngularPaginatorModule } from 'angular-paginator';
 
 @NgModule({
@@ -47,7 +47,7 @@ import { AngularPaginatorModule } from 'angular-paginator';
 export class AppModule {}
 ```
 
-Then in HTML
+and in the template
 
 ```html
 <div *ngFor="let item of array | angularPaginator: { currentPage: currentPage }; let i = index">
@@ -59,7 +59,7 @@ Then in HTML
 
 ### Paginator Pipe
 
-angularPaginator pipe accepts
+The `angularPaginator` pipe accepts
 
 ```bash
 {
@@ -68,6 +68,13 @@ angularPaginator pipe accepts
   currentPage: currentPage
 }
 ```
+
+- **id:** The default id is `ANGULAR_PAGINATOR_DEFAULT` when not specified. This is optional. Provide a unique id when multiple pagination instances are being used.
+- **itemsPerPage:** Number of items per page
+- **currentPage:** Current page number
+
+> [!IMPORTANT]
+> When using an id, ensure to provide the same id in both the pipe and directive of the same instance.
 
 ### Paginator Directive
 
@@ -84,11 +91,14 @@ angularPaginator pipe accepts
 </angular-paginator>
 ```
 
-- **id:** Use unique id when multiple paginations are being used on the same page
+- **id:** The default id is `ANGULAR_PAGINATOR_DEFAULT` when not specified. This is optional. This must be provided if the id is specified in the pipe and should be the same as the pipe id
 - **maxSize:** Limit number for pagination size
 - **rotate:** Whether to keep the current page in the middle of the visible ones
-- **boundaryLinkNumbers:** Whether to always display the first and last page numbers. If max-size is smaller than the number of pages, then the first and last page numbers are still shown with ellipses in-between as necessary. NOTE: max-size refers to the center of the range. This option may add up to 2 more numbers on each side of the displayed range for the end value and what would be an ellipsis but is replaced by a number because it is sequential
+- **boundaryLinkNumbers:** Whether to always display the first and last page numbers. If maxSize is smaller than the number of pages, then the first and last page numbers are still shown with ellipses in-between as necessary.
 - **forceEllipses:** Also displays ellipses when rotate is true and maxSize is smaller than the number of pages
+
+> [!NOTE]
+> maxSize refers to the center of the range. This option may add up to 2 more numbers on each side of the displayed range for the end value and what would be an ellipsis but is replaced by a number because it is sequential
 
 You can get access to the pagination instance(directive's api) using `#paginator="angularPaginator"`. The following are the methods/properties available via the API
 
