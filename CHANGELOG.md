@@ -12,6 +12,20 @@ All notable changes to this project will be documented in this file.
 > - Documentation
 > - Internal
 
+## v12.0.0 (2024-05-12)
+
+#### Features
+
+- export standalone directive and pipe ([40acfe7](https://github.com/sibiraj-s/angular-paginator/commit/40acfe7))
+
+#### Documentation
+
+- improve README ([5131385](https://github.com/sibiraj-s/angular-paginator/commit/5131385), [30c0b67](https://github.com/sibiraj-s/angular-paginator/commit/30c0b67))
+
+#### Breaking Changes
+
+- requires angular v17 or greater ([3f3603c](https://github.com/sibiraj-s/angular-paginator/commit/3f3603c))
+
 ## v11.0.0 (2023-07-04)
 
 #### Breaking Changes
