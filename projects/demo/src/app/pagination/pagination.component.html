@@ -1,6 +1,6 @@
 <div
   *ngFor="
-    let item of jsonArray | angularPaginator: { itemsPerPage: this.itemsPerPage, currentPage: currentPage };
+    let item of jsonArray | angularPaginator: { id: this.id, itemsPerPage: this.itemsPerPage, currentPage: currentPage };
     let i = index
   "
 >
@@ -14,6 +14,7 @@
   [maxSize]="5"
   aria-label="Pagination Component"
   #paginator="angularPaginator"
+  id={{this.id}}
   (pageChange)="currentPage = $event"
 >
   <ng-container *ngIf="paginator.pages['length'] !== 0">
