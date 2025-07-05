@@ -8,11 +8,11 @@ import { CommonModule } from '@angular/common';
   selector: 'app-pagination',
   standalone: true,
   imports: [CommonModule, AngularPaginatorModule],
-  templateUrl: './pagination.component.html',
-  styleUrls: ['./pagination.component.scss'],
+  templateUrl: './pagination.html',
+  styleUrls: ['./pagination.scss'],
 })
 
-export class PaginationComponent {
+export class Pagination {
   @Input() id = 'DEFAULT_PAGINATION';
   currentPage = 1;
   itemsPerPage = 15;

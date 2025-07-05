@@ -1,4 +1,4 @@
-type JSONArray = {
+interface JSONArray {
   name: string;
   id: string;
 };

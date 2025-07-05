@@ -1,6 +1,4 @@
-import {
-  Directive, OnInit, OnDestroy, Input, Output, EventEmitter,
-} from '@angular/core';
+import { Directive, OnInit, OnDestroy, Input, Output, EventEmitter, inject } from '@angular/core';
 import { AngularPaginatorService } from '../services/angular-paginator.service';
 import { AngularPaginatorInstance, Page } from '../others/angular-paginator.interface';
 import { Subscription } from 'rxjs';
@@ -16,6 +14,8 @@ import { Subscription } from 'rxjs';
 })
 
 export class AngularPaginatorDirective implements OnInit, OnDestroy {
+  private angularPaginatorService = inject(AngularPaginatorService);
+
   /**
    * Use unique id when multiple paginations are being used on the same page.
    * By Default Paginator uses id `ANGULAR_PAGINATOR_DEFAULT`
@@ -62,7 +62,7 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
    *
    * @param angularPaginatorService serivce for angular paginator
    */
-  constructor(private angularPaginatorService: AngularPaginatorService) {
+  constructor() {
     // subscribe to changes
     this.subscription = this.angularPaginatorService.change.subscribe((id: string) => {
       if (id === this.id) {

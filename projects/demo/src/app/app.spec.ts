@@ -1,19 +1,19 @@
 import { TestBed } from '@angular/core/testing';
-import { AppComponent } from './app.component';
+import { App } from './app';
 
-import { PaginationComponent } from './pagination/pagination.component';
+import { Pagination } from './pagination/pagination';
 
-describe('AppComponent', () => {
+describe('App', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        PaginationComponent,
+        Pagination,
       ],
     }).compileComponents();
   });
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
+    const fixture = TestBed.createComponent(App);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   });
