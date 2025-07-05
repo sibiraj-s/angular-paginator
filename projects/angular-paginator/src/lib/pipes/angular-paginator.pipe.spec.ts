@@ -1,3 +1,5 @@
+import { TestBed } from '@angular/core/testing';
+import { runInInjectionContext, Injector } from '@angular/core';
 import { AngularPaginatorPipe } from './angular-paginator.pipe';
 import { AngularPaginatorService } from '../services/angular-paginator.service';
 
@@ -18,15 +20,25 @@ const data = [
 ];
 
 describe('AngularPaginatorPipe', () => {
-  const service: AngularPaginatorService = new AngularPaginatorService();
+  let pipe: AngularPaginatorPipe;
+  let service: AngularPaginatorService;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      providers: [AngularPaginatorService]
+    });
+
+    service = TestBed.inject(AngularPaginatorService);
+
+    // Create pipe within injection context so inject() works
+    pipe = runInInjectionContext(TestBed.inject(Injector), () => new AngularPaginatorPipe());
+  });
 
   it('create an instance', () => {
-    const pipe = new AngularPaginatorPipe(service);
     expect(pipe).toBeTruthy();
   });
 
   it('should transform given input correctly with default values', () => {
-    const pipe = new AngularPaginatorPipe(service);
     const output = pipe.transform(data);
 
     expect(output).toEqual(data.slice(0, 10));
@@ -34,7 +46,6 @@ describe('AngularPaginatorPipe', () => {
   });
 
   it('should register instance in service correctly', () => {
-    const pipe = new AngularPaginatorPipe(service);
     const output = pipe.transform(data, { id: '123' });
 
     const instance = service.getInstance('123');
@@ -44,7 +55,6 @@ describe('AngularPaginatorPipe', () => {
   });
 
   it('should apply itemsPerPage correctly', () => {
-    const pipe = new AngularPaginatorPipe(service);
     const output = pipe.transform(data, { itemsPerPage: 5 });
 
     expect(output).toEqual(data.slice(0, 5));
@@ -52,7 +62,6 @@ describe('AngularPaginatorPipe', () => {
   });
 
   it('should apply currentPage correctly', () => {
-    const pipe = new AngularPaginatorPipe(service);
     const output = pipe.transform(data, { itemsPerPage: 5, currentPage: 2 });
 
     expect(output).toEqual(data.slice(5, 10));

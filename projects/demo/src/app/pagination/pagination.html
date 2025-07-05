@@ -1,10 +1,10 @@
 <div
   *ngFor="
-    let item of jsonArray | angularPaginator: { id: this.id, itemsPerPage: this.itemsPerPage, currentPage: currentPage };
+    let item of jsonArray | angularPaginator: { id: this.id, itemsPerPage: this.itemsPerPage(), currentPage: currentPage() };
     let i = index
   "
 >
-  <span class="page-number">{{ (currentPage - 1) * itemsPerPage + i + 1 }}.</span> {{ item.name }}
+  <span class="page-number">{{ (currentPage() - 1) * itemsPerPage() + i + 1 }}.</span> {{ item.name }}
 </div>
 <br />
 <nav
@@ -15,7 +15,7 @@
   aria-label="Pagination Component"
   #paginator="angularPaginator"
   id={{this.id}}
-  (pageChange)="currentPage = $event"
+  (pageChange)="currentPage.set($event)"
 >
   <ng-container *ngIf="paginator.pages['length'] !== 0">
     <ul class="pagination pagination-sm">
@@ -47,6 +47,6 @@
   </ng-container>
 </nav>
 
-<button class="btn btn-primary btn-sm" (click)="currentPage = 3" [disabled]="currentPage === 3" (keyup)="onKeyUp()">
+<button class="btn btn-primary btn-sm" (click)="currentPage.set(3)" [disabled]="currentPage() === 3" (keyup)="onKeyUp()">
   Set CurrentPage to 3
 </button>

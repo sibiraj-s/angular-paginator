@@ -1,20 +1,22 @@
 import { TestBed } from '@angular/core/testing';
+import { runInInjectionContext, Injector } from '@angular/core';
 import { AngularPaginatorDirective } from './angular-paginator.directive';
 import { AngularPaginatorService } from '../services/angular-paginator.service';
 
 describe('AngularPaginatorDirective', () => {
-  let service: AngularPaginatorService;
   let directive: AngularPaginatorDirective;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
+    TestBed.configureTestingModule({
       imports: [AngularPaginatorDirective],
-    }).compileComponents();
+      providers: [AngularPaginatorService]
+    })
+
+    await TestBed.compileComponents();
   });
 
   beforeEach(() => {
-    service = new AngularPaginatorService();
-    directive = new AngularPaginatorDirective(service);
+    directive = runInInjectionContext(TestBed.inject(Injector), () => new AngularPaginatorDirective());
   });
 
   it('should create an instance', () => {

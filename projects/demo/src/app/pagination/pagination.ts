@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, signal } from '@angular/core';
 
 import { AngularPaginatorModule } from 'angular-paginator';
 import { jsonArray } from '../data';
@@ -14,8 +14,8 @@ import { CommonModule } from '@angular/common';
 
 export class Pagination {
   @Input() id = 'DEFAULT_PAGINATION';
-  currentPage = 1;
-  itemsPerPage = 15;
+  currentPage = signal(1);
+  itemsPerPage = signal(15);
   jsonArray = jsonArray;
 
   onKeyUp():void {
