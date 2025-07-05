@@ -12,6 +12,12 @@ All notable changes to this project will be documented in this file.
 > - Documentation
 > - Internal
 
+## v13.0.0 (2025-07-06)
+
+#### Breaking Changes
+
+- update to angular 20 ([19399de](https://github.com/sibiraj-s/angular-paginator/commit/19399de))
+
 ## v12.0.0 (2024-05-12)
 
 #### Features
