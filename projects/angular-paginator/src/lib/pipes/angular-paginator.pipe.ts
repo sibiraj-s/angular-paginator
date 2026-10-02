@@ -19,17 +19,22 @@ export class AngularPaginatorPipe implements PipeTransform {
    * @param array input array for which the manipulation happens
    * @param args input arguments for the paginator pipe
    */
-  transform<T>(array: T[], args?: PaginatorPipeArgs): T[] {
-    const instance: AngularPaginatorInstance = this.createInstance(array, args);
+  transform<T>(array: T[] | null | undefined, args?: PaginatorPipeArgs): T[] {
+    const items = array ?? [];
+    const instance: AngularPaginatorInstance = this.createInstance(items, args);
 
     // create pagination information
     this.angularPaginatorService.registerInstance(instance);
 
-    // set the slicing range
-    const start = (instance.currentPage - 1) * instance.itemsPerPage;
-    const end = instance.currentPage * instance.itemsPerPage;
+    // slice a valid page, the paginator directive emits the corrected page number
+    const totalPages = Math.max(Math.ceil(instance.totalItems / instance.itemsPerPage), 1);
+    const page = Math.min(Math.max(instance.currentPage, 1), totalPages);
 
-    return array.slice(start, end);
+    // set the slicing range
+    const start = (page - 1) * instance.itemsPerPage;
+    const end = page * instance.itemsPerPage;
+
+    return items.slice(start, end);
   }
 
   /**

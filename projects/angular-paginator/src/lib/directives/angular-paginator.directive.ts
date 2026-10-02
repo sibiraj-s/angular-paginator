@@ -1,4 +1,4 @@
-import { Directive, OnInit, OnDestroy, Input, Output, EventEmitter, inject } from '@angular/core';
+import { Directive, OnInit, OnDestroy, Input, Output, EventEmitter, afterNextRender, inject, signal } from '@angular/core';
 import { AngularPaginatorService } from '../services/angular-paginator.service';
 import { AngularPaginatorInstance, Page } from '../others/angular-paginator.interface';
 import { Subscription } from 'rxjs';
@@ -45,10 +45,30 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
    */
   @Input() forceEllipses = false;
 
-  currentPage!: number;
   firstPage = 1;
-  lastPage!: number;
-  pages: Page[] = [];
+
+  /**
+   * State is kept in signals so that templates reading it are refreshed when the pipe registers
+   * or updates its instance later in the same change detection pass, including OnPush views
+   */
+  private readonly currentPageState = signal<number | undefined>(undefined);
+  private readonly lastPageState = signal(0);
+  private readonly pagesState = signal<Page[]>([]);
+
+  /** last instance for which an out of range page correction was emitted */
+  private correctedInstance?: AngularPaginatorInstance;
+
+  get currentPage(): number {
+    return this.currentPageState() ?? this.firstPage;
+  }
+
+  get lastPage(): number {
+    return this.lastPageState();
+  }
+
+  get pages(): Page[] {
+    return this.pagesState();
+  }
 
   private subscription: Subscription;
 
@@ -68,6 +88,9 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
         this.updatePages();
       }
     });
+
+    // validate once rendering is complete, the pipe may be rendered after the paginator
+    afterNextRender(() => this.isValidId());
   }
 
   /**
@@ -117,7 +140,7 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
    */
   private setPage(page: number): void {
     if (page && this.currentPage !== page) {
-      this.currentPage = page;
+      this.currentPageState.set(page);
       this.pageChange.emit(page);
     }
   }
@@ -195,7 +218,7 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
     const pageLimits = this.computePageLimits(currentPage, totalItems, itemsPerPage);
     const { startPage, endPage, totalPages, isMaxSized } = pageLimits;
 
-    this.lastPage = totalPages;
+    this.lastPageState.set(totalPages);
 
     // add page number links
     for (let pageNumber = startPage; pageNumber <= endPage; pageNumber += 1) {
@@ -260,12 +283,24 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
     const instance: AngularPaginatorInstance = this.angularPaginatorService.getInstance(this.id);
 
     const correctedCurrentPage = this.outOfBoundCorrection(instance);
+    const previousPage = this.currentPageState();
 
-    if (correctedCurrentPage !== instance.currentPage || this.currentPage !== instance.currentPage) {
-      this.setPage(correctedCurrentPage);
+    this.currentPageState.set(correctedCurrentPage);
+    this.pagesState.set(this.getPages(correctedCurrentPage, instance.itemsPerPage, instance.totalItems));
+
+    // emit when the page had to be corrected or was changed by the pipe,
+    // but not when syncing with the pipe for the first time.
+    // instances are replaced on update, so each instance is corrected only once
+    const isCorrected = correctedCurrentPage !== instance.currentPage && instance !== this.correctedInstance;
+    const isChanged = previousPage !== undefined && previousPage !== correctedCurrentPage;
+
+    if (isCorrected) {
+      this.correctedInstance = instance;
     }
 
-    this.pages = this.getPages(instance.currentPage, instance.itemsPerPage, instance.totalItems);
+    if (isCorrected || isChanged) {
+      this.pageChange.emit(correctedCurrentPage);
+    }
   }
 
   /**
@@ -295,9 +330,13 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.isValidId();
-    this.updatePages();
+    // the pipe may not have registered yet when the paginator is placed before it in the template,
+    // in which case the pages are updated once it registers
+    if (this.angularPaginatorService.getInstance(this.id)) {
+      this.updatePages();
+    }
   }
+
 
   ngOnDestroy(): void {
     /** destroy the subscription when the directive is destroyed */

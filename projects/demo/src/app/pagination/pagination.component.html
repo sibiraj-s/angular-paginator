@@ -1,6 +1,6 @@
 @for (
   item of jsonArray | angularPaginator: { id: this.id, itemsPerPage: this.itemsPerPage(), currentPage: currentPage() };
-  track item;
+  track $index;
   let i = $index
 ) {
   <div>
@@ -28,7 +28,7 @@
         </button>
       </li>
       <!-- pagination array -->
-      @for (page of paginator.pages; track page) {
+      @for (page of paginator.pages; track $index) {
         <li class="page-item" [ngClass]="{ active: page['active'] }">
           <button
             class="page-link"
