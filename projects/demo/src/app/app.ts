@@ -8,7 +8,6 @@ import { Pagination } from './pagination/pagination';
   templateUrl: './app.html',
   styleUrls: ['./app.scss'],
 })
-
 export class App {
   title = 'Angular Paginator';
 }

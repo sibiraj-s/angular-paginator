@@ -1,11 +1,12 @@
-<div
-  *ngFor="
-    let item of jsonArray | angularPaginator: { id: this.id, itemsPerPage: this.itemsPerPage(), currentPage: currentPage() };
-    let i = index
-  "
->
-  <span class="page-number">{{ (currentPage() - 1) * itemsPerPage() + i + 1 }}.</span> {{ item.name }}
-</div>
+@for (
+  item of jsonArray | angularPaginator: { id: this.id, itemsPerPage: this.itemsPerPage(), currentPage: currentPage() };
+  track item;
+  let i = $index
+) {
+  <div>
+    <span class="page-number">{{ (currentPage() - 1) * itemsPerPage() + i + 1 }}.</span> {{ item.name }}
+  </div>
+}
 <br />
 <nav
   angularPaginator
@@ -14,10 +15,10 @@
   [maxSize]="5"
   aria-label="Pagination Component"
   #paginator="angularPaginator"
-  id={{this.id}}
+  id="{{ this.id }}"
   (pageChange)="currentPage.set($event)"
 >
-  <ng-container *ngIf="paginator.pages['length'] !== 0">
+  @if (paginator.pages['length'] !== 0) {
     <ul class="pagination pagination-sm">
       <!-- direction link -->
       <li class="page-item" [ngClass]="{ disabled: paginator.currentPage === paginator.firstPage }">
@@ -26,16 +27,24 @@
           <span class="visually-hidden">Previous</span>
         </button>
       </li>
-
       <!-- pagination array -->
-      <li class="page-item" *ngFor="let page of paginator.pages" [ngClass]="{ active: page['active'] }">
-        <button class="page-link" (click)="!page['active'] && paginator.setCurrentPage(page['number'])" (keyup)="onKeyUp()">
-          {{ page['text'] }}
-          <span class="visually-hidden" *ngIf="!page['active']">Page{{ page['text'] }}</span>
-          <span class="visually-hidden" *ngIf="page['active']">You are on page {{ page['text'] }}</span>
-        </button>
-      </li>
-
+      @for (page of paginator.pages; track page) {
+        <li class="page-item" [ngClass]="{ active: page['active'] }">
+          <button
+            class="page-link"
+            (click)="!page['active'] && paginator.setCurrentPage(page['number'])"
+            (keyup)="onKeyUp()"
+          >
+            {{ page['text'] }}
+            @if (!page['active']) {
+              <span class="visually-hidden">Page{{ page['text'] }}</span>
+            }
+            @if (page['active']) {
+              <span class="visually-hidden">You are on page {{ page['text'] }}</span>
+            }
+          </button>
+        </li>
+      }
       <!-- direction link -->
       <li class="page-item" [ngClass]="{ disabled: paginator.currentPage === paginator.lastPage }">
         <button class="page-link" (click)="paginator.toNextPage()" (keyup)="onKeyUp()">
@@ -44,9 +53,14 @@
         </button>
       </li>
     </ul>
-  </ng-container>
+  }
 </nav>
 
-<button class="btn btn-primary btn-sm" (click)="currentPage.set(3)" [disabled]="currentPage() === 3" (keyup)="onKeyUp()">
+<button
+  class="btn btn-primary btn-sm"
+  (click)="currentPage.set(3)"
+  [disabled]="currentPage() === 3"
+  (keyup)="onKeyUp()"
+>
   Set CurrentPage to 3
 </button>
