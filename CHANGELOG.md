@@ -12,6 +12,30 @@ All notable changes to this project will be documented in this file.
 > - Documentation
 > - Internal
 
+## v14.0.0 (2026-10-02)
+
+#### Features
+
+- support angular 22 ([298d8ee](https://github.com/sibiraj-s/angular-paginator/commit/298d8ee))
+- support placing the paginator before the paginated list ([dcdb2b9](https://github.com/sibiraj-s/angular-paginator/commit/dcdb2b9))
+- pipe accepts `null` or `undefined` input ([dcdb2b9](https://github.com/sibiraj-s/angular-paginator/commit/dcdb2b9))
+
+#### Bug Fixes
+
+- emit the corrected page when `currentPage` is out of range ([dcdb2b9](https://github.com/sibiraj-s/angular-paginator/commit/dcdb2b9))
+- mark the corrected page as active when `currentPage` is out of range ([dcdb2b9](https://github.com/sibiraj-s/angular-paginator/commit/dcdb2b9))
+- pipe returns the first or last page when `currentPage` is out of range ([dcdb2b9](https://github.com/sibiraj-s/angular-paginator/commit/dcdb2b9))
+
+#### Breaking Changes
+
+- `pageChange` is no longer emitted on initialization ([dcdb2b9](https://github.com/sibiraj-s/angular-paginator/commit/dcdb2b9))
+- `currentPage`, `lastPage` and `pages` on the directive are now readonly ([dcdb2b9](https://github.com/sibiraj-s/angular-paginator/commit/dcdb2b9))
+
+#### Internal
+
+- migrate tests to vitest ([298d8ee](https://github.com/sibiraj-s/angular-paginator/commit/298d8ee))
+- bump github actions ([df274b5](https://github.com/sibiraj-s/angular-paginator/commit/df274b5))
+
 ## v13.0.0 (2025-07-06)
 
 #### Breaking Changes
