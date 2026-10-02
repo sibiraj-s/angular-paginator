@@ -10,7 +10,6 @@ import { AngularPaginatorInstance, PaginatorPipeArgs } from '../others/angular-p
   name: 'angularPaginator',
   standalone: true,
 })
-
 export class AngularPaginatorPipe implements PipeTransform {
   private angularPaginatorService = inject(AngularPaginatorService);
 

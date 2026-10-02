@@ -4,9 +4,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
-      "angular-paginator": [
-        "./dist/angular-paginator"
-      ]
+      "angular-paginator": ["./dist/angular-paginator"]
     },
     "strict": true,
     "noImplicitOverride": true,

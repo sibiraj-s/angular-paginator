@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-pagination',
   standalone: true,
   imports: [CommonModule, AngularPaginatorModule],
-  templateUrl: './pagination.html',
+  templateUrl: './pagination.component.html',
   styleUrls: ['./pagination.scss'],
 })
 export class Pagination {

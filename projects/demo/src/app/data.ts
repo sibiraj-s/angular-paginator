@@ -1,7 +1,7 @@
 interface JSONArray {
   name: string;
   id: string;
-};
+}
 
 /**
  * jsonArray holds the values for the angular paginator example

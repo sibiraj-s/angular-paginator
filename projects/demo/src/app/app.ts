@@ -5,7 +5,7 @@ import { Pagination } from './pagination/pagination';
   selector: 'app-root',
   standalone: true,
   imports: [Pagination],
-  templateUrl: './app.html',
+  templateUrl: './app.component.html',
   styleUrls: ['./app.scss'],
 })
 export class App {

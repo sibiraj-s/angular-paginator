@@ -45,11 +45,7 @@ export class AngularPaginatorService {
     for (const [k, v] of Object.entries(instance)) {
       const key = k as keyof AngularPaginatorInstance;
 
-      if (
-        key !== 'id'
-        && currentInstance[k as keyof AngularPaginatorInstance] !== v
-        && !updated
-      ) {
+      if (key !== 'id' && currentInstance[k as keyof AngularPaginatorInstance] !== v && !updated) {
         this.instances[instance.id] = {
           ...instance,
           id: instance.id,

@@ -1,11 +1,11 @@
 // @ts-check
-import tseslint from "typescript-eslint";
-import angular from "angular-eslint";
-import pegasus from "eslint-config-pegasus";
+import tseslint from 'typescript-eslint';
+import angular from 'angular-eslint';
+import pegasus from 'eslint-config-pegasus';
 
 export default tseslint.config(
   {
-    files: ["**/*.ts"],
+    files: ['**/*.ts'],
     extends: [
       pegasus.configs.default,
       ...pegasus.configs.typescript,
@@ -15,91 +15,72 @@ export default tseslint.config(
     ],
     processor: angular.processInlineTemplates,
     rules: {
-      "@typescript-eslint/max-params": [
-        "error",
+      '@typescript-eslint/max-params': [
+        'error',
         {
           max: 4,
         },
       ],
-      "@angular-eslint/directive-selector": [
-        "error",
+      '@angular-eslint/directive-selector': [
+        'error',
         {
-          type: "attribute",
-          prefix: "",
-          style: "camelCase",
+          type: 'attribute',
+          prefix: '',
+          style: 'camelCase',
         },
       ],
-      "@angular-eslint/component-selector": [
-        "error",
+      '@angular-eslint/component-selector': [
+        'error',
         {
-          type: "element",
-          prefix: "",
-          style: "kebab-case",
+          type: 'element',
+          prefix: '',
+          style: 'kebab-case',
         },
       ],
     },
   },
   {
-    files: ["projects/demo/**/*.ts"],
+    files: ['projects/demo/**/*.ts'],
     rules: {
-      "@angular-eslint/directive-selector": [
-        "error",
+      '@angular-eslint/directive-selector': [
+        'error',
         {
-          type: "attribute",
-          prefix: "app",
-          style: "camelCase",
+          type: 'attribute',
+          prefix: 'app',
+          style: 'camelCase',
         },
       ],
-      "@angular-eslint/component-selector": [
-        "error",
+      '@angular-eslint/component-selector': [
+        'error',
         {
-          type: "element",
-          prefix: "app",
-          style: "kebab-case",
+          type: 'element',
+          prefix: 'app',
+          style: 'kebab-case',
         },
       ],
-      'no-console': "off",
-      'no-confusing-arrow': "off",
+      'no-console': 'off',
+      'no-confusing-arrow': 'off',
     },
   },
   {
-    files: ["**/*.html"],
-    extends: [
-      ...angular.configs.templateRecommended,
-      ...angular.configs.templateAccessibility,
-    ],
+    files: ['**/*.html'],
+    extends: [...angular.configs.templateRecommended, ...angular.configs.templateAccessibility],
     rules: {},
   },
   {
-    files: ["scripts/**/*.js"],
-    extends: [
-      pegasus.configs.default,
-      pegasus.configs.node,
-    ],
+    files: ['scripts/**/*.js'],
+    extends: [pegasus.configs.default, pegasus.configs.node],
     rules: {},
   },
   {
-    files: [
-      "docs/**/*.ts",
-      "docs/**/*.tsx"
-    ],
-    extends: [
-      pegasus.configs.default,
-      pegasus.configs.typescript,
-      pegasus.configs.react,
-    ],
+    files: ['docs/**/*.ts', 'docs/**/*.tsx'],
+    extends: [pegasus.configs.default, pegasus.configs.typescript, pegasus.configs.react],
   },
   {
-    files: [
-      "scripts/**/*.js"
-    ],
-    extends: [
-      pegasus.configs.default,
-      pegasus.configs.node,
-      pegasus.configs.browser,
-    ],
+    files: ['scripts/**/*.js'],
+    extends: [pegasus.configs.default, pegasus.configs.node, pegasus.configs.browser],
     rules: {
-      "no-console": "off"
-    }
-  }
+      'no-console': 'off',
+    },
+  },
 );

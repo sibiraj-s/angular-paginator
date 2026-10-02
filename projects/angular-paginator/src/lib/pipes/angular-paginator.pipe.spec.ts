@@ -25,7 +25,7 @@ describe('AngularPaginatorPipe', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [AngularPaginatorService]
+      providers: [AngularPaginatorService],
     });
 
     service = TestBed.inject(AngularPaginatorService);

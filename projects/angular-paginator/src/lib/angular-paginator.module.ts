@@ -7,5 +7,4 @@ import { AngularPaginatorDirective } from './directives/angular-paginator.direct
   imports: [AngularPaginatorDirective, AngularPaginatorPipe],
   exports: [AngularPaginatorDirective, AngularPaginatorPipe],
 })
-
-export class AngularPaginatorModule { }
+export class AngularPaginatorModule {}

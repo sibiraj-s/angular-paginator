@@ -6,9 +6,7 @@ import { Pagination } from './pagination/pagination';
 describe('App', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        Pagination,
-      ],
+      imports: [Pagination],
     }).compileComponents();
   });
 

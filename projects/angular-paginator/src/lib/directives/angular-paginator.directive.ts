@@ -12,7 +12,6 @@ import { Subscription } from 'rxjs';
   exportAs: 'angularPaginator',
   standalone: true,
 })
-
 export class AngularPaginatorDirective implements OnInit, OnDestroy {
   private angularPaginatorService = inject(AngularPaginatorService);
 
@@ -168,7 +167,7 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
         }
       } else {
         // Visible pages are paginated with maxSize
-        startPage = ((Math.ceil(currentPage / this.maxSize) - 1) * this.maxSize) + 1;
+        startPage = (Math.ceil(currentPage / this.maxSize) - 1) * this.maxSize + 1;
 
         // adjust last page if limit is exceeded
         endPage = Math.min(startPage + this.maxSize - 1, totalPages);
@@ -206,9 +205,10 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
 
     // add links to move between page sets
     if (
-      isMaxSized
-      && (this.maxSize && this.maxSize > 0)
-      && (!this.rotate || this.forceEllipses || this.boundaryLinkNumbers)
+      isMaxSized &&
+      this.maxSize &&
+      this.maxSize > 0 &&
+      (!this.rotate || this.forceEllipses || this.boundaryLinkNumbers)
     ) {
       if (startPage > 1) {
         // need ellipsis for all options unless range is too close to beginning
@@ -218,7 +218,8 @@ export class AngularPaginatorDirective implements OnInit, OnDestroy {
         }
 
         if (this.boundaryLinkNumbers) {
-          if (startPage === 3) { // need to replace ellipsis when the buttons would be sequential
+          if (startPage === 3) {
+            // need to replace ellipsis when the buttons would be sequential
             const secondPageLink = this.makePage(2, '2', false);
             pages.unshift(secondPageLink);
           }

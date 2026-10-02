@@ -2,7 +2,6 @@
  * structure for the paginator instance
  */
 export interface AngularPaginatorInstance {
-
   /** id of the pagination instance */
   id: string;
 
@@ -20,7 +19,6 @@ export interface AngularPaginatorInstance {
  * structure for each page item
  */
 export interface Page {
-
   /** number of the page */
   number: number;
 
