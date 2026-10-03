@@ -30,4 +30,4 @@ jobs:
           NODE_ENV: production
 
       - name: Publish to NPM
-        run: npm publish dist/angular-paginator/ --provenance
+        run: npm stage publish dist/angular-paginator/
